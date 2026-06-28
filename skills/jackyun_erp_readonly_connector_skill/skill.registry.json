@@ -1,0 +1,29 @@
+{
+  "skill_id": "jackyun_erp_readonly_connector_skill",
+  "name": "吉客云 ERP 只读 Connector Skill",
+  "scenarios": [
+    "吉客云",
+    "实时库存",
+    "分仓库存",
+    "库存成本参考",
+    "批次效期",
+    "销售订单",
+    "销售汇总"
+  ],
+  "tool_allowlist": [
+    "list_erp_live_query_capabilities",
+    "test_erp_live_connection",
+    "route_erp_live_query",
+    "query_erp_live_snapshot",
+    "query_inventory_cost_reference"
+  ],
+  "output_schema": [
+    "route",
+    "inventory",
+    "warehouse_scope",
+    "sales_summary",
+    "cost_reference",
+    "data_gaps",
+    "next_actions"
+  ]
+}

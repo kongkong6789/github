@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "A2A Reference Platform Registry",
+  "type": "object",
+  "required": ["schema", "platforms"],
+  "properties": {
+    "schema": {
+      "const": "a2a_reference_platform_registry_v1"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "hub_model": {
+      "type": "string"
+    },
+    "platforms": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["platform_id", "display_name", "integration_mode", "role"],
+        "properties": {
+          "platform_id": { "type": "string" },
+          "display_name": { "type": "string" },
+          "source_repo": { "type": "string" },
+          "source_url": { "type": "string" },
+          "license": { "type": "string" },
+          "integration_mode": {
+            "enum": ["embedded", "embedded_sidecar", "sidecar_optional", "reference_only"]
+          },
+          "role": { "type": "string" },
+          "local_module": { "type": "string" },
+          "primary_tools": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "local_fallback_tools": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "env_prefix": { "type": "string" },
+          "default_url_env": { "type": "string" },
+          "default_port": { "type": "integer" },
+          "health_path": { "type": "string" },
+          "doctor_check": { "type": "string" },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}

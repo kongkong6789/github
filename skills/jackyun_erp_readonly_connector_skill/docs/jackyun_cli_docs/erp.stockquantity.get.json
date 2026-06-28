@@ -1,0 +1,412 @@
+{
+    "method": "erp.stockquantity.get",
+    "summary": "库存分页查询",
+    "description": "库存分页查询（初始化库存结束后，禁止全量查询，请使用修改时间增量数据）",
+    "request": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "goodsNo": {
+                    "type": "string",
+                    "example": "",
+                    "description": "货品编码"
+                },
+                "unitName": {
+                    "type": "string",
+                    "example": "",
+                    "description": "单位"
+                },
+                "gmtModifiedEnd": {
+                    "type": "string",
+                    "example": "2023-01-02 09:00:00",
+                    "description": "修改时间结束"
+                },
+                "pageSize": {
+                    "type": "integer",
+                    "example": 50,
+                    "description": "每页记录数"
+                },
+                "gmtModifiedStart": {
+                    "type": "string",
+                    "example": "2023-01-01 09:00:00",
+                    "description": "修改时间开始"
+                },
+                "isChannelReserve": {
+                    "type": "integer",
+                    "example": 1,
+                    "description": "是否查询渠道预留库存（1：查询；0：不查询）"
+                },
+                "warehouseCode": {
+                    "type": "string",
+                    "example": "",
+                    "description": "仓库编码"
+                },
+                "skuName": {
+                    "type": "string",
+                    "example": "",
+                    "description": "规格"
+                },
+                "isBlockup": {
+                    "type": "integer",
+                    "example": 2,
+                    "description": "是否阻塞（1：返回；2：不返回）"
+                },
+                "pageIndex": {
+                    "type": "integer",
+                    "example": 0,
+                    "description": "页码，从0开始"
+                },
+                "isbatchmanagement": {
+                    "type": "integer",
+                    "example": 1,
+                    "description": "默认0，传1 返回批次中，只返回开启批次管理的批次信息，0返回所有批次信息，不论是否开启"
+                },
+                "skuBarcode": {
+                    "type": "string",
+                    "example": "",
+                    "description": "条码（支持多条码查询 例:123,456）"
+                },
+                "goodsName": {
+                    "type": "string",
+                    "example": "",
+                    "description": "货品名称"
+                }
+            }
+        },
+        "example": {
+            "goodsNo": "",
+            "unitName": "",
+            "gmtModifiedEnd": "2023-01-02 09:00:00",
+            "pageSize": 50,
+            "gmtModifiedStart": "2023-01-01 09:00:00",
+            "isChannelReserve": 1,
+            "warehouseCode": "",
+            "skuName": "",
+            "isBlockup": 2,
+            "pageIndex": 0,
+            "isbatchmanagement": 1,
+            "skuBarcode": "",
+            "goodsName": ""
+        }
+    },
+    "response": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "description": "返回码，200 成功"
+                },
+                "msg": {
+                    "type": "string"
+                },
+                "subCode": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "object",
+                    "properties": {
+                        "data": {
+                            "type": "object",
+                            "properties": {
+                                "goodsStockQuantity": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "stockInQuantity": {
+                                                "type": "integer",
+                                                "example": 30,
+                                                "description": "入库申请数量"
+                                            },
+                                            "goodsId": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "货品id"
+                                            },
+                                            "defectiveQuanity": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "残次品数量"
+                                            },
+                                            "warehouseName": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "仓库名称"
+                                            },
+                                            "warehouseCode": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "仓库编码"
+                                            },
+                                            "skuName": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "规格名称"
+                                            },
+                                            "purchasingQuantity": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "采购在途数量"
+                                            },
+                                            "lockedQuantity": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "锁定数量"
+                                            },
+                                            "batchList": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "productionDate": {
+                                                            "type": "string",
+                                                            "example": "2020-08-19 00:00:00",
+                                                            "description": "生产日期"
+                                                        },
+                                                        "lockedQuantity": {
+                                                            "type": "integer",
+                                                            "example": 1,
+                                                            "description": "锁定数量（正品）"
+                                                        },
+                                                        "defectiveQuantity": {
+                                                            "type": "integer",
+                                                            "example": 1,
+                                                            "description": "库存（次品）数量"
+                                                        },
+                                                        "shelfLiftUnit": {
+                                                            "type": "string",
+                                                            "example": "天",
+                                                            "description": "保质期单位"
+                                                        },
+                                                        "shelfLife": {
+                                                            "type": "integer",
+                                                            "example": 112,
+                                                            "description": "保质期数"
+                                                        },
+                                                        "expirationDate": {
+                                                            "type": "string",
+                                                            "example": "2020-08-09 00:00:00",
+                                                            "description": "到期日期"
+                                                        },
+                                                        "batchNo": {
+                                                            "type": "string",
+                                                            "example": "pc2021",
+                                                            "description": "批次号"
+                                                        },
+                                                        "quantityId": {
+                                                            "type": "string",
+                                                            "example": "12321",
+                                                            "description": "主键id"
+                                                        },
+                                                        "defectiveUseQuantity": {
+                                                            "type": "string",
+                                                            "example": "12",
+                                                            "description": "次品可用库存"
+                                                        },
+                                                        "useQuantity": {
+                                                            "type": "string",
+                                                            "example": "1",
+                                                            "description": "可用库存（正品）"
+                                                        },
+                                                        "residualQuantity": {
+                                                            "type": "integer",
+                                                            "example": 1,
+                                                            "description": "库存（正品）数量"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "productionDate",
+                                                        "lockedQuantity",
+                                                        "defectiveQuantity",
+                                                        "shelfLiftUnit",
+                                                        "shelfLife",
+                                                        "expirationDate",
+                                                        "batchNo",
+                                                        "quantityId",
+                                                        "defectiveUseQuantity",
+                                                        "useQuantity",
+                                                        "residualQuantity"
+                                                    ]
+                                                },
+                                                "description": "批次信息"
+                                            },
+                                            "goodsName": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "货品名称"
+                                            },
+                                            "currentQuantity": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "当前库存数量"
+                                            },
+                                            "skuId": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "规格id"
+                                            },
+                                            "goodsNo": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "货品编号"
+                                            },
+                                            "unitName": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "计量单位"
+                                            },
+                                            "productingQuantity": {
+                                                "type": "integer",
+                                                "example": 6,
+                                                "description": "生产在途数量"
+                                            },
+                                            "stockIndex": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "当前库存更新顺序"
+                                            },
+                                            "quantityId": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "主键id"
+                                            },
+                                            "defectiveUseQuantity": {
+                                                "type": "integer",
+                                                "example": 12,
+                                                "description": "次品可用库存"
+                                            },
+                                            "costPrice": {
+                                                "type": "integer",
+                                                "example": 10,
+                                                "description": "当前成本价"
+                                            },
+                                            "salesReturnQuantity": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "销售退货数量"
+                                            },
+                                            "outerQuantity": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "外部库存数量"
+                                            },
+                                            "stockOutQuantity": {
+                                                "type": "integer",
+                                                "example": 30
+                                            },
+                                            "allocateQuantity": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "调拨在途数量"
+                                            },
+                                            "orderingQuantity": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "订购数量"
+                                            },
+                                            "useQuantity": {
+                                                "type": "integer",
+                                                "example": 12,
+                                                "description": "正品可用库存"
+                                            },
+                                            "warehouseId": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "仓库id"
+                                            },
+                                            "skuBarcode": {
+                                                "type": "string",
+                                                "example": "",
+                                                "description": "条码"
+                                            },
+                                            "reserveQuantity": {
+                                                "type": "integer",
+                                                "example": 1,
+                                                "description": "渠道预留库存"
+                                            }
+                                        },
+                                        "required": [
+                                            "stockInQuantity",
+                                            "batchList",
+                                            "productingQuantity",
+                                            "defectiveUseQuantity",
+                                            "costPrice",
+                                            "useQuantity",
+                                            "reserveQuantity"
+                                        ]
+                                    },
+                                    "description": "库存信息列表"
+                                }
+                            },
+                            "required": [
+                                "goodsStockQuantity"
+                            ]
+                        },
+                        "contextId": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "example": {
+            "code": 200,
+            "msg": "",
+            "result": {
+                "data": {
+                    "goodsStockQuantity": [
+                        {
+                            "stockInQuantity": 30,
+                            "goodsId": "",
+                            "defectiveQuanity": "",
+                            "warehouseName": "",
+                            "warehouseCode": "",
+                            "skuName": "",
+                            "purchasingQuantity": "",
+                            "lockedQuantity": "",
+                            "batchList": [
+                                {
+                                    "productionDate": "2020-08-19 00:00:00",
+                                    "lockedQuantity": 1,
+                                    "defectiveQuantity": 1,
+                                    "shelfLiftUnit": "天",
+                                    "shelfLife": 112,
+                                    "expirationDate": "2020-08-09 00:00:00",
+                                    "batchNo": "pc2021",
+                                    "quantityId": "12321",
+                                    "defectiveUseQuantity": "12",
+                                    "useQuantity": "1",
+                                    "residualQuantity": 1
+                                }
+                            ],
+                            "goodsName": "",
+                            "currentQuantity": "",
+                            "skuId": "",
+                            "goodsNo": "",
+                            "unitName": "",
+                            "productingQuantity": 6,
+                            "stockIndex": "",
+                            "quantityId": "",
+                            "defectiveUseQuantity": 12,
+                            "costPrice": 10,
+                            "salesReturnQuantity": "",
+                            "outerQuantity": "",
+                            "stockOutQuantity": 30,
+                            "allocateQuantity": "",
+                            "orderingQuantity": "",
+                            "useQuantity": 12,
+                            "warehouseId": "",
+                            "skuBarcode": "",
+                            "reserveQuantity": 1
+                        }
+                    ]
+                },
+                "contextId": "2199254218603594624"
+            },
+            "subCode": ""
+        }
+    }
+}

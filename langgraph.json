@@ -1,0 +1,9 @@
+{
+  "dependencies": [
+    "."
+  ],
+  "graphs": {
+    "ecommerce_agent": "./src/a2a_ecommerce_demo/supervisor_app.py:graph"
+  },
+  "env": ".env"
+}

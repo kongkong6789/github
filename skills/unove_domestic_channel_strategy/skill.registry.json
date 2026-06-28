@@ -1,0 +1,31 @@
+{
+  "skill_id": "unove_domestic_channel_strategy",
+  "name": "UNOVE 国内渠道经营策略 Skill",
+  "scenarios": [
+    "渠道分析",
+    "月度计划",
+    "分销线下跟进",
+    "竞品监控",
+    "营销舆情分析"
+  ],
+  "tool_allowlist": [
+    "summarize_business_data",
+    "summarize_brand_coverage",
+    "list_fact_tables",
+    "plan_fact_query",
+    "query_fact_layer",
+    "query_lightrag",
+    "query_erp_live_snapshot",
+    "search_wiki",
+    "read_wiki_page"
+  ],
+  "output_schema": [
+    "channel_rules",
+    "monthly_targets",
+    "execution_plan",
+    "customer_followup",
+    "competitor_monitoring",
+    "data_gaps",
+    "next_actions"
+  ]
+}

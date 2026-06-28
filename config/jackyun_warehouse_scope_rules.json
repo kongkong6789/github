@@ -1,0 +1,26 @@
+{
+  "schema": "a2a_jackyun_warehouse_scope_rules_v1",
+  "description": "吉客云仓库业务口径配置。增删仓库时维护这里，实时 ERP 工具和模型护栏会读取同一份规则。",
+  "rules": [
+    {
+      "business_scope": "售后",
+      "canonical_warehouse": "宝鼎仓（售后仓）",
+      "keywords": ["宝鼎", "售后"]
+    },
+    {
+      "business_scope": "大贸",
+      "canonical_warehouse": "麦歌仓",
+      "keywords": ["麦歌"]
+    },
+    {
+      "business_scope": "跨境",
+      "canonical_warehouse": "韩国申通仓",
+      "keywords": ["韩国申通"]
+    },
+    {
+      "business_scope": "保税",
+      "canonical_warehouse": "菜鸟仓",
+      "keywords": ["菜鸟", "保税"]
+    }
+  ]
+}

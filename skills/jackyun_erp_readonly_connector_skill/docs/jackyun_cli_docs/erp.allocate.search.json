@@ -1,0 +1,535 @@
+{
+    "method": "erp.allocate.search",
+    "summary": "按需查询调拨单，货品模式分页",
+    "description": "开放平台调拨按需查询",
+    "request": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "outWarehouseCode": {
+                    "type": "string",
+                    "example": "",
+                    "description": "调出仓库编号"
+                },
+                "auditDateStart": {
+                    "type": "string",
+                    "example": "2020-11-04 09:14:24",
+                    "description": "审核起始时间"
+                },
+                "inWarehouseCode": {
+                    "type": "string",
+                    "example": "",
+                    "description": "调入仓库编号"
+                },
+                "pageSize": {
+                    "type": "string",
+                    "example": "",
+                    "description": "条目"
+                },
+                "sourceNo": {
+                    "type": "string",
+                    "example": "DB0000001",
+                    "description": "来源单号"
+                },
+                "startCreateTime": {
+                    "type": "string",
+                    "example": "2020-11-04 09:14:24",
+                    "description": "创建时间的起始时间"
+                },
+                "auditDateEnd": {
+                    "type": "string",
+                    "example": "2020-11-04 09:14:24",
+                    "description": "审核结束时间"
+                },
+                "inStatus": {
+                    "type": "string",
+                    "example": "1,2",
+                    "description": "入库状态1=入库等待2=部分入库3=入库完成"
+                },
+                "endCreateTime": {
+                    "type": "string",
+                    "example": "2020-11-05 09:14:24",
+                    "description": "创建时间结束时间"
+                },
+                "outSkuCode": {
+                    "type": "string",
+                    "example": "",
+                    "description": "外部货品主键"
+                },
+                "allocateNos": {
+                    "type": "string",
+                    "example": "DB2020120800000001",
+                    "description": "调拨单号,多个中间逗号隔开"
+                },
+                "pageIndex": {
+                    "type": "string",
+                    "example": "",
+                    "description": "页码"
+                },
+                "outStatus": {
+                    "type": "string",
+                    "example": "1",
+                    "description": "出库状态1=出库等待2=部分出库3=出库完成"
+                },
+                "cols": {
+                    "type": "string",
+                    "example": "skuName,skuBarcode",
+                    "description": "需要返回的字段,用“,”号拼接"
+                },
+                "status": {
+                    "type": "string",
+                    "example": "0=草稿1=待审核2=已审核3=已关闭 10-审核中 20=已完成",
+                    "description": "0=草稿1=待审核2=已审核3=已关闭 10-审核中"
+                }
+            },
+            "required": [
+                "outWarehouseCode",
+                "inWarehouseCode",
+                "sourceNo",
+                "inStatus",
+                "outSkuCode",
+                "outStatus",
+                "status"
+            ]
+        },
+        "example": {
+            "outWarehouseCode": "",
+            "auditDateStart": "2020-11-04 09:14:24",
+            "inWarehouseCode": "",
+            "pageSize": "",
+            "sourceNo": "DB0000001",
+            "startCreateTime": "2020-11-04 09:14:24",
+            "auditDateEnd": "2020-11-04 09:14:24",
+            "inStatus": "1,2",
+            "endCreateTime": "2020-11-05 09:14:24",
+            "outSkuCode": "",
+            "allocateNos": "DB2020120800000001",
+            "pageIndex": "",
+            "outStatus": "1",
+            "cols": "skuName,skuBarcode",
+            "status": "0=草稿1=待审核2=已审核3=已关闭 10-审核中 20=已完成"
+        }
+    },
+    "response": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "description": "返回码，200 成功"
+                },
+                "msg": {
+                    "type": "string"
+                },
+                "subCode": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "object",
+                    "properties": {
+                        "data": {
+                            "type": "object",
+                            "properties": {
+                                "reason": {
+                                    "type": "string",
+                                    "example": "门店之前调货",
+                                    "description": "调拨原因"
+                                },
+                                "companyName": {
+                                    "type": "string",
+                                    "example": "笛佛",
+                                    "description": "公司名称"
+                                },
+                                "memo": {
+                                    "type": "string",
+                                    "example": "备注",
+                                    "description": "这是调拨单备注"
+                                },
+                                "skuPrice": {
+                                    "type": "integer",
+                                    "example": 15,
+                                    "description": "单价"
+                                },
+                                "inStatus": {
+                                    "type": "string",
+                                    "example": "1",
+                                    "description": "入库状态1=入库等待2=部分入库3=入库完成"
+                                },
+                                "operator": {
+                                    "type": "string",
+                                    "example": "张洲",
+                                    "description": "制单人"
+                                },
+                                "outSkuCode": {
+                                    "type": "string",
+                                    "example": "SKU-WB-001",
+                                    "description": "外部货品主键"
+                                },
+                                "outWarehouseId": {
+                                    "type": "string",
+                                    "example": "632463357515668608",
+                                    "description": "调出仓库id"
+                                },
+                                "allocatePriceType": {
+                                    "type": "string",
+                                    "example": "1",
+                                    "description": "调拨价格类型:1=批发价，2=零售价，3=会员价"
+                                },
+                                "isAllocateDifferentCompany": {
+                                    "type": "string",
+                                    "example": "1",
+                                    "description": "是否跨公司调拨(0-否 1-是)"
+                                },
+                                "flagData": {
+                                    "type": "string",
+                                    "example": "1,2",
+                                    "description": "标记Id集合"
+                                },
+                                "operatorId": {
+                                    "type": "string",
+                                    "example": "445554288029867136",
+                                    "description": "制单人id"
+                                },
+                                "goodsName": {
+                                    "type": "string",
+                                    "example": "阿迪达斯-上衣",
+                                    "description": "货品名称"
+                                },
+                                "skuId": {
+                                    "type": "string",
+                                    "example": "1011495587933854848",
+                                    "description": "规格id"
+                                },
+                                "skuCount": {
+                                    "type": "integer",
+                                    "example": 1,
+                                    "description": "货品数量(调拨单主表字段)"
+                                },
+                                "inWarehouseCode": {
+                                    "type": "string",
+                                    "example": "JYK-B",
+                                    "description": "调入仓库编号"
+                                },
+                                "unitName": {
+                                    "type": "string",
+                                    "example": "件",
+                                    "description": "单位名称"
+                                },
+                                "isCertified": {
+                                    "type": "string",
+                                    "example": "1",
+                                    "description": "是否正品"
+                                },
+                                "sourceNo": {
+                                    "type": "string",
+                                    "example": "来源单号",
+                                    "description": "来源单号"
+                                },
+                                "rowRemark": {
+                                    "type": "string",
+                                    "example": "备注",
+                                    "description": "这是明细备注"
+                                },
+                                "applyDepartId": {
+                                    "type": "string",
+                                    "example": "396854331816666112",
+                                    "description": "申请部门id"
+                                },
+                                "applyUserName": {
+                                    "type": "string",
+                                    "example": "张洲",
+                                    "description": "申请人姓名"
+                                },
+                                "totalAmount": {
+                                    "type": "integer",
+                                    "example": 15,
+                                    "description": "总金额"
+                                },
+                                "goodsCount": {
+                                    "type": "integer",
+                                    "example": 1,
+                                    "description": "货品种类（调拨单主表字段）"
+                                },
+                                "companyId": {
+                                    "type": "string",
+                                    "example": "317065649711596544",
+                                    "description": "公司id"
+                                },
+                                "auditUserId": {
+                                    "type": "string",
+                                    "example": "445554288029867136",
+                                    "description": "审核人id"
+                                },
+                                "auditUserName": {
+                                    "type": "string",
+                                    "example": "张洲",
+                                    "description": "审核人姓名"
+                                },
+                                "allocateId": {
+                                    "type": "string",
+                                    "example": "1041929127951342720",
+                                    "description": "主键id"
+                                },
+                                "status": {
+                                    "type": "string",
+                                    "example": "0",
+                                    "description": "0=草稿1=待审核2=已审核3=已关闭 10-审核中"
+                                },
+                                "logisticNo": {
+                                    "type": "string",
+                                    "example": "物流单号",
+                                    "description": "物流单号"
+                                },
+                                "gmtModified": {
+                                    "type": "string",
+                                    "example": "1606975539000",
+                                    "description": "修改时间"
+                                },
+                                "goodsId": {
+                                    "type": "string",
+                                    "example": "970232000399160192",
+                                    "description": "货品id"
+                                },
+                                "applyUserId": {
+                                    "type": "string",
+                                    "example": "445554288029867136",
+                                    "description": "申请人id,关联用户表"
+                                },
+                                "skuName": {
+                                    "type": "string",
+                                    "example": "阿迪达斯-上衣-红色",
+                                    "description": "规格名称"
+                                },
+                                "inWarehouseId": {
+                                    "type": "string",
+                                    "example": "621542102209928320",
+                                    "description": "调入仓库id"
+                                },
+                                "allocateDetailId": {
+                                    "type": "string",
+                                    "example": "1041929128010062976",
+                                    "description": "调拨明细id"
+                                },
+                                "outCount": {
+                                    "type": "integer",
+                                    "example": 1,
+                                    "description": "已出库数量"
+                                },
+                                "allocateNo": {
+                                    "type": "string",
+                                    "example": "DB2020120800000001",
+                                    "description": "调拨单号"
+                                },
+                                "planOutDate": {
+                                    "type": "string",
+                                    "example": "1606975539000",
+                                    "description": "预计出库时间(时间戳)"
+                                },
+                                "auditDate": {
+                                    "type": "string",
+                                    "example": "1607408548000",
+                                    "description": "审核时间(时间戳)"
+                                },
+                                "goodsNo": {
+                                    "type": "string",
+                                    "example": "ADDS-00001",
+                                    "description": "货品编号"
+                                },
+                                "outWarehouseCode": {
+                                    "type": "string",
+                                    "example": "JYK-A",
+                                    "description": "调出仓库编号"
+                                },
+                                "assistUnit": {
+                                    "type": "string",
+                                    "example": "1件",
+                                    "description": "辅助单位"
+                                },
+                                "gmtCreate": {
+                                    "type": "string",
+                                    "example": "1607408548000",
+                                    "description": "创建时间(时间戳)"
+                                },
+                                "inCount": {
+                                    "type": "integer",
+                                    "example": 1,
+                                    "description": "已入库数量"
+                                },
+                                "allocatePrice": {
+                                    "type": "string",
+                                    "example": "1",
+                                    "description": "1=批发价，2=零售价，3=会员价"
+                                },
+                                "goodsSkuCount": {
+                                    "type": "integer",
+                                    "example": 14,
+                                    "description": "数量"
+                                },
+                                "goodsTotalAmount": {
+                                    "type": "integer",
+                                    "example": 15,
+                                    "description": "总金额"
+                                },
+                                "applyDepartName": {
+                                    "type": "string",
+                                    "example": "总经办",
+                                    "description": "申请人部门"
+                                },
+                                "allocateType": {
+                                    "type": "string",
+                                    "example": "0",
+                                    "description": "调拨类型:0=同价调拨1=异价调拨"
+                                },
+                                "outStatus": {
+                                    "type": "string",
+                                    "example": "1",
+                                    "description": "出库状态1=出库等待2=部分出库3=出库完成"
+                                },
+                                "skuBarcode": {
+                                    "type": "string",
+                                    "example": "ADDS-AJ-001",
+                                    "description": "条码"
+                                },
+                                "applyDate": {
+                                    "type": "string",
+                                    "example": "1607408548000",
+                                    "description": "申请时间"
+                                },
+                                "planInDate": {
+                                    "type": "string",
+                                    "example": "1606975539000",
+                                    "description": "预计入库时间(时间戳)"
+                                }
+                            },
+                            "required": [
+                                "reason",
+                                "companyName",
+                                "memo",
+                                "skuPrice",
+                                "inStatus",
+                                "operator",
+                                "outSkuCode",
+                                "outWarehouseId",
+                                "allocatePriceType",
+                                "isAllocateDifferentCompany",
+                                "flagData",
+                                "operatorId",
+                                "goodsName",
+                                "skuId",
+                                "skuCount",
+                                "inWarehouseCode",
+                                "unitName",
+                                "isCertified",
+                                "sourceNo",
+                                "rowRemark",
+                                "applyDepartId",
+                                "applyUserName",
+                                "totalAmount",
+                                "goodsCount",
+                                "companyId",
+                                "auditUserId",
+                                "auditUserName",
+                                "allocateId",
+                                "status",
+                                "logisticNo",
+                                "gmtModified",
+                                "goodsId",
+                                "applyUserId",
+                                "skuName",
+                                "inWarehouseId",
+                                "allocateDetailId",
+                                "outCount",
+                                "allocateNo",
+                                "planOutDate",
+                                "auditDate",
+                                "goodsNo",
+                                "outWarehouseCode",
+                                "assistUnit",
+                                "gmtCreate",
+                                "inCount",
+                                "allocatePrice",
+                                "goodsSkuCount",
+                                "goodsTotalAmount",
+                                "applyDepartName",
+                                "allocateType",
+                                "outStatus",
+                                "skuBarcode",
+                                "applyDate",
+                                "planInDate"
+                            ]
+                        },
+                        "contextId": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "example": {
+            "code": 200,
+            "msg": "",
+            "result": {
+                "data": {
+                    "reason": "门店之前调货",
+                    "companyName": "笛佛",
+                    "memo": "备注",
+                    "skuPrice": 15,
+                    "inStatus": "1",
+                    "operator": "张洲",
+                    "outSkuCode": "SKU-WB-001",
+                    "outWarehouseId": "632463357515668608",
+                    "allocatePriceType": "1",
+                    "isAllocateDifferentCompany": "1",
+                    "flagData": "1,2",
+                    "operatorId": "445554288029867136",
+                    "goodsName": "阿迪达斯-上衣",
+                    "skuId": "1011495587933854848",
+                    "skuCount": 1,
+                    "inWarehouseCode": "JYK-B",
+                    "unitName": "件",
+                    "isCertified": "1",
+                    "sourceNo": "来源单号",
+                    "rowRemark": "备注",
+                    "applyDepartId": "396854331816666112",
+                    "applyUserName": "张洲",
+                    "totalAmount": 15,
+                    "goodsCount": 1,
+                    "companyId": "317065649711596544",
+                    "auditUserId": "445554288029867136",
+                    "auditUserName": "张洲",
+                    "allocateId": "1041929127951342720",
+                    "status": "0",
+                    "logisticNo": "物流单号",
+                    "gmtModified": "1606975539000",
+                    "goodsId": "970232000399160192",
+                    "applyUserId": "445554288029867136",
+                    "skuName": "阿迪达斯-上衣-红色",
+                    "inWarehouseId": "621542102209928320",
+                    "allocateDetailId": "1041929128010062976",
+                    "outCount": 1,
+                    "allocateNo": "DB2020120800000001",
+                    "planOutDate": "1606975539000",
+                    "auditDate": "1607408548000",
+                    "goodsNo": "ADDS-00001",
+                    "outWarehouseCode": "JYK-A",
+                    "assistUnit": "1件",
+                    "gmtCreate": "1607408548000",
+                    "inCount": 1,
+                    "allocatePrice": "1",
+                    "goodsSkuCount": 14,
+                    "goodsTotalAmount": 15,
+                    "applyDepartName": "总经办",
+                    "allocateType": "0",
+                    "outStatus": "1",
+                    "skuBarcode": "ADDS-AJ-001",
+                    "applyDate": "1607408548000",
+                    "planInDate": "1606975539000"
+                },
+                "contextId": "2020228332118180736"
+            },
+            "subCode": ""
+        }
+    }
+}

@@ -1,0 +1,3077 @@
+{
+    "version": "1.0.0",
+    "methods": [
+        {
+            "method": "acs.bill.create",
+            "summary": "账单创建接口",
+            "description": "开放平台账单创建对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/acs.bill.create.json"
+        },
+        {
+            "method": "acs.bill.uploadfile",
+            "summary": "数聚通账单下载-上传接口",
+            "description": "数聚通账单下载-上传接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/acs.bill.uploadfile.json"
+        },
+        {
+            "method": "acs.billinfo.get",
+            "summary": "开放平台账单查询对外接口",
+            "description": "开放平台账单查询对外接口。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/acs.billinfo.get.json"
+        },
+        {
+            "method": "acs.checkinfo.get",
+            "summary": "开放平台销售对账单查询对外接口",
+            "description": "开放平台销售对账单查询对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/acs.checkinfo.get.json"
+        },
+        {
+            "method": "acs.feecheckinfo.get",
+            "summary": "开放平台费用归集单查询对外接口",
+            "description": "开放平台费用归集单查询对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/acs.feecheckinfo.get.json"
+        },
+        {
+            "method": "acs.feesum.get",
+            "summary": "开放平台销售费用汇总查询对外接口",
+            "description": "开放平台销售费用汇总查询对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/acs.feesum.get.json"
+        },
+        {
+            "method": "ass-business.disorder.cancel",
+            "summary": "取消错漏单（新）",
+            "description": "取消错漏单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.disorder.cancel.json"
+        },
+        {
+            "method": "ass-business.disorder.createDisorder",
+            "summary": "开放平台创建错漏单（新）",
+            "description": "开放平台创建错漏单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.disorder.createDisorder.json"
+        },
+        {
+            "method": "ass-business.disorder.listDisorderInfo",
+            "summary": "分页获取错漏单",
+            "description": "*此接口不包含淘系数据，其它平台的敏感信息会根据平台规则同步调整",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.disorder.listDisorderInfo.json"
+        },
+        {
+            "method": "ass-business.disorder.listDisorderInfoV2",
+            "summary": "分页获取错漏单（新）",
+            "description": "*此接口不包含淘系数据，其它平台的敏感信息会根据平台规则同步调整",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.disorder.listDisorderInfoV2.json"
+        },
+        {
+            "method": "ass-business.dispute.complete",
+            "summary": "服务工单状态变更",
+            "description": "用于修改纠纷单处理状态",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.dispute.complete.json"
+        },
+        {
+            "method": "ass-business.dispute.createdispute",
+            "summary": "创建服务工单",
+            "description": "开放平台创建服务工单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.dispute.createdispute.json"
+        },
+        {
+            "method": "ass-business.dispute.listDisputeInfo",
+            "summary": "分页获取服务工单信息",
+            "description": "用于分页获取纠纷单信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.dispute.listDisputeInfo.json"
+        },
+        {
+            "method": "ass-business.exchange.delivery",
+            "summary": "退换单退货入库",
+            "description": "退换单退货入库",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.exchange.delivery.json"
+        },
+        {
+            "method": "ass-business.exchange.deliverycomplete",
+            "summary": "退换补发单完结收货",
+            "description": "退换补发单完结收货",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.exchange.deliverycomplete.json"
+        },
+        {
+            "method": "ass-business.exchange.returnorder.confirm",
+            "summary": "退货入库单确认(逆向)",
+            "description": "",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.exchange.returnorder.confirm.json"
+        },
+        {
+            "method": "ass-business.flag.batchedit",
+            "summary": "批量修改售后单标记",
+            "description": "批量修改售后单单标记",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.flag.batchedit.json"
+        },
+        {
+            "method": "ass-business.others.getcustomcolumnconfiginfo",
+            "summary": "获取自定义字段配置信息",
+            "description": "获取自定义字段配置信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.others.getcustomcolumnconfiginfo.json"
+        },
+        {
+            "method": "ass-business.others.getreturnaddressinfo",
+            "summary": "获取售后设置退货地址配置信息",
+            "description": "获取售后设置退货地址配置信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.others.getreturnaddressinfo.json"
+        },
+        {
+            "method": "ass-business.refund.cancel",
+            "summary": "取消补偿退款单（新）",
+            "description": "取消补偿退款单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.refund.cancel.json"
+        },
+        {
+            "method": "ass-business.refund.create",
+            "summary": "创建补偿退款单（新）",
+            "description": "创建补偿退款单（新）\n货品明细的退款金额(refundFee) 累加 = 应退合计(returnTotal)+订单优惠(discountFee)\n",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.refund.create.json"
+        },
+        {
+            "method": "ass-business.refund.listRefundInfo",
+            "summary": "分页查询补偿退款单（新）",
+            "description": "*此接口不包含淘系数据，其它平台的敏感信息会根据平台规则同步调整。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.refund.listRefundInfo.json"
+        },
+        {
+            "method": "ass-business.refund.pay",
+            "summary": "补偿退款单结算",
+            "description": "补偿退款单结算",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.refund.pay.json"
+        },
+        {
+            "method": "ass-business.refund.update",
+            "summary": "补偿退款单更新",
+            "description": "补偿退款单更新",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.refund.update.json"
+        },
+        {
+            "method": "ass-business.returnchange.cancel",
+            "summary": "取消退换补发单（新）",
+            "description": "取消退换补货单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.returnchange.cancel.json"
+        },
+        {
+            "method": "ass-business.returnchange.create",
+            "summary": "创建退换补发单（新）",
+            "description": "创建退换补发单（新）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.returnchange.create.json"
+        },
+        {
+            "method": "ass-business.returnchange.fullinfoget",
+            "summary": "分页查询退换补发单（新）",
+            "description": "分页查询退换补货单（新）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.returnchange.fullinfoget.json"
+        },
+        {
+            "method": "ass-business.returnchange.oppolist",
+            "summary": "获取退换单信息（奇门自定义接口）",
+            "description": "*此接口不包含淘系数据，其它平台的敏感信息会根据平台规则同步调整",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.returnchange.oppolist.json"
+        },
+        {
+            "method": "ass-business.returnchange.pay",
+            "summary": "退换补发单结算",
+            "description": "退换补发单结算",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.returnchange.pay.json"
+        },
+        {
+            "method": "ass-business.returnchange.recoverToAuditStatus",
+            "summary": "恢复至审核退换补发单",
+            "description": "恢复至审核退换补发单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.returnchange.recoverToAuditStatus.json"
+        },
+        {
+            "method": "ass-business.returnchange.update.customFields.plat",
+            "summary": "更新退换补发单自定义字段信息",
+            "description": "更新退换补发单自定义字段信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.returnchange.update.customFields.plat.json"
+        },
+        {
+            "method": "ass-business.returnchange.update.plat",
+            "summary": "更新退换补发单物流信息",
+            "description": "更新退换补发单物流信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass-business.returnchange.update.plat.json"
+        },
+        {
+            "method": "ass.refund.cancel",
+            "summary": "补偿退款取消接口",
+            "description": "补偿退款取消接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass.refund.cancel.json"
+        },
+        {
+            "method": "ass.refund.create",
+            "summary": "补偿退款新增开放接口",
+            "description": "补偿退款新增开放接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass.refund.create.json"
+        },
+        {
+            "method": "ass.returnchange.cancel",
+            "summary": "退换取消接口",
+            "description": "退换取消接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass.returnchange.cancel.json"
+        },
+        {
+            "method": "ass.returnchange.create",
+            "summary": "退换新增开放接口",
+            "description": "退换新增开放接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass.returnchange.create.json"
+        },
+        {
+            "method": "ass.returnchange.fullinfoget",
+            "summary": "分页查询退换补货单（旧）(后续不再维护新字段)",
+            "description": "分页查询退换补货单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/ass.returnchange.fullinfoget.json"
+        },
+        {
+            "method": "birc.businessdata.import",
+            "summary": "BI导入业务数据",
+            "description": "开放平台导入BI业务数据通用接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/birc.businessdata.import.json"
+        },
+        {
+            "method": "birc.report.needauth.goodsMultiDimensionalAnalysis",
+            "summary": "货品销售多维分析报表",
+            "description": "货品销售多维分析报表查询接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/birc.report.needauth.goodsMultiDimensionalAnalysis.json"
+        },
+        {
+            "method": "crm.available.integral.balance",
+            "summary": "客户档案可用积分余额查询",
+            "description": "客户档案可用积分余额查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.available.integral.balance.json"
+        },
+        {
+            "method": "crm.cardTicket.instancesOfCustomer",
+            "summary": "查询客户持有卡券",
+            "description": "查询客户持有卡券",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.cardTicket.instancesOfCustomer.json"
+        },
+        {
+            "method": "crm.cardTicket.list",
+            "summary": "卡券设置列表",
+            "description": "卡券设置列表",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.cardTicket.list.json"
+        },
+        {
+            "method": "crm.cardTicket.receive",
+            "summary": "激活卡券",
+            "description": "激活卡券",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.cardTicket.receive.json"
+        },
+        {
+            "method": "crm.cardTicket.writeOff",
+            "summary": "卡券核销",
+            "description": "卡券核销",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.cardTicket.writeOff.json"
+        },
+        {
+            "method": "crm.customer.add",
+            "summary": "客户档案新增",
+            "description": "接口说明：\n客户端路径：营销→客户档案\n接口描述：用于推送客户的档案信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.customer.add.json"
+        },
+        {
+            "method": "crm.customer.batchAdd",
+            "summary": "客户档案批量新增",
+            "description": "客户档案批量新增",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.customer.batchAdd.json"
+        },
+        {
+            "method": "crm.customer.batchEdit",
+            "summary": "客户档案批量修改",
+            "description": "客户档案批量修改",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.customer.batchEdit.json"
+        },
+        {
+            "method": "crm.customer.batchEnable",
+            "summary": "客户档案批量启停用",
+            "description": "客户档案批量启停用",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.customer.batchEnable.json"
+        },
+        {
+            "method": "crm.customer.detailByUnionId",
+            "summary": "根据unionId查询客户档案信息",
+            "description": "根据unionId查询客户档案信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.customer.detailByUnionId.json"
+        },
+        {
+            "method": "crm.customer.detailByUnionIdList",
+            "summary": "根据unionId列表批量查询客户档案信息",
+            "description": "根据unionId列表批量查询客户档案信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.customer.detailByUnionIdList.json"
+        },
+        {
+            "method": "crm.customer.edit",
+            "summary": "客户档案修改",
+            "description": "客户档案修改",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.customer.edit.json"
+        },
+        {
+            "method": "crm.customer.list",
+            "summary": "客户档案列表",
+            "description": "客户档案列表",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.customer.list.json"
+        },
+        {
+            "method": "crm.customer.list.customized",
+            "summary": "客户档案列表（新）",
+            "description": "客户档案列表（新）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.customer.list.customized.json"
+        },
+        {
+            "method": "crm.customer.rechargeLogList",
+            "summary": "客户档案充值流水列表查询",
+            "description": "客户档案充值流水列表查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.customer.rechargeLogList.json"
+        },
+        {
+            "method": "crm.customer.storageUpdate",
+            "summary": "预存余额充值（钱包充值）",
+            "description": "预存余额充值",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.customer.storageUpdate.json"
+        },
+        {
+            "method": "crm.customer.typeAttributeList",
+            "summary": "客户档案分类属性列表",
+            "description": "客户档案分类属性列表",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.customer.typeAttributeList.json"
+        },
+        {
+            "method": "crm.customer.wallet.refund",
+            "summary": "钱包退款",
+            "description": "钱包退款",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.customer.wallet.refund.json"
+        },
+        {
+            "method": "crm.customer.walletBalanceList",
+            "summary": "客户档案钱包余额列表",
+            "description": "客户档案钱包余额列表",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.customer.walletBalanceList.json"
+        },
+        {
+            "method": "crm.customer.walletlist",
+            "summary": "客户钱包余额查询",
+            "description": "客户钱包余额查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.customer.walletlist.json"
+        },
+        {
+            "method": "crm.integral.log",
+            "summary": "客户积分流水查询",
+            "description": "客户积分流水查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.integral.log.json"
+        },
+        {
+            "method": "crm.vipLevel.list",
+            "summary": "客户档案会员等级列表",
+            "description": "客户档案会员等级列表",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/crm.vipLevel.list.json"
+        },
+        {
+            "method": "erp-baseinfo.bankaccounts.listNeed",
+            "summary": "按需查询结算账户(过滤删除数据)",
+            "description": "按需查询结算账户",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-baseinfo.bankaccounts.listNeed.json"
+        },
+        {
+            "method": "erp-baseinfo.flag.getflagid",
+            "summary": "开放平台根据标记名称获取标记id",
+            "description": "开放平台根据标记名称获取标记id",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-baseinfo.flag.getflagid.json"
+        },
+        {
+            "method": "erp-baseinfo.storage.file",
+            "summary": "入库单附件查询",
+            "description": "入库单附件查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-baseinfo.storage.file.json"
+        },
+        {
+            "method": "erp-bmq.mq.inoutcallback",
+            "summary": "出入库回传重试",
+            "description": "出入库回传重试",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-bmq.mq.inoutcallback.json"
+        },
+        {
+            "method": "erp-bmq.reserve.create",
+            "summary": "创建预留单",
+            "description": "创建预留单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-bmq.reserve.create.json"
+        },
+        {
+            "method": "erp-busiorder.goodsdoc.stockRead",
+            "summary": "出入库单冲销",
+            "description": "根据出入库单号冲销出入库单，只支持来源OPEN、单个单据的冲销",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-busiorder.goodsdoc.stockRead.json"
+        },
+        {
+            "method": "erp-busiorder.goodsdoc.updateFlagData",
+            "summary": "开放平台批量修改单据标记",
+            "description": "开放平台修改单据标记接口，目前仅支持出入库单、调拨单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-busiorder.goodsdoc.updateFlagData.json"
+        },
+        {
+            "method": "erp-busiorder.goodsdocin.search",
+            "summary": "入库查询（规格模式）",
+            "description": "开放平台入库查询规格模式,如果此接口未返回serialNo,则表示吉客云的出入库单存在批次和唯一码共存或者唯一码的数量过多，请用此接口返回的serialSourceId字段调用erp.storage.goodsdocserial接口获取此货品行的唯一码数据。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-busiorder.goodsdocin.search.json"
+        },
+        {
+            "method": "erp-busiorder.goodsdocin.search.count",
+            "summary": "入库查询总数（规格模式）",
+            "description": "开放平台入库查询总数规格模式",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-busiorder.goodsdocin.search.count.json"
+        },
+        {
+            "method": "erp-busiorder.goodsdocout.search",
+            "summary": "出库查询（规格模式）",
+            "description": "开放平台出库查询规格模式\n如果此接口未返回serialNo,则表示吉客云的出入库单存在批次和唯一码共存或者唯一码的数量过多，请用此接口返回的serialSourceId字段调用erp.storage.goodsdocserial接口获取此货品行的唯一码数据。分页最大支持到查询20万条数据，数据量大的客户建议按 出入库时间或者修改时间拉取数据，时间粒度划分到每天。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-busiorder.goodsdocout.search.json"
+        },
+        {
+            "method": "erp-busiorder.goodsdocout.search.count",
+            "summary": "出库查询总数（规格模式）",
+            "description": "开放平台出库查询总数规格模式",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-busiorder.goodsdocout.search.count.json"
+        },
+        {
+            "method": "erp-goods-online.item.batchimportimage",
+            "summary": "开放平台批量添加资质图",
+            "description": "开放平台批量添加资质图",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-goods-online.item.batchimportimage.json"
+        },
+        {
+            "method": "erp-goods-online.item.batchimportitem",
+            "summary": "批量创建商品档案",
+            "description": "创建商品档案",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-goods-online.item.batchimportitem.json"
+        },
+        {
+            "method": "erp-goods-online.item.batchupdateitem",
+            "summary": "批量更新商品档案",
+            "description": "批量更新商品档案。接口预计25年6月16日晚发布",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-goods-online.item.batchupdateitem.json"
+        },
+        {
+            "method": "erp-goods-online.item.details",
+            "summary": "获取商品库商品信息",
+            "description": "1、单次最多只能批量获取10个商品信息，超出部分会被忽略。\n2、多个商品ID使用英文逗号分隔。\n3、此接口不能获取从网店下载的商品信息。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-goods-online.item.details.json"
+        },
+        {
+            "method": "erp-goods-online.item.getItemGroup",
+            "summary": "查询商品分组信息",
+            "description": "查询商品分组信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-goods-online.item.getItemGroup.json"
+        },
+        {
+            "method": "erp-goods-online.item.getItemUploadTaskRelation",
+            "summary": "查询商品上传任务id",
+            "description": "查询商品上传任务id接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-goods-online.item.getItemUploadTaskRelation.json"
+        },
+        {
+            "method": "erp-goods-online.item.updatecate",
+            "summary": "更新商品库商品类目",
+            "description": "更新商品库商品类目",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-goods-online.item.updatecate.json"
+        },
+        {
+            "method": "erp-goods-online.task.updateProductDate",
+            "summary": "修改平台产品生产日期 ",
+            "description": "根据平台商品id修改产品生产日期",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-goods-online.task.updateProductDate.json"
+        },
+        {
+            "method": "erp-goods.goods.batchupdateflag",
+            "summary": "开放平台批量修改货品标记",
+            "description": "开放平台修改货品标记的接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-goods.goods.batchupdateflag.json"
+        },
+        {
+            "method": "erp-goods.goods.batchupdateflagbyskubarcode",
+            "summary": "开放平台根据条码批量修改货品标记",
+            "description": "开放平台根据条码修改货品标记的接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-goods.goods.batchupdateflagbyskubarcode.json"
+        },
+        {
+            "method": "erp-goods.goods.getforqimen",
+            "summary": "查询吉客云货品档案信息（仿奇门返回）",
+            "description": "查询吉客云货品档案信息（仿奇门返回）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-goods.goods.getforqimen.json"
+        },
+        {
+            "method": "erp-goods.goods.listCountGoodspackage",
+            "summary": "统计组合装数",
+            "description": "统计组合装数",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-goods.goods.listCountGoodspackage.json"
+        },
+        {
+            "method": "erp-goods.goods.listgoodspackage",
+            "summary": "查询组合装信息",
+            "description": "如果查询数据量超 1 万，为避免性能问题，建议按以下方式分批查询\n1、按修改时间分批， 每次查一个小时间范围（如 1天内）的数据，循环获取所有时段。\n2、按 ID 游标分批，首次传maxSkuId=0，之后每次传上批结果的最后一个skuId。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-goods.goods.listgoodspackage.json"
+        },
+        {
+            "method": "erp-goods.goods.saveProcessMaterial",
+            "summary": "开放平台仓内加工信息更新",
+            "description": "开放平台仓内加工信息更新。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-goods.goods.saveProcessMaterial.json"
+        },
+        {
+            "method": "erp-goods.goods.sku.search",
+            "summary": "条件查询货品",
+            "description": "首次同步，传参lastMaxId(前一次返回的最大skuId ，第一次传0，后面取前一次查询返回的 最后一条数据的skuId)，不用翻页（内部逻辑会取大于lastMaxId的数据）\n首次同步完成后，后面请使用修改时间增量查询\nskufield字段和 goodsfield字段可查询1-30 中间省略",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-goods.goods.sku.search.json"
+        },
+        {
+            "method": "erp-goods.pricelist.get",
+            "summary": "货品价目查询",
+            "description": "开放平台货品价目查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-goods.pricelist.get.json"
+        },
+        {
+            "method": "erp-goods.processmaterial.search",
+            "summary": "查询仓内加工原料",
+            "description": "查询仓内加工原料,只会返回能匹配到对应规格的原料(如果原料设置的是取新品规格, 是根据主件的规格名和子件的规格名进行匹配, 如果匹配不到就不会返回)",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-goods.processmaterial.search.json"
+        },
+        {
+            "method": "erp-pds.platcate.get",
+            "summary": "淘系标准类目查询",
+            "description": "淘系标准类目接口查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-pds.platcate.get.json"
+        },
+        {
+            "method": "erp-purch.externalNumber.modify",
+            "summary": "批量修改外部订单号",
+            "description": "批量修改外部订单号",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-purch.externalNumber.modify.json"
+        },
+        {
+            "method": "erp-purch.order.createOrderchange",
+            "summary": "采购单变更接口",
+            "description": "支持采购单变更，目前不支持组合装货品的采购单变更",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-purch.order.createOrderchange.json"
+        },
+        {
+            "method": "erp-purch.order.rebateamount",
+            "summary": "采购返利金额查询",
+            "description": "采购返利金额查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-purch.order.rebateamount.json"
+        },
+        {
+            "method": "erp-purch.purchsett.get",
+            "summary": "采购结算单查询",
+            "description": "此接口返回结算单主表数据与采购明细\n如果查询数据量超 1 万，为避免性能问题,采用传入上一次查询到的最大的settId作为maxId",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-purch.purchsett.get.json"
+        },
+        {
+            "method": "erp-purch.rebate.create",
+            "summary": "采购返利开单",
+            "description": "开放平台采购返利开单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-purch.rebate.create.json"
+        },
+        {
+            "method": "erp-purch.rebate.get",
+            "summary": "采购返利查询",
+            "description": "开放平台采购返利查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-purch.rebate.get.json"
+        },
+        {
+            "method": "erp-purch.settdetail.get",
+            "summary": "采购结算单明细查询",
+            "description": "此接口返回结算单货品明细数据\n如果查询数据量超 1 万，为避免性能问题,采用传入上一次查询到的最大的settIDetaild作为maxId",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-purch.settdetail.get.json"
+        },
+        {
+            "method": "erp-purch.settfeedetail.get",
+            "summary": "采购结算单费用明细查询",
+            "description": "此接口返回结算单费用明细\n如果查询数据量超 1 万，为避免性能问题,采用传入上一次查询到的最大的settFeeDetailId作为maxId",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-purch.settfeedetail.get.json"
+        },
+        {
+            "method": "erp-purch.settle.audit",
+            "summary": "采购结算单审核",
+            "description": "开放平台采购结算审核接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-purch.settle.audit.json"
+        },
+        {
+            "method": "erp-purch.settle.updatepaystatus",
+            "summary": "采购结算单更新付款状态",
+            "description": "开放平台采购结算更新付款状态为 “已付款”",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-purch.settle.updatepaystatus.json"
+        },
+        {
+            "method": "erp-stock.assemble.getAssembleInCount",
+            "summary": "查询组装拆卸在途数量",
+            "description": "查询组装拆卸在途数量",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-stock.assemble.getAssembleInCount.json"
+        },
+        {
+            "method": "erp-stock.goodsdoc.updatecost",
+            "summary": "批量维护入库单价格",
+            "description": "*此接口不包含淘系数据，其它平台的敏感信息会根据平台规则同步调整",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-stock.goodsdoc.updatecost.json"
+        },
+        {
+            "method": "erp-stock.producibilityResidualQuantity.search",
+            "summary": "可生产量（可用）查询",
+            "description": "可生产量（可用）查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-stock.producibilityResidualQuantity.search.json"
+        },
+        {
+            "method": "erp-stock.reserve.adjust",
+            "summary": "调整预留单",
+            "description": "开放平台调整预留单接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-stock.reserve.adjust.json"
+        },
+        {
+            "method": "erp-stock.reserve.release.v2",
+            "summary": "根据预留单号释放预留单（允许非创建人释放不受设置项控制）",
+            "description": "整单释放预留单，入参为以逗号分割的预留单号",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-stock.reserve.release.v2.json"
+        },
+        {
+            "method": "erp-stock.reserve.search",
+            "summary": "预留单查询接口",
+            "description": "开放平台预留单查询接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-stock.reserve.search.json"
+        },
+        {
+            "method": "erp-stock.sku.stock.search",
+            "summary": "委外仓批次库存查询",
+            "description": "委外仓批次库存查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-stock.sku.stock.search.json"
+        },
+        {
+            "method": "erp-stock.stock.skulist",
+            "summary": "分仓库存查询(规格模式)",
+            "description": "分仓库存查询(规格模式)\n1.必须传货品和规格信息, 不能只传仓库编码\n2.查询的规格数量有限制, 最多匹配1000个规格",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-stock.stock.skulist.json"
+        },
+        {
+            "method": "erp-stock.update.stockCustomFields",
+            "summary": "批量更新出入库单自定义字段",
+            "description": "批量更新出入库单自定义字段",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp-stock.update.stockCustomFields.json"
+        },
+        {
+            "method": "erp.address.getList",
+            "summary": "查询地址信息",
+            "description": "查询地址信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.address.getList.json"
+        },
+        {
+            "method": "erp.allocate.close",
+            "summary": "调拨关闭",
+            "description": "调拨关闭",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.allocate.close.json"
+        },
+        {
+            "method": "erp.allocate.complete",
+            "summary": "调拨完成",
+            "description": "调拨完成",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.allocate.complete.json"
+        },
+        {
+            "method": "erp.allocate.create",
+            "summary": "开放平台调拨单创建对外接口",
+            "description": "开放平台调拨单创建对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.allocate.create.json"
+        },
+        {
+            "method": "erp.allocate.get",
+            "summary": "调拨查询",
+            "description": "开放平台调拨查询，调拨单主表和货品明细一起返回，单次请求返回的货品明细合计最多不能超过2000。单据明细较多的客户，建议减少分页条数或对接货品模式接口：erp.allocate.search",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.allocate.get.json"
+        },
+        {
+            "method": "erp.allocate.quick.create",
+            "summary": "调拨单一键调拨(非标准一键调拨)",
+            "description": "调拨单一键调拨,支持调拨时部分流程控制,详细参考openAllocateType字段的注释",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.allocate.quick.create.json"
+        },
+        {
+            "method": "erp.allocate.search",
+            "summary": "按需查询调拨单，货品模式分页",
+            "description": "开放平台调拨按需查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.allocate.search.json"
+        },
+        {
+            "method": "erp.allocate.search.count",
+            "summary": "按需查询调拨单总数",
+            "description": "开放平台调拨按需查询总数",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.allocate.search.count.json"
+        },
+        {
+            "method": "erp.allocateReturn.create",
+            "summary": "调拨退回",
+            "description": "开放平台调拨退回对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.allocateReturn.create.json"
+        },
+        {
+            "method": "erp.bankaccounts.create",
+            "summary": "结算账户更新创建",
+            "description": "开放平台结算账户更新创建对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.bankaccounts.create.json"
+        },
+        {
+            "method": "erp.batchstockquantity.count",
+            "summary": "批次库存查询总数",
+            "description": "批次库存查询总数",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.batchstockquantity.count.json"
+        },
+        {
+            "method": "erp.batchstockquantity.get",
+            "summary": "批次库存查询",
+            "description": "批次库存查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.batchstockquantity.get.json"
+        },
+        {
+            "method": "erp.brand.add",
+            "summary": "开放平台货品品牌新增接口",
+            "description": "创建货品档案基础资料品牌新增接口\n参数为数组[{'brandNameCn':''}]",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.brand.add.json"
+        },
+        {
+            "method": "erp.brand.del ",
+            "summary": "开放平台货品品牌删除接口",
+            "description": "开放平台货品品牌删除接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.brand.del .json"
+        },
+        {
+            "method": "erp.brand.get",
+            "summary": "开放平台货品品牌列表查询",
+            "description": "货品品牌查询接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.brand.get.json"
+        },
+        {
+            "method": "erp.cancel.stock",
+            "summary": "出入库申请单关闭或恢复",
+            "description": "开放平台入库申请单关闭或恢复",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.cancel.stock.json"
+        },
+        {
+            "method": "erp.combind.create",
+            "summary": "开放平台创建组装拆卸的接口",
+            "description": "开放平台创建组装拆卸的接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.combind.create.json"
+        },
+        {
+            "method": "erp.combind.create.v2",
+            "summary": "开放平台创建组装拆卸的接口",
+            "description": "开放平台创建组装拆卸的接口,支持菜鸟仓同时生成组装拆卸出入库单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.combind.create.v2.json"
+        },
+        {
+            "method": "erp.combined.close",
+            "summary": "组装拆卸单关闭",
+            "description": "根据组装拆卸单单号关闭组装拆卸单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.combined.close.json"
+        },
+        {
+            "method": "erp.combined.get.v2",
+            "summary": "开放平台查询组装拆卸单",
+            "description": "开放平台查询组装拆卸单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.combined.get.v2.json"
+        },
+        {
+            "method": "erp.company.create",
+            "summary": "创建公司",
+            "description": "",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.company.create.json"
+        },
+        {
+            "method": "erp.company.create.v2",
+            "summary": "创建或更新公司接口",
+            "description": "创建公司 根据companyCode定位，如果已经存在公司，则更新",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.company.create.v2.json"
+        },
+        {
+            "method": "erp.company.query",
+            "summary": "查询公司",
+            "description": "",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.company.query.json"
+        },
+        {
+            "method": "erp.company.update",
+            "summary": "修改公司",
+            "description": "",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.company.update.json"
+        },
+        {
+            "method": "erp.correct.record",
+            "summary": "批次纠错列表查询",
+            "description": "批次纠错列表查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.correct.record.json"
+        },
+        {
+            "method": "erp.delivery.batchfinish",
+            "summary": "批量完成发货",
+            "description": "批量完成发货,单次最多5个",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.delivery.batchfinish.json"
+        },
+        {
+            "method": "erp.depart.create",
+            "summary": "创建部门",
+            "description": "",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.depart.create.json"
+        },
+        {
+            "method": "erp.depart.create.v2",
+            "summary": "创建或者更新部门",
+            "description": "创建或者更新部门,根据部门code定位",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.depart.create.v2.json"
+        },
+        {
+            "method": "erp.depart.query",
+            "summary": "查询部门",
+            "description": "",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.depart.query.json"
+        },
+        {
+            "method": "erp.depart.update",
+            "summary": "修改部门",
+            "description": "",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.depart.update.json"
+        },
+        {
+            "method": "erp.dictionary.page",
+            "summary": "查询数据字典",
+            "description": "对应吉客云数据字典查询页面",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.dictionary.page.json"
+        },
+        {
+            "method": "erp.dictionary.save",
+            "summary": "新增数据字典",
+            "description": "新增数据字典",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.dictionary.save.json"
+        },
+        {
+            "method": "erp.dictionary.update",
+            "summary": "修改数据字典",
+            "description": "修改数据字典",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.dictionary.update.json"
+        },
+        {
+            "method": "erp.goods.assistbarcodecreate",
+            "summary": "添加辅助条码",
+            "description": "添加辅助条码",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.goods.assistbarcodecreate.json"
+        },
+        {
+            "method": "erp.goods.assistbarcodeupdate",
+            "summary": "批量更新辅助条码",
+            "description": "批量更新辅助条码",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.goods.assistbarcodeupdate.json"
+        },
+        {
+            "method": "erp.goods.customfield",
+            "summary": "获取货品自定义字段的说明的接口",
+            "description": "获取自定义字段的说明的接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.goods.customfield.json"
+        },
+        {
+            "method": "erp.goods.skuimport",
+            "summary": "货品插入(单规格)",
+            "description": "货品插入接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.goods.skuimport.json"
+        },
+        {
+            "method": "erp.goods.skuimportbatch",
+            "summary": "批量创建货品",
+            "description": "1、批量创建货品 outSkuCode 是2个系统之间的货品匹配关系的唯一依据，如果货品没有outSkuCode则无法用此接口更新货品。请确保规格唯一（用于定位到某一个具体的规格） 吉客云的货品是多规格的模式，根据货品编号+规格名称定位。 相同的货品有多个规格的话，那么货品编号一样，规格名称不一样即可（不同的规格之间的条码也不允许重复） 示例： 货品编号 G0001 货品名称：吉客云冰丝衬衫 规格信息： 规格名称：白色L码 条码：G01B-L 规格名称：白色M码 条码：G01B-M\n\n\n                                          --------------- 特别说明：同一个货品放在一次里面调用，单次最多支持200。前面请求结束后再请求下一次，减少并发。否则货品可能同步失败或者重复;\n2、来源开放平台，不支持货品管理策略;\n3、规格名称为空，取‘默认规格’，当‘默认规格’重复时取外部编码（outSkuCode）为规格名称;4、传入的条码如果包含分号，会按照分号拆分识别为多条货品 ",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.goods.skuimportbatch.json"
+        },
+        {
+            "method": "erp.goods.update",
+            "summary": "更新货品基本信息",
+            "description": "根据货品id更新货品信息，支持多个货品批量更新，返回结果：更新失败的货品信息集合。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.goods.update.json"
+        },
+        {
+            "method": "erp.goods.updateretailprice",
+            "summary": "根据外部编码更新货品的固定成本价",
+            "description": "开放平台根据外部编码更新货品的固定成本价。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.goods.updateretailprice.json"
+        },
+        {
+            "method": "erp.goodsbatchinfo.createAndUpdateBatchInfo",
+            "summary": "货品批次创建和修改接口",
+            "description": "创建批次和修改批次接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.goodsbatchinfo.createAndUpdateBatchInfo.json"
+        },
+        {
+            "method": "erp.goodsbatchinfo.get",
+            "summary": "货品批次查询",
+            "description": "货品批次查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.goodsbatchinfo.get.json"
+        },
+        {
+            "method": "erp.goodscate.add",
+            "summary": "开放平台货品分类新增接口",
+            "description": "开放平台货品分类查询接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.goodscate.add.json"
+        },
+        {
+            "method": "erp.goodscate.get",
+            "summary": "货品分类查询",
+            "description": "货品分类查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.goodscate.get.json"
+        },
+        {
+            "method": "erp.goodscate.update",
+            "summary": "修改货品分类的名称",
+            "description": "修改货品分类的名称",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.goodscate.update.json"
+        },
+        {
+            "method": "erp.goodsdoc.stockin",
+            "summary": "根据入库申请单号入库",
+            "description": "开放平台根据入库申请单号入库操作",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.goodsdoc.stockin.json"
+        },
+        {
+            "method": "erp.goodsdoc.stockout",
+            "summary": "根据出库申请单号出库",
+            "description": "开放平台根据出库申请单号出库 ，不支持相同货品分多条传，相同货品的批次和唯一码请合并到一起",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.goodsdoc.stockout.json"
+        },
+        {
+            "method": "erp.goodssource.create",
+            "summary": "根据条码和供应商编号创建供应商报价",
+            "description": "根据条码和供应商编号创建供应商报价",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.goodssource.create.json"
+        },
+        {
+            "method": "erp.goodssource.getbycol",
+            "summary": "开放平台供应商货品价目查询按需",
+            "description": "开放平台供应商货品价目查询按需",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.goodssource.getbycol.json"
+        },
+        {
+            "method": "erp.innersettorder.get",
+            "summary": "开放平台公司间结算对外接口",
+            "description": "开放平台公司间结算对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.innersettorder.get.json"
+        },
+        {
+            "method": "erp.innersettorder.gooddetail.get",
+            "summary": "开放平台公司间结算货品信息查询对外接口",
+            "description": "开放平台公司间结算货品信息查询对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.innersettorder.gooddetail.get.json"
+        },
+        {
+            "method": "erp.innersettorder.sellteorderno.get",
+            "summary": "开放平台公司间结算生成单据查询对外接口",
+            "description": "开放平台公司间结算生成单据查询对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.innersettorder.sellteorderno.get.json"
+        },
+        {
+            "method": "erp.invoice.get",
+            "summary": "开放平台采购发票查询",
+            "description": "开放平台采购发票查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.invoice.get.json"
+        },
+        {
+            "method": "erp.invoice.goodsGet",
+            "summary": "开放平台采购发票货品明细查询",
+            "description": "开放平台采购发票货品明细查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.invoice.goodsGet.json"
+        },
+        {
+            "method": "erp.logistic.get",
+            "summary": "物流公司查询",
+            "description": "开放平台物流公司查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.logistic.get.json"
+        },
+        {
+            "method": "erp.orderquantity.notice",
+            "summary": "订购量变化通知",
+            "description": "吉客云系统内订购量有变化时主动通知外部系统",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.orderquantity.notice.json"
+        },
+        {
+            "method": "erp.packagegoods.import",
+            "summary": "添加组合装商品",
+            "description": "支持新增和修改组合装，根据 货品编号 goodsNo定位货品。组合装规格只有一条，skuList 可以传一条或者不传即默认规格",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.packagegoods.import.json"
+        },
+        {
+            "method": "erp.period.getList",
+            "summary": "查询当前期间成本",
+            "description": "查询当前期间成本",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.period.getList.json"
+        },
+        {
+            "method": "erp.pricetype.get",
+            "summary": "开放平台返回货品价目的定义表，用于客户知道字段定义",
+            "description": "开放平台返回货品价目的定义表，用于客户知道字段定义\n请和货品价目表联合使用",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.pricetype.get.json"
+        },
+        {
+            "method": "erp.purch.cancel",
+            "summary": "开放平台取消采购订单对外接口",
+            "description": "开放平台取消采购订单对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purch.cancel.json"
+        },
+        {
+            "method": "erp.purch.close",
+            "summary": "开放平台关闭采购订单对外接口",
+            "description": "开放平台关闭采购订单对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purch.close.json"
+        },
+        {
+            "method": "erp.purch.create",
+            "summary": "开放平台采购订单创建对外接口",
+            "description": "开放平台采购订单创建对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purch.create.json"
+        },
+        {
+            "method": "erp.purch.createtoinapplybill",
+            "summary": "开放平台采购到货创建入库申请单",
+            "description": "开放平台采购到货创建入库申请单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purch.createtoinapplybill.json"
+        },
+        {
+            "method": "erp.purch.createtoinapplybillforcustomization",
+            "summary": "开放平台采购到货创建入库申请单",
+            "description": "开放平台采购到货创建入库申请单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purch.createtoinapplybillforcustomization.json"
+        },
+        {
+            "method": "erp.purch.forceFinish",
+            "summary": "开放平台完成采购订单对外接口",
+            "description": "开放平台完成采购订单对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purch.forceFinish.json"
+        },
+        {
+            "method": "erp.purch.get",
+            "summary": "采购单查询",
+            "description": "采购单查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purch.get.json"
+        },
+        {
+            "method": "erp.purch.listOrderChange",
+            "summary": "采购变更单查询",
+            "description": "采购变更单查询接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purch.listOrderChange.json"
+        },
+        {
+            "method": "erp.purch.search",
+            "summary": "采购单按需查询",
+            "description": "采购单按需查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purch.search.json"
+        },
+        {
+            "method": "erp.purch.search.count",
+            "summary": "采购单按需查询总数",
+            "description": "采购单按需查询总数",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purch.search.count.json"
+        },
+        {
+            "method": "erp.purch.setflag",
+            "summary": "采购单设置标记",
+            "description": "*此接口不包含淘系数据，其它平台的敏感信息会根据平台规则同步调整",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purch.setflag.json"
+        },
+        {
+            "method": "erp.purchapply.get",
+            "summary": "获取采购申请单列表",
+            "description": "获取采购申请单列表",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purchapply.get.json"
+        },
+        {
+            "method": "erp.purchordersett.get",
+            "summary": "采购结算单查询",
+            "description": "此接口返回结算单主表数据与采购明细",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purchordersett.get.json"
+        },
+        {
+            "method": "erp.purchordersettmerge.get",
+            "summary": "采购结算单查询",
+            "description": "此接口返回结算单主表数据与采购明细（明细数据根据 规格、结算价格、结算税率合并）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purchordersettmerge.get.json"
+        },
+        {
+            "method": "erp.purchreturn.cancel",
+            "summary": "开放平台取消采购退货单对外接口",
+            "description": "开放平台取消采购退货单对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purchreturn.cancel.json"
+        },
+        {
+            "method": "erp.purchreturn.create",
+            "summary": "开放平台采购退货单创建对外接口",
+            "description": "开放平台采购退货单创建对外接口\n在调用此接口之前请确保基础数据如：仓库、货品、供应商等是否匹配完成，其中仓库是根据吉客云系统中的仓库编号来定位，也就是参数中的【warehouseCode】参数等 货品档案的定位：可以根据吉客云系统中的skuId(吉客云系统的内部id）， outSkuCode(匹配关系编码，见接口erp.goods.skuimportbatch）， skuBarcode(条码）。 其中优先级：skuId>outSkuCode>skuBarCode 如果想用其中的某个值做匹配，其他2个参数则不要赋值即可。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purchreturn.create.json"
+        },
+        {
+            "method": "erp.purchreturn.get",
+            "summary": "采购退货查询",
+            "description": "开放平台采购退货查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purchreturn.get.json"
+        },
+        {
+            "method": "erp.purchsett.search",
+            "summary": "开放平台采购结算费用查询接口",
+            "description": "开放平台采购结算费用查询接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.purchsett.search.json"
+        },
+        {
+            "method": "erp.revoke.3PLstockin",
+            "summary": "入库取消（3PL专用）",
+            "description": "入库取消（3PL专用）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.revoke.3PLstockin.json"
+        },
+        {
+            "method": "erp.revoke.3PLstockout",
+            "summary": "出库取消（3PL专用）",
+            "description": "出库取消（3PL专用）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.revoke.3PLstockout.json"
+        },
+        {
+            "method": "erp.revoke.stockin",
+            "summary": "入库通知取消",
+            "description": "入库取消",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.revoke.stockin.json"
+        },
+        {
+            "method": "erp.revoke.stockout",
+            "summary": "出库通知取消",
+            "description": "出库取消",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.revoke.stockout.json"
+        },
+        {
+            "method": "erp.salechannel.blockup",
+            "summary": "批量停用店铺接口",
+            "description": "开放平台批量停用店铺对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.salechannel.blockup.json"
+        },
+        {
+            "method": "erp.salechannel.create",
+            "summary": "新增销售渠道",
+            "description": "新增销售渠道",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.salechannel.create.json"
+        },
+        {
+            "method": "erp.salechannel.create.v2",
+            "summary": "新增渠道",
+            "description": "新增店铺, 根据渠道code 定位，如果已经有，则更新(加盟门店不支持创建)",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.salechannel.create.v2.json"
+        },
+        {
+            "method": "erp.salechannel.recover",
+            "summary": "批量启用店铺接口",
+            "description": "开放平台批量启用店铺对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.salechannel.recover.json"
+        },
+        {
+            "method": "erp.salechannel.update",
+            "summary": "更新销售渠道",
+            "description": "更新店铺",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.salechannel.update.json"
+        },
+        {
+            "method": "erp.sales.count",
+            "summary": "营销渠道查询",
+            "description": "开放平台营销渠道查询总数\n",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.sales.count.json"
+        },
+        {
+            "method": "erp.sales.get",
+            "summary": "销售渠道查询",
+            "description": "开放平台营销渠道查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.sales.get.json"
+        },
+        {
+            "method": "erp.salesgoodsskuprice.create",
+            "summary": "创建货品价目（已经存在则修改，根据规格、单位、币种定位）",
+            "description": "创建货品价目（已经存在则修改，根据规格、单位、币种定位）：\n通过此接口可以创建、修改货品价目到吉客云的系统。其中公司、部门传吉客云系统的公司、部门的编号。币种不传默认调整人民币。货品根据条码或者外部同步的唯一编号定位。\n",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.salesgoodsskuprice.create.json"
+        },
+        {
+            "method": "erp.serialno.add",
+            "summary": "开放平台新增唯一码接口",
+            "description": "开放平台新增唯一码接口。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.serialno.add.json"
+        },
+        {
+            "method": "erp.serialno.get",
+            "summary": "开放平台查询唯一码接口",
+            "description": "开放平台查询唯一码接口。分页最大支持到查询20万条数据，数据量大的客户建议按 新增时间或者修改时间拉取数据，时间粒度划分到每天。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.serialno.get.json"
+        },
+        {
+            "method": "erp.serialno.upd",
+            "summary": "开放平台修改唯一码接口",
+            "description": "开放平台修改唯一码接口。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.serialno.upd.json"
+        },
+        {
+            "method": "erp.settle.create",
+            "summary": "采购结算单创建",
+            "description": "开放平台采购结算创建对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.settle.create.json"
+        },
+        {
+            "method": "erp.stock.closestockin",
+            "summary": "根据申请单号关闭入库申请单",
+            "description": "根据申请单号关闭入库申请单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stock.closestockin.json"
+        },
+        {
+            "method": "erp.stock.closestockout",
+            "summary": "根据申请单号关闭出库申请单",
+            "description": "根据申请单号关闭出库申请单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stock.closestockout.json"
+        },
+        {
+            "method": "erp.stock.createandstockin",
+            "summary": "创建入库申请单并入库",
+            "description": "创建入库申请单并入库（直接入库）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stock.createandstockin.json"
+        },
+        {
+            "method": "erp.stock.createandstockout",
+            "summary": "创建出库申请单并出库",
+            "description": "创建出库申请单并直接出库\n（用于直接出库操作）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stock.createandstockout.json"
+        },
+        {
+            "method": "erp.stock.createstockin",
+            "summary": "开放平台补货单生成入库申请单",
+            "description": "开放平台补货单生成入库申请单对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stock.createstockin.json"
+        },
+        {
+            "method": "erp.stock.finishstockin",
+            "summary": "完成入库申请单",
+            "description": "完成入库申请单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stock.finishstockin.json"
+        },
+        {
+            "method": "erp.stock.finishstockout",
+            "summary": "完成出库申请单",
+            "description": "完成出库申请单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stock.finishstockout.json"
+        },
+        {
+            "method": "erp.stock.quantityadjust",
+            "summary": "三方仓库存校准",
+            "description": "三方仓库存校准（根据外部仓库的库存和吉客云的库存做差异比较，生成出入库单）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stock.quantityadjust.json"
+        },
+        {
+            "method": "erp.stock.quantityadjustbyunitname",
+            "summary": "三方仓库存校准(带单位)",
+            "description": "三方仓库存校准（根据外部仓库的库存和吉客云的库存做差异比较，生成出入库单:当传入单位时,单位必须在吉客云货品档案上可以找到,找不到则默认取辅助单位\"）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stock.quantityadjustbyunitname.json"
+        },
+        {
+            "method": "erp.stock.take",
+            "summary": "库存盘点通知(逆向)",
+            "description": "库存盘点通知",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stock.take.json"
+        },
+        {
+            "method": "erp.stockchange.report",
+            "summary": "库存异动通知（逆向）",
+            "description": "库存异动通知（吉客云调用外部ERP）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stockchange.report.json"
+        },
+        {
+            "method": "erp.stockin.close",
+            "summary": "根据关联单号关闭入库申请单",
+            "description": "根据关联单号关闭入库申请单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stockin.close.json"
+        },
+        {
+            "method": "erp.stockin.confirm",
+            "summary": "入库确认(逆向)",
+            "description": "将入库单数据根据回推地址传给外部系统",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stockin.confirm.json"
+        },
+        {
+            "method": "erp.stockin.force.close",
+            "summary": "强制关闭入库申请单",
+            "description": "强制关闭入库申请单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stockin.force.close.json"
+        },
+        {
+            "method": "erp.stockin.get.v2",
+            "summary": "按需查询入库申请单货品模式",
+            "description": "分页查询入库申请单\n创建时间、修改时间、申请时间都为空，会默认查询申请时间为一个月内的数据",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stockin.get.v2.json"
+        },
+        {
+            "method": "erp.stockin.getBatchInfo",
+            "summary": "根据入库申请单明细id批量查询批次信息",
+            "description": "根据入库申请单明细id批量查询批次信息 ,入参inDetailIds  即是erp.stockin.get.v2 返回的 inDetailId \t\n(明细)主键id 字段",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stockin.getBatchInfo.json"
+        },
+        {
+            "method": "erp.stockinextend.update",
+            "summary": "修改入库申请单自定义字段信息",
+            "description": "修改入库申请单自定义字段信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stockinextend.update.json"
+        },
+        {
+            "method": "erp.stockout.close",
+            "summary": "根据关联单号关闭出库申请单",
+            "description": "根据关联单号关闭出库申请单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stockout.close.json"
+        },
+        {
+            "method": "erp.stockout.confirm",
+            "summary": "出库确认(逆向)",
+            "description": "将出库单数据根据回推地址传给外部系统",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stockout.confirm.json"
+        },
+        {
+            "method": "erp.stockout.force.close",
+            "summary": "强制关闭出库申请单",
+            "description": "强制关闭出库申请单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stockout.force.close.json"
+        },
+        {
+            "method": "erp.stockout.get",
+            "summary": "分页查询出库申请单",
+            "description": "分页查询出库申请单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stockout.get.json"
+        },
+        {
+            "method": "erp.stockout.get.v2",
+            "summary": "按需查询出库申请单货品模式",
+            "description": "按需查询出库申请单货品模式",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stockout.get.v2.json"
+        },
+        {
+            "method": "erp.stockoutextend.update",
+            "summary": "修改出库申请单自定义字段信息",
+            "description": "修改出库申请单自定义字段信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stockoutextend.update.json"
+        },
+        {
+            "method": "erp.stockquantity.get",
+            "summary": "库存分页查询",
+            "description": "库存分页查询（初始化库存结束后，禁止全量查询，请使用修改时间增量数据）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.stockquantity.get.json"
+        },
+        {
+            "method": "erp.storage.3PLstockincreate",
+            "summary": "创建入库申请单（3PL专用）",
+            "description": "创建入库申请单（3PL专用）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.storage.3PLstockincreate.json"
+        },
+        {
+            "method": "erp.storage.3PLstockoutcreate",
+            "summary": "创建出库申请单（3PL专用）",
+            "description": "创建出库申请单（3PL专用）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.storage.3PLstockoutcreate.json"
+        },
+        {
+            "method": "erp.storage.assistbarcode",
+            "summary": "辅助条码查询",
+            "description": "辅助条码查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.storage.assistbarcode.json"
+        },
+        {
+            "method": "erp.storage.goodsdocin.counts",
+            "summary": "入库单查询单据数量",
+            "description": "入库单查询，值为null时不返回字段信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.storage.goodsdocin.counts.json"
+        },
+        {
+            "method": "erp.storage.goodsdocin.v2",
+            "summary": "入库单查询",
+            "description": "该接口已不再维护，请对接新接口：erp-busiorder.goodsdocin.search\n1、入库单查询，值为null时不返回字段信息\n明细总数量大于1万，返回数据会有异常，请使用erp-busiorder.goodsdocin.search\n     \n2、如果此接口未返回serialNo,则表示吉客云的出入库单存在批次和唯一码共存或者唯一码的数量过多，请用此接口返回的serialSourceId字段调用erp.storage.goodsdocserial接口获取此货品行的唯一码数据。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.storage.goodsdocin.v2.json"
+        },
+        {
+            "method": "erp.storage.goodsdocout.counts",
+            "summary": "出库单查询单据数量",
+            "description": "入库单查询，值为null时不返回字段信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.storage.goodsdocout.counts.json"
+        },
+        {
+            "method": "erp.storage.goodsdocout.v2",
+            "summary": "分页查询出库单",
+            "description": "1、销售出库类别的出库单，不会返回对应销售单的金额，只有成本核算后的成本价\n2、单据明细数量超过1万，返回结果会有异常，请使用erp-busiorder.goodsdocout.search查询\n3、如果此接口未返回serialNo,则表示吉客云的出入库单存在批次和唯一码共存或者唯一码的数量过多，请用此接口返回的serialSourceId字段调用erp.storage.goodsdocserial接口获取此货品行的唯一码数据。\n分页最大支持到查询20万条数据，数据量大的客户建议按 新增时间或者修改时间拉取数据，时间粒度划分到每天。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.storage.goodsdocout.v2.json"
+        },
+        {
+            "method": "erp.storage.goodsdocserial",
+            "summary": "分页查询出库单唯一码",
+            "description": "当出入库接口查询的serialSourceId不为空时，需要查询该接口，获取出入库货品唯一码信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.storage.goodsdocserial.json"
+        },
+        {
+            "method": "erp.storage.goodslist",
+            "summary": "分页查询货品信息",
+            "description": "首次同步，传参maxSkuId(前一次返回的最大skuId ，第一次传0，后面取前一次查询返回的 最后一条数据的skuId)，不用翻页（内部逻辑会取大于maxSkuId的数据）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.storage.goodslist.json"
+        },
+        {
+            "method": "erp.storage.stockincreate",
+            "summary": "入库申请单创建",
+            "description": "入库申请单创建：\n通过此接口可以创建入库申请单到吉客云的系统，然后由吉客云系统操作接下来的入库作业。\n在调用此接口之前请确保基础数据如：仓库、货品、渠道等是否匹配完成，其中仓库是根据吉客云系统中的仓库编号来定位，也就是参数中的【inWarehouseCode】参数。\n货品档案的定位是可以根据吉客云系统中的skuId(吉客云系统的内部id）， outSkuCode(匹配关系编码，见接口erp.goods.skuimportbatch）， skuBarcode(条码）。\n其中优先级：skuId>outSkuCode>skuBarCode 如果想用其中的某个值做匹配，其他2个参数则不要赋值即可。\n创建的入库申请单默认为已审核状态",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.storage.stockincreate.json"
+        },
+        {
+            "method": "erp.storage.stockoutcreate",
+            "summary": "创建出库申请单",
+            "description": "创建出库申请单：\n通过此接口可以创建出库申请单到吉客云的系统，然后由吉客云系统操作接下来的出库作业。\n在调用此接口之前请确保基础数据如：仓库、货品、渠道等是否匹配完成，其中仓库是根据吉客云系统中的仓库编号来定位，也就是参数中的【outWarehouseCode】参数。\n货品档案的定位是可以根据吉客云系统中的skuId(吉客云系统的内部id）， outSkuCode(匹配关系编码，见接口erp.goods.skuimportbatch）， skuBarcode(条码）。\n其中优先级：skuId>outSkuCode>skuBarCode 如果想用其中的某个值做匹配，其他2个参数则不要赋值即可。\n创建的出库申请单默认为已审核状态",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.storage.stockoutcreate.json"
+        },
+        {
+            "method": "erp.storage.stockoutsearch",
+            "summary": "出库申请单查询",
+            "description": "出库申请单查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.storage.stockoutsearch.json"
+        },
+        {
+            "method": "erp.template.create",
+            "summary": "开放平台新建组装拆卸模板",
+            "description": "开放平台新建组装拆卸模板",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.template.create.json"
+        },
+        {
+            "method": "erp.template.get",
+            "summary": "开放平台查询组装拆卸模板",
+            "description": "开放平台查询组装拆卸模板",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.template.get.json"
+        },
+        {
+            "method": "erp.template.getDetailsV2",
+            "summary": "组装拆卸模板明细信息查询",
+            "description": "组装拆卸模板明细信息查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.template.getDetailsV2.json"
+        },
+        {
+            "method": "erp.template.getV2",
+            "summary": "组装拆卸模板主表信息查询",
+            "description": "组装拆卸模板主表信息查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.template.getV2.json"
+        },
+        {
+            "method": "erp.template.query",
+            "summary": "条件查询组装拆卸模板明细",
+            "description": "条件查询组装拆卸模板明细",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.template.query.json"
+        },
+        {
+            "method": "erp.unit.baseUpdate",
+            "summary": "基础单位修改",
+            "description": "开放平台基础单位修改对外接口。修改基础单位可能会引起货品价目、供应商报价失效，该单位货品、组合装子件已被引用时需要手动更新单据上货品信息！！！货品档案的定位是可以根据吉客云系统中的outSkuCode(匹配关系编码）， skuBarcode(条码）。 其中优先级：outSkuCode>skuBarCode 如果想用其中的某个值做匹配，其他参数则不要赋值即可。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.unit.baseUpdate.json"
+        },
+        {
+            "method": "erp.unit.create",
+            "summary": "辅助单位创建",
+            "description": "开放平台辅助单位创建对外接口。\n货品档案的定位是可以根据吉客云系统中的skuId(吉客云系统的内部id）， outSkuCode(匹配关系编码）， skuBarcode(条码）。 其中优先级：skuId>outSkuCode>skuBarCode 如果想用其中的某个值做匹配，其他2个参数则不要赋值即可。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.unit.create.json"
+        },
+        {
+            "method": "erp.unit.delete",
+            "summary": "辅助单位删除",
+            "description": "开放平台辅助单位删除对外接口。 货品档案的定位是可以根据吉客云系统中的outSkuCode(匹配关系编码）， skuBarcode(条码）。 其中优先级：outSkuCode>skuBarCode 如果想用其中的某个值做匹配，其他参数则不要赋值即可。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.unit.delete.json"
+        },
+        {
+            "method": "erp.unit.get",
+            "summary": "辅助单位查询",
+            "description": "开放平台辅助单位查询对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.unit.get.json"
+        },
+        {
+            "method": "erp.unit.update",
+            "summary": "辅助单位更新",
+            "description": "开放平台辅助单位更新对外接口。会先根据unitName删除对应货品的辅助单位，再根据入参信息重新添加辅助单位。货品档案的定位是可以根据吉客云系统中的outSkuCode(匹配关系编码），skuBarcode(条码）。其中优先级：outSkuCode>skuBarCode如果想用其中的某个值做匹配，其他参数则不要赋值即可。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.unit.update.json"
+        },
+        {
+            "method": "erp.user.blockup",
+            "summary": "用户档案停用接口",
+            "description": "用户档案新增接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.user.blockup.json"
+        },
+        {
+            "method": "erp.user.create",
+            "summary": "用户档案新增接口",
+            "description": "用户档案新增接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.user.create.json"
+        },
+        {
+            "method": "erp.user.create.v2",
+            "summary": "创建或更新员工档案",
+            "description": "创建或更新员工档案，根据工号定位",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.user.create.v2.json"
+        },
+        {
+            "method": "erp.user.recover",
+            "summary": "用户档案启用接口",
+            "description": "用户档案启用接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.user.recover.json"
+        },
+        {
+            "method": "erp.user.search",
+            "summary": "用户档案查询接口",
+            "description": "用户档案查询接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.user.search.json"
+        },
+        {
+            "method": "erp.user.update",
+            "summary": "用户档案更新接口",
+            "description": "用户档案更新接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.user.update.json"
+        },
+        {
+            "method": "erp.vend.blockup",
+            "summary": "停用供应商",
+            "description": "停用供应商",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.vend.blockup.json"
+        },
+        {
+            "method": "erp.vend.create",
+            "summary": "供应商创建",
+            "description": "开放平台供应商创建对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.vend.create.json"
+        },
+        {
+            "method": "erp.vend.create.v2",
+            "summary": "供应商更新创建",
+            "description": "开放平台供应商更新创建对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.vend.create.v2.json"
+        },
+        {
+            "method": "erp.vend.get",
+            "summary": "供应商查询",
+            "description": "开放平台供应商查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.vend.get.json"
+        },
+        {
+            "method": "erp.vend.update",
+            "summary": "供应商更新",
+            "description": "开放平台供应商更新对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.vend.update.json"
+        },
+        {
+            "method": "erp.vendprice.create",
+            "summary": "开放平台供应商报价开单对外接口",
+            "description": "开放平台供应商报价开单对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.vendprice.create.json"
+        },
+        {
+            "method": "erp.warehouse.create",
+            "summary": "仓库创建",
+            "description": "开放平台仓库创建对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.warehouse.create.json"
+        },
+        {
+            "method": "erp.warehouse.create.v2",
+            "summary": "创建或更新存放仓库",
+            "description": "创建存放仓库，根据仓库code判断，如果已经有仓库，则更新",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.warehouse.create.v2.json"
+        },
+        {
+            "method": "erp.warehouse.get",
+            "summary": "开放平台仓库查询",
+            "description": "开放平台仓库查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/erp.warehouse.get.json"
+        },
+        {
+            "method": "fin-calculate.common.uploadfile",
+            "summary": "上传推广费文件",
+            "description": "上传平台后台下载的费用文件，转化为网店推广费用",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-calculate.common.uploadfile.json"
+        },
+        {
+            "method": "fin-fbs.arapdetail.listarap",
+            "summary": "开放平台客户核销查询对外接口",
+            "description": "开放平台客户核销查询对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.arapdetail.listarap.json"
+        },
+        {
+            "method": "fin-fbs.bankbalance.get",
+            "summary": "结算账户余额接口",
+            "description": "开放平台账户余额接口（结算账户余额表-已审核账单）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.bankbalance.get.json"
+        },
+        {
+            "method": "fin-fbs.billinfo.allpayablelist",
+            "summary": "开放平台应付单主表及明细合并查询对外接口",
+            "description": "开放平台应付单主表及明细合并查询对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billinfo.allpayablelist.json"
+        },
+        {
+            "method": "fin-fbs.billinfo.allreceivablelist",
+            "summary": "非销售应收单主表及明细合并查询",
+            "description": "开放平台应收单主表及明细合并查询对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billinfo.allreceivablelist.json"
+        },
+        {
+            "method": "fin-fbs.billinfo.allreceivepaymentlist",
+            "summary": "开放平台收付款单主表及明细合并查询对外接口",
+            "description": "开放平台收付款单主表及明细合并查询对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billinfo.allreceivepaymentlist.json"
+        },
+        {
+            "method": "fin-fbs.billinfo.auditbill",
+            "summary": "收付款审核接口",
+            "description": "开放平台收付款审核接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billinfo.auditbill.json"
+        },
+        {
+            "method": "fin-fbs.billinfo.countreceivepayment",
+            "summary": "开放平台收付款单总数查询",
+            "description": "开放平台收付款单总数查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billinfo.countreceivepayment.json"
+        },
+        {
+            "method": "fin-fbs.billinfo.createcashorcostrecpaybill",
+            "summary": "开放平台收付款单创建（支持类型现收收入、支付费用）对外接口",
+            "description": "开放平台收付款单创建（支持类型现收收入、支付费用）对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billinfo.createcashorcostrecpaybill.json"
+        },
+        {
+            "method": "fin-fbs.billinfo.createcostbill",
+            "summary": "费用单创建接口",
+            "description": "开放平台费用单创建对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billinfo.createcostbill.json"
+        },
+        {
+            "method": "fin-fbs.billinfo.createcustrecbill",
+            "summary": "开放平台客户往来-收款单创建对外接口",
+            "description": "开放平台收客户预收-收款单创建对外接口。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billinfo.createcustrecbill.json"
+        },
+        {
+            "method": "fin-fbs.billinfo.createcustvendstaffpaybill",
+            "summary": "开放平台客户供应商员工往来-付款单创建对外接口",
+            "description": "开放平台客户供应商员工往来-付款单创建对外接口。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billinfo.createcustvendstaffpaybill.json"
+        },
+        {
+            "method": "fin-fbs.billinfo.createvendpaybill",
+            "summary": "开放平台付款开单-付供应商预付开放接口",
+            "description": "开放平台付款开单-付供应商预付开放接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billinfo.createvendpaybill.json"
+        },
+        {
+            "method": "fin-fbs.billinfo.createvendrecbill",
+            "summary": "开放平台供应商往来-收款单创建对外接口",
+            "description": "开放平台收供应商退款-收款单创建对外接口。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billinfo.createvendrecbill.json"
+        },
+        {
+            "method": "fin-fbs.billinfo.getdetailbyid",
+            "summary": "开放平台收付款单业务明细查询对外接口",
+            "description": "开放平台收付款单业务明细查询对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billinfo.getdetailbyid.json"
+        },
+        {
+            "method": "fin-fbs.billinfo.getwfdetailbybillnum",
+            "summary": "收付款单核销明细查询对外接口",
+            "description": "收付款单核销明细查询对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billinfo.getwfdetailbybillnum.json"
+        },
+        {
+            "method": "fin-fbs.billinfo.listbillfileurl",
+            "summary": "查询收付款单附件",
+            "description": "查询收付款单附件",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billinfo.listbillfileurl.json"
+        },
+        {
+            "method": "fin-fbs.billinfo.receivepaymentlist",
+            "summary": "开放平台收付款单查询对外接口",
+            "description": "开放平台收付款单查询对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billinfo.receivepaymentlist.json"
+        },
+        {
+            "method": "fin-fbs.billinfo.recpaybillwithwfnum",
+            "summary": "获取收付款单对应核销单号、核销明细系统单号",
+            "description": "开放平台获取收付款单对应核销单号、核销明细系统单号接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billinfo.recpaybillwithwfnum.json"
+        },
+        {
+            "method": "fin-fbs.billinfo.updatestatus",
+            "summary": "收付款单据状态、摘要及自定义字段修改",
+            "description": "更新收付款单据状态、摘要及自定义字段",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billinfo.updatestatus.json"
+        },
+        {
+            "method": "fin-fbs.billtranssale.listreceivablespay",
+            "summary": "销售应收应付单主表及明细合并查询",
+            "description": "开放平台销售应收应付单主表及明细合并查询对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.billtranssale.listreceivablespay.json"
+        },
+        {
+            "method": "fin-fbs.createbill",
+            "summary": "开放平台应收单/应付单创建对外接口",
+            "description": "开放平台应收单/应付单创建对外接口。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.createbill.json"
+        },
+        {
+            "method": "fin-fbs.unitbalance.get",
+            "summary": "应收应付余额表查询",
+            "description": "开放平台应收应付余额表查询对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin-fbs.unitbalance.get.json"
+        },
+        {
+            "method": "fin.accounts.listall",
+            "summary": "开放平台集团科目查询",
+            "description": "开放平台获取所有集团科目接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin.accounts.listall.json"
+        },
+        {
+            "method": "fin.acdoc.create",
+            "summary": "开放平台手工新建待审核凭证",
+            "description": "开放平台手工新建待审核凭证",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin.acdoc.create.json"
+        },
+        {
+            "method": "fin.acdoc.query",
+            "summary": "开放平台凭证不含明细查询接口",
+            "description": "开放平台凭证含查询接口,查询明细用fin.acdocdetail.query ",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin.acdoc.query.json"
+        },
+        {
+            "method": "fin.acdocdetail.query",
+            "summary": "开放平台凭证明细查询接口",
+            "description": "开放平台凭证明细查询接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin.acdocdetail.query.json"
+        },
+        {
+            "method": "fin.bill.updateAnnex",
+            "summary": "新增/删除单据附件",
+            "description": "新增/删除单据附件链接，后台不会再下载一份复制备份上传",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin.bill.updateAnnex.json"
+        },
+        {
+            "method": "fin.contact.listcontactunits",
+            "summary": "开放平台往来单位查询对外接口",
+            "description": "开放平台费用归集单查询对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin.contact.listcontactunits.json"
+        },
+        {
+            "method": "fin.payment.cancelAudit",
+            "summary": "付款申请单取消审核",
+            "description": "根据付款申请单id更新单据状态对外接口。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin.payment.cancelAudit.json"
+        },
+        {
+            "method": "fin.paymentapply.create",
+            "summary": "开放平台付款申请创建对外接口",
+            "description": "开放平台付款申请创建对外接口。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin.paymentapply.create.json"
+        },
+        {
+            "method": "fin.paymentapply.listinfo",
+            "summary": "开放平台付款申请查询对外接口",
+            "description": "开放平台付款申请查询对外接口。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin.paymentapply.listinfo.json"
+        },
+        {
+            "method": "fin.paymentapply.queryinfobypurchno",
+            "summary": "根据采购订单查询付款申请单号及状态",
+            "description": "根据采购订单查询付款申请单号及状态",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin.paymentapply.queryinfobypurchno.json"
+        },
+        {
+            "method": "fin.paymentid.execute",
+            "summary": "根据申请单号转付款执行对外接口",
+            "description": "根据申请单号转付款执行对外接口。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/fin.paymentid.execute.json"
+        },
+        {
+            "method": "gsp.enterprise.create",
+            "summary": "首营企业创建",
+            "description": "开放平台创建首营企业",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/gsp.enterprise.create.json"
+        },
+        {
+            "method": "gsp.gspgoods.create",
+            "summary": "首营品种创建",
+            "description": "开放平台创建首营品种",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/gsp.gspgoods.create.json"
+        },
+        {
+            "method": "jei-core-exchange.apply.create.online",
+            "summary": "根据网店订单号和开票资料创建开票申请单",
+            "description": "根据网店订单号和开票资料创建开票申请单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-core-exchange.apply.create.online.json"
+        },
+        {
+            "method": "jei-core-exchange.apply.normal.create",
+            "summary": "创建开票申请单",
+            "description": "创建开票申请单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-core-exchange.apply.normal.create.json"
+        },
+        {
+            "method": "jei-core-exchange.apply.query",
+            "summary": "查询开票申请单信息",
+            "description": "销售单编号和网店订单编号不能同时为空",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-core-exchange.apply.query.json"
+        },
+        {
+            "method": "jei-core-exchange.apply.update",
+            "summary": "修改开票申请单数据",
+            "description": " 根据开票申请单id修改开票申请单数据，明细某一行不传则会删除没传的行",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-core-exchange.apply.update.json"
+        },
+        {
+            "method": "jei-core-exchange.blue.apply.query",
+            "summary": "查询蓝票开票申请单信息",
+            "description": "1.根据查询返回列表是否存在数据判断是否还有下一页数据\n2.仅会返回开票平台为虚拟平台的蓝票数据",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-core-exchange.blue.apply.query.json"
+        },
+        {
+            "method": "jei-core-exchange.invoice.cancel",
+            "summary": "蓝票信息取消",
+            "description": " 蓝票发票取消，删除通过发票更新接口更新的数据。只处理状态为开票失败或者待开票的数据",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-core-exchange.invoice.cancel.json"
+        },
+        {
+            "method": "jei-core-exchange.invoice.goods.query",
+            "summary": "查询发票明细接口",
+            "description": "查询发票明细接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-core-exchange.invoice.goods.query.json"
+        },
+        {
+            "method": "jei-core-exchange.invoice.message.query",
+            "summary": "查询发票主表以及明细接口",
+            "description": "查询发票主表以及明细接口(至少传一个参数，否则会报参数为空)",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-core-exchange.invoice.message.query.json"
+        },
+        {
+            "method": "jei-core-exchange.invoice.query",
+            "summary": "查询开票结果",
+            "description": "查询开票结果",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-core-exchange.invoice.query.json"
+        },
+        {
+            "method": "jei-core-exchange.invoice.redConfirm.cancel",
+            "summary": "红票信息取消",
+            "description": "红票发票取消，删除通过发票更新接口更新的数据。只处理状态为开票失败或者待开票的数据",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-core-exchange.invoice.redConfirm.cancel.json"
+        },
+        {
+            "method": "jei-core-exchange.invoice.redConfirm.update",
+            "summary": "发票冲红时，同步红字确认单信息",
+            "description": " 发票冲红时，同步红字确认单信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-core-exchange.invoice.redConfirm.update.json"
+        },
+        {
+            "method": "jei-core-exchange.invoice.update",
+            "summary": "更新发票状态",
+            "description": " 根据开票申请单id更新开票状态。1，拉取开票申请数据后，先通过该接口将开票申请单状态更新为开票中。2，开票成功或开票失败时通过该接口更新开票申请单状态。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-core-exchange.invoice.update.json"
+        },
+        {
+            "method": "jei-core-exchange.invoice.updateSynStatus",
+            "summary": "更新发票同步状态",
+            "description": "根据开票申请单id修改发票回传电商平台状态",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-core-exchange.invoice.updateSynStatus.json"
+        },
+        {
+            "method": "jei-core-exchange.red.apply.query",
+            "summary": "查询红票开票申请单信息",
+            "description": "根据查询返回列表是否存在数据判断是否还有下一页数据",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-core-exchange.red.apply.query.json"
+        },
+        {
+            "method": "jei-core-exchange.sku.match.tax.code",
+            "summary": "货品匹配税目编码",
+            "description": "",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-core-exchange.sku.match.tax.code.json"
+        },
+        {
+            "method": "jei-core-exchange.tax.code.match.sku",
+            "summary": "分类匹配税目编码",
+            "description": "分类匹配税目编码",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-core-exchange.tax.code.match.sku.json"
+        },
+        {
+            "method": "jei-core-exchange.tax.code.query",
+            "summary": "根据货品条码查询税目匹配",
+            "description": "根据货品条码查询税目匹配",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-core-exchange.tax.code.query.json"
+        },
+        {
+            "method": "jei-service.apply.sync",
+            "summary": "开票申请单信息推送",
+            "description": "1，在吉客云上点开票后，会通过该接口进行推送数据，吉客云这边有可能会重复推送，对接方需要根据开票申请单id进行重复性校验。\n2，对接方接收的数据后，需要立即通过 jei-core-exchange.invoice.update 接口将单据更新成处理中状态（不然用户可能会重复点，重复推数据）。\n3，如果既对接了这个接口，又对接了拉数据接口，需要根据id做好重复性校验。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jei-service.apply.sync.json"
+        },
+        {
+            "method": "jmall.customer.list",
+            "summary": "获取吉商城会员列表",
+            "description": "获取吉商城会员列表。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jmall.customer.list.json"
+        },
+        {
+            "method": "jmall.goods.getqrcode",
+            "summary": "获取吉商城货品二维码信息",
+            "description": "获取吉商城货品二维码信息。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jmall.goods.getqrcode.json"
+        },
+        {
+            "method": "jmi-robot.message.send",
+            "summary": "开放平台吉秘机器人发消息",
+            "description": "吉秘机器人发消息接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/jmi-robot.message.send.json"
+        },
+        {
+            "method": "mrp.apply.stock.add",
+            "summary": "通过任务单新增领料单",
+            "description": "通过任务单新增领料单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.apply.stock.add.json"
+        },
+        {
+            "method": "mrp.apply.stock.cancel",
+            "summary": "通过领料单号取消领料单",
+            "description": "通过领料单号取消领料单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.apply.stock.cancel.json"
+        },
+        {
+            "method": "mrp.bom.batch.add",
+            "summary": "批量创建bom",
+            "description": "批量创建bom",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.bom.batch.add.json"
+        },
+        {
+            "method": "mrp.bom.batch.delete",
+            "summary": "批量删除bom",
+            "description": "批量删除bom",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.bom.batch.delete.json"
+        },
+        {
+            "method": "mrp.bom.querylist",
+            "summary": "BOM查询",
+            "description": "BOM查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.bom.querylist.json"
+        },
+        {
+            "method": "mrp.customScene.queryList",
+            "summary": "图片处理报工场景查询",
+            "description": "图片处理报工场景查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.customScene.queryList.json"
+        },
+        {
+            "method": "mrp.cut.notify",
+            "summary": "聚图切割通知生产",
+            "description": "提供接口聚图软件切割完成后通知生产",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.cut.notify.json"
+        },
+        {
+            "method": "mrp.dispatch.confirm",
+            "summary": "生产工序派工",
+            "description": "生产工序派工",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.dispatch.confirm.json"
+        },
+        {
+            "method": "mrp.dispatch.user.update",
+            "summary": "生产工序转派",
+            "description": "生产工序转派",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.dispatch.user.update.json"
+        },
+        {
+            "method": "mrp.finish.notify",
+            "summary": "完工后通知生产创建完工入库单",
+            "description": "完工后通知生产创建完工入库单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.finish.notify.json"
+        },
+        {
+            "method": "mrp.order.create",
+            "summary": "生产推单接口",
+            "description": "生产推单接口（异步）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.order.create.json"
+        },
+        {
+            "method": "mrp.order.force",
+            "summary": "订单强制完成",
+            "description": "订单强制完成",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.order.force.json"
+        },
+        {
+            "method": "mrp.order.querylist",
+            "summary": "生产订单查询",
+            "description": "生产订单查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.order.querylist.json"
+        },
+        {
+            "method": "mrp.procedure.task.report",
+            "summary": "生产工序报工",
+            "description": "生产工序报工",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.procedure.task.report.json"
+        },
+        {
+            "method": "mrp.proceduretask.querylist",
+            "summary": "工序任务查询",
+            "description": "工序任务查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.proceduretask.querylist.json"
+        },
+        {
+            "method": "mrp.project.518158.order.create",
+            "summary": "伊利518158生产推单接口",
+            "description": "伊利518158生产推单接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.project.518158.order.create.json"
+        },
+        {
+            "method": "mrp.task.productbatchsn.update",
+            "summary": "更新任务单批次号",
+            "description": "更新任务单批次号",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.task.productbatchsn.update.json"
+        },
+        {
+            "method": "mrp.task.querylist",
+            "summary": "任务单查询",
+            "description": "任务单查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.task.querylist.json"
+        },
+        {
+            "method": "mrp.taskpick.querylist",
+            "summary": "通过领料单号查询任务领料信息",
+            "description": "通过领料单号查询任务领料信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.taskpick.querylist.json"
+        },
+        {
+            "method": "mrp.taskpickstate.querylist",
+            "summary": "通过货品编号查询任务领料状态",
+            "description": "通过货品编号查询任务领料状态（注：若货品对应有多个任务单，只返回一个结果。若多个任务单都是未领料状态，则返回未领料；若都是已领完，则返回已领完；除此以外，返回部分领料）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/mrp.taskpickstate.querylist.json"
+        },
+        {
+            "method": "oa.expense.borrowList",
+            "summary": "列表查询借款单数据",
+            "description": "列表查询借款单数据",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oa.expense.borrowList.json"
+        },
+        {
+            "method": "oa.expense.borrowRefundList",
+            "summary": "查询核销借款明细",
+            "description": "查询核销借款明细",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oa.expense.borrowRefundList.json"
+        },
+        {
+            "method": "oa.expense.borrowReturnDetail",
+            "summary": "查询还款明细数据",
+            "description": "查询还款明细数据",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oa.expense.borrowReturnDetail.json"
+        },
+        {
+            "method": "oa.expense.reimburseAccumList",
+            "summary": "查询费用归集数据",
+            "description": "查询费用归集数据",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oa.expense.reimburseAccumList.json"
+        },
+        {
+            "method": "oa.expense.reimburseInvoiceRelateList",
+            "summary": "查询报销发票明细数据",
+            "description": "查询报销发票明细数据",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oa.expense.reimburseInvoiceRelateList.json"
+        },
+        {
+            "method": "oa.expense.reimburseList",
+            "summary": "列表查询报销单数据",
+            "description": "列表查询报销单数据",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oa.expense.reimburseList.json"
+        },
+        {
+            "method": "oa.expense.reimburseRecordInvoiceList",
+            "summary": "查询费用单明细数据",
+            "description": "查询费用单明细数据",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oa.expense.reimburseRecordInvoiceList.json"
+        },
+        {
+            "method": "oa.expense.returnList",
+            "summary": "列表查询还款单数据",
+            "description": "列表查询还款单数据",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oa.expense.returnList.json"
+        },
+        {
+            "method": "oa.flow.flowStatusCallBack",
+            "summary": "流程状态回调（审批或驳回）",
+            "description": "流程状态回调（审批或驳回）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oa.flow.flowStatusCallBack.json"
+        },
+        {
+            "method": "oa.flow.queryFlowList",
+            "summary": "列表查询流程数据",
+            "description": "列表查询流程数据",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oa.flow.queryFlowList.json"
+        },
+        {
+            "method": "oa.user.queryEntryAge",
+            "summary": "根据erpUserId批量查询司龄和入职日期",
+            "description": "根据erpUserId批量查询司龄和入职日期",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oa.user.queryEntryAge.json"
+        },
+        {
+            "method": "oms-cds.customsgoodslist",
+            "summary": "进口货品信息查询",
+            "description": "查询进口货品信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms-cds.customsgoodslist.json"
+        },
+        {
+            "method": "oms-cds.customsorderlist",
+            "summary": "报关单信息查询",
+            "description": "查询报关单信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms-cds.customsorderlist.json"
+        },
+        {
+            "method": "oms-cds.customsOrderStatus",
+            "summary": "开放接口查询报关单状态信息",
+            "description": "开放接口查询报关单状态信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms-cds.customsOrderStatus.json"
+        },
+        {
+            "method": "oms-cds.inventoryInfolist",
+            "summary": "开放接口查询清单信息",
+            "description": "开放接口查询清单信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms-cds.inventoryInfolist.json"
+        },
+        {
+            "method": "oms-cds.scrm.customer.batchAddTraceLog",
+            "summary": "客户档案批量新增联系记录",
+            "description": "客户档案批量新增联系记录",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms-cds.scrm.customer.batchAddTraceLog.json"
+        },
+        {
+            "method": "oms-settle.settle.listWithScrollId",
+            "summary": "销售结算单查询",
+            "description": "通过游标方式查询销售结算单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms-settle.settle.listWithScrollId.json"
+        },
+        {
+            "method": "oms-settle.trade.expense.add",
+            "summary": "销售费用创建",
+            "description": "",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms-settle.trade.expense.add.json"
+        },
+        {
+            "method": "oms-settle.trade.expenseList",
+            "summary": "销售费用查询",
+            "description": "对应【销售费用查询】页面",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms-settle.trade.expenseList.json"
+        },
+        {
+            "method": "oms-settle.trade.expenseShareGoodsList",
+            "summary": "销售费用明细查询",
+            "description": "对应【销售费用分摊到货品查询】\n未传发生时间、销售单号、销售费用ID、销售渠道参数时，创建时间一定要传，否则不用",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms-settle.trade.expenseShareGoodsList.json"
+        },
+        {
+            "method": "oms-settle.tradeInvoice.batchAdd",
+            "summary": "销售发票创建",
+            "description": "",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms-settle.tradeInvoice.batchAdd.json"
+        },
+        {
+            "method": "oms.customerQuotation.query",
+            "summary": "客户报价单查询",
+            "description": "1、报价单号、客户编号、客户名称、报价时间起止、建单时间起止、有效期起止需至少传其一，时间类参数起止时间间隔不能超过7天；\n<br/>\n2、cols字段为查询报价单列，需传入文档中指定的可选字段，多个字段用半角逗号分隔；\n<br/>\n3、goodsCols字段为查询报价单货品列，至少需要传入一个可选字段，否则不返回货品信息；\n<br/>\n4、分页信息pageInfo中，pageIndex默认0（显示第一页），pageSize默认50条，最大支持1000条；\n<br/>\n5、涉及数组类型的参数（如quotationStatus、customerGradeName等），多个值用半角逗号分隔或按数组格式传入。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.customerQuotation.query.json"
+        },
+        {
+            "method": "oms.open.trade.audit.reject",
+            "summary": "销售单驳回审核",
+            "description": "销售单驳回审核",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.open.trade.audit.reject.json"
+        },
+        {
+            "method": "oms.open.trade.settle.allinfo",
+            "summary": "销售结算单查询",
+            "description": "注意：本接口将于2026.04.20下线，请及时对接新的销售结算单查询接口【oms-settle.settle.listWithScrollId】\n\n查询归档数据时，仅支持部分条件（gmtCreatedBegin、\t\ngmtCreatedEnd、settleTimeBegin、settleTimeEnd、tradeNo）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.open.trade.settle.allinfo.json"
+        },
+        {
+            "method": "oms.order.batchsendsms",
+            "summary": "销售单批量发送短信",
+            "description": "销售单批量发送短信，需要先在吉客云系统的【手机短信】中维护好相关的短信签名与短信模板才可使用该接口进行发送短信。\n注：当销售单为淘宝、京东、抖音、快手加密订单时必传且只能按模板内容来发送短信；其他平台如果传了短信模板，则按模板内容发送短信，smsDetail失效；其他平台如需自定义短信内容，则templateName无需传值。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.order.batchsendsms.json"
+        },
+        {
+            "method": "oms.order.columnext.edit",
+            "summary": "开放平台更新销售单自定义字段对外接口",
+            "description": "开放平台更新销售单自定义字段对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.order.columnext.edit.json"
+        },
+        {
+            "method": "oms.order.confirm.delivery",
+            "summary": "发货确认",
+            "description": "有外部发货标记的销售单，或者平台发货的销售单，当网店订单交易状态为等买家收货或交易成功，销售单更新为发货在途",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.order.confirm.delivery.json"
+        },
+        {
+            "method": "oms.order.customs.notify",
+            "summary": "报关结果通知",
+            "description": "报关结果通知",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.order.customs.notify.json"
+        },
+        {
+            "method": "oms.order.expenselist",
+            "summary": "销售单费用查询",
+            "description": "建议调用新接口查询销售费用【oms-settle.trade.expenseList】",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.order.expenselist.json"
+        },
+        {
+            "method": "oms.order.flag.batchedit",
+            "summary": "批量修改订单标记",
+            "description": "批量修改订单标记",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.order.flag.batchedit.json"
+        },
+        {
+            "method": "oms.order.updateLockBillStatus",
+            "summary": "开放平台更新锁账状态接口",
+            "description": "开放平台查询物流轨迹的接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.order.updateLockBillStatus.json"
+        },
+        {
+            "method": "oms.trade.appointLogisticNo",
+            "summary": "预约物流单号",
+            "description": "预约物流单号,每次最大100个订单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.appointLogisticNo.json"
+        },
+        {
+            "method": "oms.trade.audit.pass",
+            "summary": "销售单审核",
+            "description": "销售单审核",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.audit.pass.json"
+        },
+        {
+            "method": "oms.trade.batchGetTempDownloadUrl",
+            "summary": "批量获取oss临时url地址",
+            "description": "",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.batchGetTempDownloadUrl.json"
+        },
+        {
+            "method": "oms.trade.batchUpdateGoodsBatchNo",
+            "summary": "修改销售单货品批次接口",
+            "description": "修改销售单货品批次接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.batchUpdateGoodsBatchNo.json"
+        },
+        {
+            "method": "oms.trade.checkJingDongStorageSerialNos",
+            "summary": "京东云仓查询唯一码是否可用",
+            "description": "京东云仓查询唯一码是否可用",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.checkJingDongStorageSerialNos.json"
+        },
+        {
+            "method": "oms.trade.confirm",
+            "summary": "发货确认(逆向)",
+            "description": "将订单发货确认信息回传给外部系统",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.confirm.json"
+        },
+        {
+            "method": "oms.trade.countget",
+            "summary": "销售单总数查询",
+            "description": "销售单数量的获取在大数据量下，接口耗时会较长，请谨慎调用。非必要，不做调用。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.countget.json"
+        },
+        {
+            "method": "oms.trade.fullinfoget",
+            "summary": "销售单查询",
+            "description": "1、销售单查询根据游标(scrollId)分页查询参数的特殊说明:第一次查询入参增加scrollId=\"\",并在fields字段中添加scrollId字段,在下一次查询时需要将上次查询响应的游标值当做入参去请求下一页的数据；\n<br/>\n2、部分列表字段fields填写说明详见：https://s.jkyun.biz/2jWhg8v； \n<br/>\n3、开放平台销售单取数核对方式可参考：https://s.jkyun.biz/T5x1lE5;    \n<br/>\n4，销售单号、网店订单号、分批发货申请单号、修改时间、创建时间、审核时间、发货时间、完成时间、下单时间必传其一，起止时间不能超过7天。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.fullinfoget.json"
+        },
+        {
+            "method": "oms.trade.getSerial",
+            "summary": "获取订单唯一码信息",
+            "description": "查询订单唯一码信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.getSerial.json"
+        },
+        {
+            "method": "oms.trade.goods.getinfobybrand",
+            "summary": "根据品牌查询货品销售信息",
+            "description": "根据品牌查询货品销售信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.goods.getinfobybrand.json"
+        },
+        {
+            "method": "oms.trade.order.batchUpdateLogisticWarehouse",
+            "summary": "销售单修改仓库或物流信息",
+            "description": "批量修改销售单仓库或物流信息（优先编码匹配，仅修改预售、待审核订单）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.order.batchUpdateLogisticWarehouse.json"
+        },
+        {
+            "method": "oms.trade.order.completeDelivery",
+            "summary": "销售单完成发货",
+            "description": "1.批量订单完成发货（数据处理上限数量：20）\n2.订单在待发货待递交状态才可以调用，修改订单状态为发货在途\n3.“条码”和“货品编码+规格”，必填其一，同时填写，优先匹配条码",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.order.completeDelivery.json"
+        },
+        {
+            "method": "oms.trade.order.delete",
+            "summary": "根据网店订单号删除已取消销售单",
+            "description": "根据网店订单号删除已取消销售单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.order.delete.json"
+        },
+        {
+            "method": "oms.trade.order.reAudit",
+            "summary": "销售单复核",
+            "description": "销售单复核",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.order.reAudit.json"
+        },
+        {
+            "method": "oms.trade.order.updateActualCost",
+            "summary": "更新订单实际成本(定制接口)",
+            "description": "发货时间范围不能超过90天",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.order.updateActualCost.json"
+        },
+        {
+            "method": "oms.trade.ordercancel",
+            "summary": "取消订单",
+            "description": "用于取消订单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.ordercancel.json"
+        },
+        {
+            "method": "oms.trade.ordercreate",
+            "summary": "销售单创建",
+            "description": "接口说明：                                                                                                                                                                                                                                                                                     \n    客户端路径：销售→新建销售单；\n    接口描述：模拟手工创建吉客云销售订单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.ordercreate.json"
+        },
+        {
+            "method": "oms.trade.orderloglist",
+            "summary": "获取销售单日志列表",
+            "description": "获取销售单日志列表，第一次分页查询参数返回total和游标，后续查询每次请求需要传入上次请求返回的游标（极大提高查询性能）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.orderloglist.json"
+        },
+        {
+            "method": "oms.trade.package.querylist",
+            "summary": "通过销售单号查询订单包裹信息",
+            "description": "通过销售单号查询订单包裹信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.package.querylist.json"
+        },
+        {
+            "method": "oms.trade.quotation.batchUpdateGoodsMemo",
+            "summary": "更新意向单货品备注",
+            "description": "批量更新意向单货品备注\n",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.quotation.batchUpdateGoodsMemo.json"
+        },
+        {
+            "method": "oms.trade.quotation.querylist",
+            "summary": "意向单查询（包括货品）",
+            "description": "意向单查询（包括货品）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.quotation.querylist.json"
+        },
+        {
+            "method": "oms.trade.remark.add",
+            "summary": "开放接口订单备注操作",
+            "description": "开放接口订单备注操作（客服备注，追加备注）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.remark.add.json"
+        },
+        {
+            "method": "oms.trade.settle.edit",
+            "summary": "更新销售结算单自定义字段",
+            "description": "更新销售结算单自定义字段。单次调用限制20条结算单。单条结算单可同时更新结算单级和货品级自定义。传值空字符串代表清空。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.settle.edit.json"
+        },
+        {
+            "method": "oms.trade.stockout",
+            "summary": "生成出库单接口",
+            "description": "生成出库单接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.trade.stockout.json"
+        },
+        {
+            "method": "oms.tradecolorflag.post",
+            "summary": "通知旗帜变更(逆向)",
+            "description": "通知旗帜变更(逆向)\n1 灰旗\n2 红旗\n3 黄旗\n4 绿旗\n5 蓝旗\n6 紫旗\n7 粉旗\n26 青旗\n27 橙旗\n29 深蓝旗\n30 浅蓝旗\n31 浅粉旗\n32 深绿旗\n34 桃红旗",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/oms.tradecolorflag.post.json"
+        },
+        {
+            "method": "omsapi-business.get.match.goods",
+            "summary": "获取已匹配商品信息",
+            "description": "获取已匹配商品信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/omsapi-business.get.match.goods.json"
+        },
+        {
+            "method": "omsapi-business.message.notify",
+            "summary": "消息变更通知",
+            "description": "网店订单消息变更通知",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/omsapi-business.message.notify.json"
+        },
+        {
+            "method": "omsapi-business.onlineGoodsList",
+            "summary": "网店商品列表查询",
+            "description": "网店商品列表查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/omsapi-business.onlineGoodsList.json"
+        },
+        {
+            "method": "omsapi-business.order.get",
+            "summary": "网店订单列表详情",
+            "description": "网店订单列表详情",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/omsapi-business.order.get.json"
+        },
+        {
+            "method": "omsapi-business.refund.listRefund",
+            "summary": "分页查询网店售后单",
+            "description": "分页查询网店售后单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/omsapi-business.refund.listRefund.json"
+        },
+        {
+            "method": "omsapi-download.order.push",
+            "summary": "推送订单",
+            "description": "接口说明：\n    客户端路径：销售→销售开单\n    接口描述：用于推送订单数据请注意相关传值",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/omsapi-download.order.push.json"
+        },
+        {
+            "method": "omsapi-download.takeawayorder.push",
+            "summary": "推送外卖订单",
+            "description": "推送外卖订单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/omsapi-download.takeawayorder.push.json"
+        },
+        {
+            "method": "open-datasync.trade.order.delete",
+            "summary": "删除销售订单",
+            "description": "此接口为倍次计费接口，一次调用会产生3次流量计费\n此接口用于删除销售订单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/open-datasync.trade.order.delete.json"
+        },
+        {
+            "method": "pos.cardticket.purchaseHistory.list",
+            "summary": "卡券消费记录查询",
+            "description": "卡券消费记录查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.cardticket.purchaseHistory.list.json"
+        },
+        {
+            "method": "pos.cardticket.statistics.history.list",
+            "summary": "卡券核销流水",
+            "description": "卡券核销流水",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.cardticket.statistics.history.list.json"
+        },
+        {
+            "method": "pos.cardticketinstance.create",
+            "summary": "批量创建卡券实例",
+            "description": "开放平台创建卡券实例（建议每一次100条以下，如果请求参数包含了卡券编号字段建议50条以下）",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.cardticketinstance.create.json"
+        },
+        {
+            "method": "pos.cardticketinstance.enable.list",
+            "summary": "卡券停用列表",
+            "description": "卡券停用列表",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.cardticketinstance.enable.list.json"
+        },
+        {
+            "method": "pos.cardticketinstance.enableordisable",
+            "summary": "卡券管理停用/启用",
+            "description": "卡券管理停用/启用",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.cardticketinstance.enableordisable.json"
+        },
+        {
+            "method": "pos.chargeback.list",
+            "summary": "补货退货单查询",
+            "description": "",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.chargeback.list.json"
+        },
+        {
+            "method": "pos.chargebackApply.add",
+            "summary": "补货退货申请新增",
+            "description": "补货退货申请新增",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.chargebackApply.add.json"
+        },
+        {
+            "method": "pos.chargebackApply.list",
+            "summary": "补货退货申请查询",
+            "description": "",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.chargebackApply.list.json"
+        },
+        {
+            "method": "pos.distribution.add",
+            "summary": "补货单新增",
+            "description": "补货单新增",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.distribution.add.json"
+        },
+        {
+            "method": "pos.distribution.list",
+            "summary": "补货单查询",
+            "description": "",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.distribution.list.json"
+        },
+        {
+            "method": "pos.distribution.supplyIn",
+            "summary": "根据补货单补货入库",
+            "description": "根据补货单补货入库，相同货品会自动合并后再入库",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.distribution.supplyIn.json"
+        },
+        {
+            "method": "pos.distributionSupply.add",
+            "summary": "补货申请新增",
+            "description": "补货申请新增",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.distributionSupply.add.json"
+        },
+        {
+            "method": "pos.distributionSupply.list",
+            "summary": "补货申请查询",
+            "description": "补货申请查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.distributionSupply.list.json"
+        },
+        {
+            "method": "pos.huifu.acctpaymentPay",
+            "summary": "汇付余额支付",
+            "description": "汇付余额支付",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.huifu.acctpaymentPay.json"
+        },
+        {
+            "method": "pos.huifu.acctpaymentPayQuery",
+            "summary": "汇付余额支付下单查询",
+            "description": "汇付余额支付下单查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.huifu.acctpaymentPayQuery.json"
+        },
+        {
+            "method": "pos.huifu.acctpaymentRefund",
+            "summary": "汇付余额支付退款",
+            "description": "汇付余额支付退款",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.huifu.acctpaymentRefund.json"
+        },
+        {
+            "method": "pos.huifu.acctpaymentRefundQuery",
+            "summary": "汇付余额支付退款查询",
+            "description": "汇付余额支付退款查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.huifu.acctpaymentRefundQuery.json"
+        },
+        {
+            "method": "pos.jmember.findusercustomer",
+            "summary": "吉会员查询接口",
+            "description": "吉会员查询接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.jmember.findusercustomer.json"
+        },
+        {
+            "method": "pos.period.cycle.list.get",
+            "summary": "查询周期购主订单",
+            "description": "用于查询周期购主订单,请注意相关传值",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.period.cycle.list.get.json"
+        },
+        {
+            "method": "pos.period.cycle.order.goods.detail",
+            "summary": "周期购分期发货单货品查询",
+            "description": "用于周期购分期发货单货品查询,请注意相关传值",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.period.cycle.order.goods.detail.json"
+        },
+        {
+            "method": "pos.period.cycle.orders.edit",
+            "summary": "周期购分期发货单修改",
+            "description": "用于周期购分期发货单修改,请注意相关传值",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.period.cycle.orders.edit.json"
+        },
+        {
+            "method": "pos.period.cycle.orders.get",
+            "summary": "查询周期购分期发货单",
+            "description": "用于查询周期购分期发货单,请注意相关传值",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.period.cycle.orders.get.json"
+        },
+        {
+            "method": "pos.period.cycle.orders.origin.get",
+            "summary": "周期购原销售单查询",
+            "description": "周期购原销售单查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.period.cycle.orders.origin.get.json"
+        },
+        {
+            "method": "pos.periodCycle.delayEdit",
+            "summary": "修改周期购订单下次发货时间",
+            "description": "修改周期购订单下次发货时间接口，请注意相关传值",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.periodCycle.delayEdit.json"
+        },
+        {
+            "method": "pos.supplyIn.add",
+            "summary": "门店补货入库",
+            "description": "",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.supplyIn.add.json"
+        },
+        {
+            "method": "pos.ticket.addCardInstanceExtraBusiness",
+            "summary": "新增卡券实例提货券统计配置",
+            "description": "新增卡券实例提货券统计配置",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.ticket.addCardInstanceExtraBusiness.json"
+        },
+        {
+            "method": "pos.ticket.deleteCardInstanceExtraBusiness",
+            "summary": "删除卡券实例提货券统计配置",
+            "description": "删除卡券实例提货券统计配置",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.ticket.deleteCardInstanceExtraBusiness.json"
+        },
+        {
+            "method": "pos.ticket.queryCardInstanceExtraBusiness",
+            "summary": "查询卡券实例提货券统计配置列表",
+            "description": "查询卡券实例提货券统计配置列表",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/pos.ticket.queryCardInstanceExtraBusiness.json"
+        },
+        {
+            "method": "repair-install.repair.createRepair",
+            "summary": "创建维修工单",
+            "description": "创建维修工单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/repair-install.repair.createRepair.json"
+        },
+        {
+            "method": "repair-install.repair.getRepairBaseInfo",
+            "summary": "获取维修工单基本信息",
+            "description": "获取维修工单基本信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/repair-install.repair.getRepairBaseInfo.json"
+        },
+        {
+            "method": "repair-install.repair.listRepairInfo",
+            "summary": "分页查询维修工单",
+            "description": "分页查询维修工单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/repair-install.repair.listRepairInfo.json"
+        },
+        {
+            "method": "repair-install.repair.updateRepair",
+            "summary": "更新维修工单",
+            "description": "更新维修工单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/repair-install.repair.updateRepair.json"
+        },
+        {
+            "method": "udr.openapi.userdefinedreport",
+            "summary": "吉智BI自定义报表API接口",
+            "description": "吉智BI自定义报表API接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/udr.openapi.userdefinedreport.json"
+        },
+        {
+            "method": "wms-config.snCheckFormatRule.listBySkuBarcodes",
+            "summary": "查询唯一码格式校验规则（货品）",
+            "description": "根据货品条码获取未被停用和删除的唯一码格式校验规则",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-config.snCheckFormatRule.listBySkuBarcodes.json"
+        },
+        {
+            "method": "wms-config.snCheckFormatRule.updateBySkuBarcodeBatch",
+            "summary": "修改唯一码格式校验规则（货品）",
+            "description": "根据货品条码修改唯一码格式校验规则",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-config.snCheckFormatRule.updateBySkuBarcodeBatch.json"
+        },
+        {
+            "method": "wms-cross.delivery.print",
+            "summary": "跨境送仓打印",
+            "description": "跨境送仓打印",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-cross.delivery.print.json"
+        },
+        {
+            "method": "wms-cross.rpadata.querystatus",
+            "summary": "查询寄售数据上传处理进度",
+            "description": "查询寄售数据上传处理进度",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-cross.rpadata.querystatus.json"
+        },
+        {
+            "method": "wms-cross.rpadata.uploadfile",
+            "summary": "数聚通寄售数据上传",
+            "description": "",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-cross.rpadata.uploadfile.json"
+        },
+        {
+            "method": "wms-kernel.order.modifypackagenumber",
+            "summary": "按发货单拆分包裹",
+            "description": "按发货单拆分包裹",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-kernel.order.modifypackagenumber.json"
+        },
+        {
+            "method": "wms-ods.order.basecreate",
+            "summary": "创建发货单",
+            "description": "创建发货单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-ods.order.basecreate.json"
+        },
+        {
+            "method": "wms-ods.order.create",
+            "summary": "创建发货单",
+            "description": "创建发货单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-ods.order.create.json"
+        },
+        {
+            "method": "wms-rps.logistic.print",
+            "summary": "远程打印",
+            "description": "远程打印",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-rps.logistic.print.json"
+        },
+        {
+            "method": "wms-transport.deliver.cancel",
+            "summary": "配送单取消",
+            "description": "open取消配送单接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-transport.deliver.cancel.json"
+        },
+        {
+            "method": "wms-transport.deliver.create",
+            "summary": "创建配送单",
+            "description": "创建配送单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-transport.deliver.create.json"
+        },
+        {
+            "method": "wms-transport.deliver.createV2",
+            "summary": "创建配送单",
+            "description": "创建配送单接口新",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-transport.deliver.createV2.json"
+        },
+        {
+            "method": "wms-transport.deliver.dispatch.courier",
+            "summary": "配送单指派员工",
+            "description": "配送单员工指派",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-transport.deliver.dispatch.courier.json"
+        },
+        {
+            "method": "wms-transport.deliver.listall",
+            "summary": "查询配送单",
+            "description": "查询配送单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-transport.deliver.listall.json"
+        },
+        {
+            "method": "wms-transport.deliver.listByWarehouse",
+            "summary": "条件查询配送单",
+            "description": "查询配送单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-transport.deliver.listByWarehouse.json"
+        },
+        {
+            "method": "wms-transport.deliver.send",
+            "summary": "配送单备货完成",
+            "description": "配送单备货完成",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-transport.deliver.send.json"
+        },
+        {
+            "method": "wms-transport.deliver.sign",
+            "summary": "配送单签收",
+            "description": "配送单签收",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-transport.deliver.sign.json"
+        },
+        {
+            "method": "wms-transport.deliver.update.location",
+            "summary": "配送单更新经纬度",
+            "description": "配送单更新经纬度",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-transport.deliver.update.location.json"
+        },
+        {
+            "method": "wms-wis.finish.agvstockmove",
+            "summary": "库存移动",
+            "description": "库存移动保存",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-wis.finish.agvstockmove.json"
+        },
+        {
+            "method": "wms-wis.receive.qc",
+            "summary": "收货质检",
+            "description": "收货质检",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-wis.receive.qc.json"
+        },
+        {
+            "method": "wms-wis.receive.query",
+            "summary": "获取收货单",
+            "description": "获取收货单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-wis.receive.query.json"
+        },
+        {
+            "method": "wms-wis.storeprocess.confirm",
+            "summary": "仓内加工单确认接口",
+            "description": "仓内加工单确认",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-wis.storeprocess.confirm.json"
+        },
+        {
+            "method": "wms-wos.agv-order.pick",
+            "summary": "agv发货单拣货",
+            "description": "agv发货单拣货",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-wos.agv-order.pick.json"
+        },
+        {
+            "method": "wms-wos.order.inspect",
+            "summary": "完成验货",
+            "description": "验货确认",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-wos.order.inspect.json"
+        },
+        {
+            "method": "wms-wos.order.senddirect",
+            "summary": "直接发货",
+            "description": "直接发货",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-wos.order.senddirect.json"
+        },
+        {
+            "method": "wms-wos.order.weighing",
+            "summary": "称重登记",
+            "description": "称重登记。*此接口为免费接口，不消耗调用量额度",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-wos.order.weighing.json"
+        },
+        {
+            "method": "wms-wos.re-weight.confirm",
+            "summary": "补称重登记",
+            "description": "补称重登记。*此接口为免费接口，不消耗调用量额度",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-wos.re-weight.confirm.json"
+        },
+        {
+            "method": "wms-wos.sendOrderUpdateLogisticInfo",
+            "summary": "发货单完成并且更新物流信息接口",
+            "description": "发货单完成并且更新物流信息接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-wos.sendOrderUpdateLogisticInfo.json"
+        },
+        {
+            "method": "wms-wps.extpick.confirmBatch",
+            "summary": "AGV发货确认",
+            "description": "发货确认",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-wps.extpick.confirmBatch.json"
+        },
+        {
+            "method": "wms-wps.extpick.task.create",
+            "summary": "AGV生成拣货任务",
+            "description": "AGV生成拣货任务",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-wps.extpick.task.create.json"
+        },
+        {
+            "method": "wms-wps.extpick.taskCreate",
+            "summary": "AGV生成拣货任务",
+            "description": "AGV生成拣货任务",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms-wps.extpick.taskCreate.json"
+        },
+        {
+            "method": "wms.batch.createboxbatch",
+            "summary": "批量新增箱子",
+            "description": "批量新增箱子",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.batch.createboxbatch.json"
+        },
+        {
+            "method": "wms.batch.createboxbatchV2",
+            "summary": "批量新增箱子",
+            "description": "批量新增箱子V2",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.batch.createboxbatchV2.json"
+        },
+        {
+            "method": "wms.batch.getBoxNoBySn",
+            "summary": "根据唯一码查询所关联箱码",
+            "description": "根据唯一码查询所关联箱码",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.batch.getBoxNoBySn.json"
+        },
+        {
+            "method": "wms.box.queryInfo",
+            "summary": "查询装箱信息",
+            "description": "通过一个（箱码/唯一码）分页查询装箱所有信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.box.queryInfo.json"
+        },
+        {
+            "method": "wms.box.updateByBoxNo",
+            "summary": "根据箱码更新箱子数据",
+            "description": "根据箱码更新箱子信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.box.updateByBoxNo.json"
+        },
+        {
+            "method": "wms.expresslocus.notify",
+            "summary": "轨迹通知",
+            "description": "轨迹通知",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.expresslocus.notify.json"
+        },
+        {
+            "method": "wms.extpick.createinventory",
+            "summary": "生成盘点单",
+            "description": "生成盘点单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.extpick.createinventory.json"
+        },
+        {
+            "method": "wms.extpick.flagagvorder",
+            "summary": "标记发货单",
+            "description": "agv获取的发货单打上autopick标记",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.extpick.flagagvorder.json"
+        },
+        {
+            "method": "wms.extpick.getdeliveryorder",
+            "summary": "获取发货单",
+            "description": "获取发货单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.extpick.getdeliveryorder.json"
+        },
+        {
+            "method": "wms.extpick.getstockpd",
+            "summary": "获取盘点单",
+            "description": "获取盘点单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.extpick.getstockpd.json"
+        },
+        {
+            "method": "wms.extpick.queryentryorder",
+            "summary": "查询移库单",
+            "description": "此接口不包含淘系数据，其它平台的敏感信息会根据平台规则同步调整",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.extpick.queryentryorder.json"
+        },
+        {
+            "method": "wms.extpick.querywave",
+            "summary": "获取波次列表",
+            "description": "获取发货单波次列表",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.extpick.querywave.json"
+        },
+        {
+            "method": "wms.extpick.querywavedetail",
+            "summary": "获取波次明细",
+            "description": "获取波次明细列表",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.extpick.querywavedetail.json"
+        },
+        {
+            "method": "wms.jde.selectnotice",
+            "summary": "查询到货单信息",
+            "description": "*此接口不包含淘系数据，其它平台的敏感信息会根据平台规则同步调整",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.jde.selectnotice.json"
+        },
+        {
+            "method": "wms.label.query-info.page",
+            "summary": "查询标签（分页）",
+            "description": "获取发货标签信息(分页)",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.label.query-info.page.json"
+        },
+        {
+            "method": "wms.order.3PLcancel",
+            "summary": "3PL取消发货单",
+            "description": "3PL取消发货单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.3PLcancel.json"
+        },
+        {
+            "method": "wms.order.3PLcreate",
+            "summary": "3PL创建发货单",
+            "description": "3PL创建发货单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.3PLcreate.json"
+        },
+        {
+            "method": "wms.order.add-flags",
+            "summary": "批量添加发货单标记",
+            "description": "批量添加发货单标记",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.add-flags.json"
+        },
+        {
+            "method": "wms.order.basecancel",
+            "summary": "取消发货单",
+            "description": "取消发货单。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.basecancel.json"
+        },
+        {
+            "method": "wms.order.basicbatchconfirmsync",
+            "summary": "批量发货确认(逆向)-同步",
+            "description": "发货确认",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.basicbatchconfirmsync.json"
+        },
+        {
+            "method": "wms.order.batchconfirm",
+            "summary": "批量发货确认(逆向)",
+            "description": "发货确认",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.batchconfirm.json"
+        },
+        {
+            "method": "wms.order.batchconfirmsync",
+            "summary": "批量发货确认(逆向)-同步",
+            "description": "发货确认",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.batchconfirmsync.json"
+        },
+        {
+            "method": "wms.order.cancel",
+            "summary": "发货单取消",
+            "description": "取消发货单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.cancel.json"
+        },
+        {
+            "method": "wms.order.create",
+            "summary": "创建发货单",
+            "description": "创建发货单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.create.json"
+        },
+        {
+            "method": "wms.order.packlist",
+            "summary": "根据发货单号查询包裹",
+            "description": "根据发货单号查询包裹",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.packlist.json"
+        },
+        {
+            "method": "wms.order.pending",
+            "summary": "发货单挂起或恢复",
+            "description": "开放平台入库申请单发货单关闭对外接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.pending.json"
+        },
+        {
+            "method": "wms.order.process",
+            "summary": "发货单流水通知",
+            "description": "发货单流水通知",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.process.json"
+        },
+        {
+            "method": "wms.order.query-info",
+            "summary": "查询发货单",
+            "description": "此接口不包含淘系和拼多多的数据，其它平台的敏感信息会根据平台规则同步调整",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.query-info.json"
+        },
+        {
+            "method": "wms.order.query-info.page",
+            "summary": "查询发货单（分页）",
+            "description": "*此接口不包含淘系和拼多多的数据，其它平台的敏感信息会根据平台规则同步调整。",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.query-info.page.json"
+        },
+        {
+            "method": "wms.order.query-info.page.v2",
+            "summary": "查询未完成发货单（分页）",
+            "description": "获取未完成发货单信息(分页)\n*此接口不包含拼多多的数据，其它平台的敏感信息会根据平台规则同步调整",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.query-info.page.v2.json"
+        },
+        {
+            "method": "wms.order.query-logisticbill",
+            "summary": "查询物流结算单",
+            "description": "查询物流结算单",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.query-logisticbill.json"
+        },
+        {
+            "method": "wms.order.query-operation",
+            "summary": "查询发货单节点操作信息",
+            "description": "获取发货单操作节点信息",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.query-operation.json"
+        },
+        {
+            "method": "wms.order.query.page",
+            "summary": "查询发货单（分页带货位）",
+            "description": "获取发货单信息带货位(分页)\n*此接口不包含拼多多的数据，其它平台的敏感信息会根据平台规则同步调整",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.query.page.json"
+        },
+        {
+            "method": "wms.order.snreport",
+            "summary": "发货单SN通知接口",
+            "description": "发货单SN通知接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.snreport.json"
+        },
+        {
+            "method": "wms.order.upload-stockout-picture",
+            "summary": "上传称重图片",
+            "description": "用于上传称重图片。*此接口为免费接口，不消耗调用量额度",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.upload-stockout-picture.json"
+        },
+        {
+            "method": "wms.order.wdgjsortinglist",
+            "summary": "二次分拣",
+            "description": "获取二次分拣所需订单信息接口",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.order.wdgjsortinglist.json"
+        },
+        {
+            "method": "wms.pd.detail",
+            "summary": "盘点单明细查询",
+            "description": "盘点单明细查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.pd.detail.json"
+        },
+        {
+            "method": "wms.pd.listV1",
+            "summary": "盘点单查询(主表)",
+            "description": "盘点单查询(主表)",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.pd.listV1.json"
+        },
+        {
+            "method": "wms.position.goods-stock-batch",
+            "summary": "查询货位库存",
+            "description": "货位占用关系获取",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.position.goods-stock-batch.json"
+        },
+        {
+            "method": "wms.stocktake.basecreate",
+            "summary": "盘点单创建",
+            "description": "盘点单创建",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.stocktake.basecreate.json"
+        },
+        {
+            "method": "wms.stocktake.bill-create",
+            "summary": "盘点单创建",
+            "description": "盘点单创建",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.stocktake.bill-create.json"
+        },
+        {
+            "method": "wms.stocktake.billcreate",
+            "summary": "盘点单创建",
+            "description": "盘点单创建",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.stocktake.billcreate.json"
+        },
+        {
+            "method": "wms.stocktake.get",
+            "summary": "盘点单查询",
+            "description": "开放平台盘点单查询",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.stocktake.get.json"
+        },
+        {
+            "method": "wms.stocktake.notice",
+            "summary": "盘点结果回传",
+            "description": "盘点结果回传",
+            "detailUrl": "https://open.jackyun.com/developer/jkyuncli/methods/wms.stocktake.notice.json"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "a2a_skill_directory_metadata_v1",
+  "skill_id": "kingdee_erp_readonly_connector_skill",
+  "title": "金蝶 ERP 只读 Connector Skill",
+  "status": "active",
+  "source_type": "skill_directory",
+  "read_only": true,
+  "risk_level": "low",
+  "allowed_tools": [
+    "list_erp_live_query_capabilities",
+    "test_erp_live_connection",
+    "query_erp_live_snapshot",
+    "verify_erp_supplier_terms_mapping",
+    "query_inventory_cost_reference"
+  ],
+  "forbidden_actions": [
+    "Save",
+    "Submit",
+    "Push",
+    "Delete",
+    "Import",
+    "write_external"
+  ],
+  "output_schema": "readonly_erp_connector_context_v1"
+}

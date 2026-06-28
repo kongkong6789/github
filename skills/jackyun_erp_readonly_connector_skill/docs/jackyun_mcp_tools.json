@@ -1,0 +1,134 @@
+﻿{
+    "code":  200,
+    "msg":  "查询成功",
+    "result":  {
+                   "data":  [
+                                {
+                                    "description":  "根据调拨单号、调拨单创建时间、调入仓库及调出仓库查询调拨单的相关信息",
+                                    "enabled":  1,
+                                    "gmtCreate":  1776850869000,
+                                    "gmtModified":  1777019942000,
+                                    "methodName":  "erp.allocate.get",
+                                    "toolId":  62,
+                                    "toolName":  "getStockAllocateListInfo",
+                                    "version":  "v1.0"
+                                },
+                                {
+                                    "description":  "根据发货单完成时间查询发货单的相关信息",
+                                    "enabled":  1,
+                                    "gmtCreate":  1776850136000,
+                                    "gmtModified":  1777019176000,
+                                    "methodName":  "wms.order.query-info.page",
+                                    "toolId":  61,
+                                    "toolName":  "getOrderListInfo",
+                                    "version":  "v1.0"
+                                },
+                                {
+                                    "description":  "支持根据退换补发单号、网店订单号、网店售后单号、销售订单号及退换补发单创建时间查询对应退换补发单的相关信息",
+                                    "enabled":  1,
+                                    "gmtCreate":  1776847386000,
+                                    "gmtModified":  1777019364000,
+                                    "methodName":  "ass-business.returnchange.fullinfoget",
+                                    "toolId":  60,
+                                    "toolName":  "getReturnChangeListInfo",
+                                    "version":  "v1.0"
+                                },
+                                {
+                                    "description":  "支持通过结算单号、结算日期条件，查询采购结算单相关信息。",
+                                    "enabled":  1,
+                                    "gmtCreate":  1776845627000,
+                                    "gmtModified":  1777019969000,
+                                    "methodName":  "erp.purchordersett.get",
+                                    "toolId":  59,
+                                    "toolName":  "getPurchOrderSettleListInfo",
+                                    "version":  "v1.0"
+                                },
+                                {
+                                    "description":  "支持查询指定仓库库存，指定货品在各个仓库的库存等",
+                                    "enabled":  1,
+                                    "gmtCreate":  1776842951000,
+                                    "gmtModified":  1777019979000,
+                                    "methodName":  "erp.stockquantity.get",
+                                    "toolId":  57,
+                                    "toolName":  "getGoodsStockQuantityListInfo",
+                                    "version":  "v1.0"
+                                },
+                                {
+                                    "description":  "支持根据采购退货单号和采购退货单的创建时间，查询采购退货单对应的仓库、供应商以及各货品的明细信息；同时支持按指定货品查询关联的采购退货单信息。",
+                                    "enabled":  1,
+                                    "gmtCreate":  1776840663000,
+                                    "gmtModified":  1777019989000,
+                                    "methodName":  "erp.purchreturn.get",
+                                    "toolId":  56,
+                                    "toolName":  "getPurchOrderReturnListInfo",
+                                    "version":  "v1.0"
+                                },
+                                {
+                                    "description":  "支持根据采购订单号和采购订单创建时间，查询采购订单对应的仓库、供应商、到货状态，以及各货品的申请入库数量、实际入库数量、入库单价、入库金额等明细信息；同时支持按指定货品查询关联的采购订单信息。",
+                                    "enabled":  1,
+                                    "gmtCreate":  1776836294000,
+                                    "gmtModified":  1777019999000,
+                                    "methodName":  "erp.purch.get",
+                                    "toolId":  55,
+                                    "toolName":  "getPurchOrderListInfo",
+                                    "version":  "v1.0"
+                                },
+                                {
+                                    "description":  "根据仓库编号查询仓库名称，地址，所属销售渠道",
+                                    "enabled":  1,
+                                    "gmtCreate":  1776404207000,
+                                    "gmtModified":  1777020007000,
+                                    "methodName":  "erp.warehouse.get",
+                                    "toolId":  54,
+                                    "toolName":  "getWarehouseListInfo",
+                                    "version":  "v1.0"
+                                },
+                                {
+                                    "description":  "根据订单编号或发货时间获取销售单的店铺名称，销售单货品金额，销售单的货品名称，货品编号",
+                                    "enabled":  1,
+                                    "gmtCreate":  1776320328000,
+                                    "gmtModified":  1777019158000,
+                                    "methodName":  "oms.trade.fullinfoget",
+                                    "toolId":  53,
+                                    "toolName":  "getTradesListInfo",
+                                    "version":  "v1.0"
+                                },
+                                {
+                                    "description":  "根据货品编码获取货品名称，条码，单位，分类，品牌，默认存放仓库",
+                                    "enabled":  1,
+                                    "gmtCreate":  1776320078000,
+                                    "gmtModified":  1777020020000,
+                                    "methodName":  "erp.storage.goodslist",
+                                    "toolId":  52,
+                                    "toolName":  "getGoodsListInfoByGoodsNo",
+                                    "version":  "v1.0"
+                                },
+                                {
+                                    "description":  "根据出库单号，出库单创建时间获取出库信息，支持通过出库单号，出库单创建时间查询出库时间，出库单的公司名称，出库单上的货品名称，货品数量，条码，单位",
+                                    "enabled":  1,
+                                    "gmtCreate":  1776319933000,
+                                    "gmtModified":  1777020032000,
+                                    "methodName":  "erp.storage.goodsdocout.v2",
+                                    "toolId":  51,
+                                    "toolName":  "getGoodsDocOutListInfo",
+                                    "version":  "v1.0"
+                                },
+                                {
+                                    "description":  "根据入库单号，入库单的创建时间获取入库信息，支持通过入库单号，入库单的场景时间查询入库时间，入库单的公司名称，入库单上的货品名称和货品数量",
+                                    "enabled":  1,
+                                    "gmtCreate":  1776318779000,
+                                    "gmtModified":  1777020041000,
+                                    "methodName":  "erp.storage.goodsdocin.v2",
+                                    "toolId":  50,
+                                    "toolName":  "getGoodsDocInListInfo",
+                                    "version":  "v1.0"
+                                }
+                            ],
+                   "pageInfo":  {
+                                    "offset":  0,
+                                    "pageIndex":  0,
+                                    "pageSize":  100,
+                                    "total":  12
+                                }
+               }
+}

@@ -1,0 +1,410 @@
+{
+    "method": "birc.report.needauth.goodsMultiDimensionalAnalysis",
+    "summary": "货品销售多维分析报表",
+    "description": "货品销售多维分析报表查询接口",
+    "request": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "finReceiptStatus": {
+                    "type": "string",
+                    "example": "0,1",
+                    "description": "收款状态，查询多个使用英文逗号分隔，不传默认全部。0：未收款，1：已收款，2：部分收款"
+                },
+                "startFinReceiptTime": {
+                    "type": "string",
+                    "example": "2024-07-01",
+                    "description": "收款开始时间"
+                },
+                "timeType": {
+                    "type": "integer",
+                    "example": 3,
+                    "description": "统计时间。2：按月统计，3：按日统计"
+                },
+                "pageSize": {
+                    "type": "integer",
+                    "example": 50,
+                    "description": "每页条数"
+                },
+                "skuIds": {
+                    "type": "string",
+                    "example": "1980498431363023616,1972522435990847744,1965473105817764353",
+                    "description": "规格id，查询多个使用英文逗号分隔，不传默认全部"
+                },
+                "endFinReceiptTime": {
+                    "type": "string",
+                    "example": "2024-07-01",
+                    "description": "收款结束时间"
+                },
+                "tradeFrom": {
+                    "type": "string",
+                    "example": "0,6",
+                    "description": "订单来源。查询多个使用英文逗号分隔，不传默认全部。0：其他，6：售后"
+                },
+                "logisticIds": {
+                    "type": "string",
+                    "example": "982368299883299584,981841120540230400,981787574520251136",
+                    "description": "物流公司id。查询多个使用英文逗号分隔，不传默认全部。"
+                },
+                "filterTimeType": {
+                    "type": "integer",
+                    "example": 2,
+                    "description": "统计时间类型。1：下单时间，2：发货时间，3：付款时间"
+                },
+                "summaryType": {
+                    "type": "string",
+                    "example": "channel,goods",
+                    "description": "汇总维度。常用值：time,channel,brand,cate,country,province,city,goods,sku,channelCate,warehouse,logistic,seller,finReceiptTime,company,depart。多个维度使用英文逗号分隔"
+                },
+                "pageIndex": {
+                    "type": "integer",
+                    "example": 0,
+                    "description": "分页页码，从0开始"
+                },
+                "shopIds": {
+                    "type": "string",
+                    "example": "1498402603019928448,1287124464992715136",
+                    "description": "销售渠道id，查询多个使用英文逗号分隔，不传默认全部"
+                },
+                "tradeStatus": {
+                    "type": "string",
+                    "example": "0,6000",
+                    "description": "订单状态。查询多个使用英文逗号分隔，不传默认全部。0：未发货，4040：部分发货，6000：已发货"
+                },
+                "departId": {
+                    "type": "string",
+                    "example": "1915165648533193344,1931369377171112704,1981938700547326592",
+                    "description": "部门id，查询多个使用英文逗号分隔，不传默认全部"
+                },
+                "startTime": {
+                    "type": "string",
+                    "example": "2024-07",
+                    "description": "统计开始时间。timeType=2 时格式 yyyy-MM；timeType=3 时格式 yyyy-MM-dd"
+                },
+                "sellerIds": {
+                    "type": "string",
+                    "example": "1945702957593691776,1153451354635403776",
+                    "description": "业务员id，查询多个使用英文逗号分隔，不传默认全部"
+                },
+                "warehouseIds": {
+                    "type": "string",
+                    "example": "1690670461930669184,1690665141229552768",
+                    "description": "仓库id，查询多个使用英文逗号分隔，不传默认全部"
+                },
+                "endTime": {
+                    "type": "string",
+                    "example": "2024-07",
+                    "description": "统计结束时间。timeType=2 时格式 yyyy-MM；timeType=3 时格式 yyyy-MM-dd"
+                },
+                "tradeType": {
+                    "type": "string",
+                    "example": "7,8,11,12",
+                    "description": "订单类型。查询多个使用英文逗号分隔，不传默认全部。1:零售业务,2:代发货(来自分销商),3:预售订单,4:周期性订购,5:代销售(供货商发货),6:现款现货,7:售后发货,8:售后退货,9:批发业务(B2B),10:试销业务,11:错漏调整,12:仅退款,13:销售返利,91:自定义1,92:自定义2,93:自定义3...100:自定义10"
+                },
+                "assemblyDimension": {
+                    "type": "integer",
+                    "example": 0,
+                    "description": "组合装统计维度，0：按组合装，1：按单品"
+                }
+            }
+        },
+        "example": {
+            "finReceiptStatus": "0,1",
+            "startFinReceiptTime": "2024-07-01",
+            "timeType": 3,
+            "pageSize": 50,
+            "skuIds": "1980498431363023616,1972522435990847744,1965473105817764353",
+            "endFinReceiptTime": "2024-07-01",
+            "tradeFrom": "0,6",
+            "logisticIds": "982368299883299584,981841120540230400,981787574520251136",
+            "filterTimeType": 2,
+            "summaryType": "channel,goods",
+            "pageIndex": 0,
+            "shopIds": "1498402603019928448,1287124464992715136",
+            "tradeStatus": "0,6000",
+            "departId": "1915165648533193344,1931369377171112704,1981938700547326592",
+            "startTime": "2024-07",
+            "sellerIds": "1945702957593691776,1153451354635403776",
+            "warehouseIds": "1690670461930669184,1690665141229552768",
+            "endTime": "2024-07",
+            "tradeType": "7,8,11,12",
+            "assemblyDimension": 0
+        }
+    },
+    "response": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "description": "返回码，200 成功"
+                },
+                "msg": {
+                    "type": "string"
+                },
+                "subCode": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "object",
+                    "properties": {
+                        "data": {
+                            "type": "object",
+                            "properties": {
+                                "shopCateName": {
+                                    "type": "string",
+                                    "example": "示例渠道分类",
+                                    "description": "渠道分类。仅当汇总方式勾选包含“渠道分类”时有值"
+                                },
+                                "costAmtCompanyCurrency": {
+                                    "type": "number",
+                                    "example": 22.5,
+                                    "description": "成本(本币)"
+                                },
+                                "companyName": {
+                                    "type": "string",
+                                    "example": "示例公司",
+                                    "description": "公司。仅当汇总方式勾选包含“公司”时有值"
+                                },
+                                "sellerName": {
+                                    "type": "string",
+                                    "example": "示例业务员",
+                                    "description": "业务员。仅当汇总方式勾选包含“业务员”时有值"
+                                },
+                                "shopName": {
+                                    "type": "string",
+                                    "example": "示例销售渠道",
+                                    "description": "销售渠道。仅当汇总方式勾选包含“销售渠道”时有值"
+                                },
+                                "grossProfitCompanyCurrency": {
+                                    "type": "number",
+                                    "example": 22.5,
+                                    "description": "毛利(本币)"
+                                },
+                                "finReceiptTime": {
+                                    "type": "string",
+                                    "example": "2024-07-01",
+                                    "description": "收款时间。仅当汇总方式勾选包含“收款时间”时有值"
+                                },
+                                "cateName": {
+                                    "type": "string",
+                                    "example": "示例分类",
+                                    "description": "分类。仅当汇总方式勾选包含“分类”时有值"
+                                },
+                                "warehouseName": {
+                                    "type": "string",
+                                    "example": "示例发货仓库",
+                                    "description": "发货仓库。仅当汇总方式勾选包含“发货仓库”时有值"
+                                },
+                                "goodsQty": {
+                                    "type": "number",
+                                    "example": 22.5,
+                                    "description": "销售量"
+                                },
+                                "skuName": {
+                                    "type": "string",
+                                    "example": "示例规格",
+                                    "description": "规格。仅当汇总方式勾选包含“规格”时有值"
+                                },
+                                "expenseShareAmtCompanyCurrency": {
+                                    "type": "number",
+                                    "example": 22.5,
+                                    "description": "费用分摊(本币)"
+                                },
+                                "cityName": {
+                                    "type": "string",
+                                    "example": "杭州市",
+                                    "description": "城市。仅当汇总方式勾选包含“城市”时有值"
+                                },
+                                "taxAmtCompanyCurrency": {
+                                    "type": "number",
+                                    "example": 22.5,
+                                    "description": "税额(本币)"
+                                },
+                                "noTaxGoodsAmtCompanyCurrency": {
+                                    "type": "number",
+                                    "example": 22.5,
+                                    "description": "未税金额(本币)，组合装统计维度按“组合装”时有值"
+                                },
+                                "customerTotal": {
+                                    "type": "number",
+                                    "example": 22.5,
+                                    "description": "分销终端金额"
+                                },
+                                "goodsName": {
+                                    "type": "string",
+                                    "example": "示例货品名称",
+                                    "description": "货品名称。仅当汇总方式勾选包含“货品”或“规格”时有值"
+                                },
+                                "barcode": {
+                                    "type": "string",
+                                    "example": "示例条码",
+                                    "description": "条码。仅当汇总方式勾选包含“规格”时有值"
+                                },
+                                "departName": {
+                                    "type": "string",
+                                    "example": "示例部门",
+                                    "description": "部门。仅当汇总方式勾选包含“部门”时有值"
+                                },
+                                "deductRefundgoodsAmtCompanyCurrency": {
+                                    "type": "number",
+                                    "example": 22.5,
+                                    "description": "销售额_扣退(本币)"
+                                },
+                                "goodsNo": {
+                                    "type": "string",
+                                    "example": "示例货品编号",
+                                    "description": "货品编号。仅当汇总方式勾选包含“货品”或“规格”时有值"
+                                },
+                                "sellAmtCompanyCurrency": {
+                                    "type": "number",
+                                    "example": 22.5,
+                                    "description": "货品金额(本币)"
+                                },
+                                "noTaxGrossProfitCompanyCurrency": {
+                                    "type": "number",
+                                    "example": 22.5,
+                                    "description": "未税毛利(本币)，组合装统计维度按“组合装”时有值"
+                                },
+                                "brandName": {
+                                    "type": "string",
+                                    "example": "示例品牌",
+                                    "description": "品牌。仅当汇总方式勾选包含“品牌”时有值"
+                                },
+                                "unitName": {
+                                    "type": "string",
+                                    "example": "示例单位",
+                                    "description": "单位。仅当汇总方式勾选包含“货品”或“规格”时有值"
+                                },
+                                "cancelGoodsAmtCompanyCurrency": {
+                                    "type": "number",
+                                    "example": 22.5,
+                                    "description": "取消金额(本币)"
+                                },
+                                "returnGoodsQty": {
+                                    "type": "number",
+                                    "example": 22.5,
+                                    "description": "退货量"
+                                },
+                                "noTaxGrossProfitRateCompanyCurrencyShow": {
+                                    "type": "string",
+                                    "example": "22.5%",
+                                    "description": "未税毛利率%(本币)，组合装统计维度按“组合装”时有值"
+                                },
+                                "estimateWeight": {
+                                    "type": "number",
+                                    "example": 22.5,
+                                    "description": "预估销售重量(g)"
+                                },
+                                "logisticName": {
+                                    "type": "string",
+                                    "example": "示例物流公司",
+                                    "description": "物流公司。仅当汇总方式勾选包含“物流公司”时有值"
+                                },
+                                "goodsAmtCompanyCurrency": {
+                                    "type": "number",
+                                    "example": 22.5,
+                                    "description": "销售额(本币)"
+                                },
+                                "skuNo": {
+                                    "type": "string",
+                                    "example": "示例规格编码",
+                                    "description": "规格编码。仅当汇总方式勾选包含“规格”时有值"
+                                },
+                                "refundGoodsAmtCompanyCurrency": {
+                                    "type": "number",
+                                    "example": 22.5,
+                                    "description": "退款金额(本币)"
+                                },
+                                "returnGoodsRate": {
+                                    "type": "string",
+                                    "example": "22.5%",
+                                    "description": "退货率"
+                                },
+                                "countryName": {
+                                    "type": "string",
+                                    "example": "中国",
+                                    "description": "国家及地区。仅当汇总方式勾选包含“国家及地区”时有值"
+                                },
+                                "provinceName": {
+                                    "type": "string",
+                                    "example": "浙江省",
+                                    "description": "省份。仅当汇总方式勾选包含“省份”时有值"
+                                },
+                                "time": {
+                                    "type": "string",
+                                    "example": "2024-07-01",
+                                    "description": "时间。仅当汇总方式勾选包含“统计时间”时有值"
+                                },
+                                "grossProfitRateCompanyCurrencyShow": {
+                                    "type": "string",
+                                    "example": "22.5%",
+                                    "description": "毛利率%(本币)"
+                                },
+                                "deliveryGoodsQty": {
+                                    "type": "number",
+                                    "example": 22.5,
+                                    "description": "发货量"
+                                }
+                            }
+                        },
+                        "contextId": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "example": {
+            "code": 200,
+            "msg": "",
+            "result": {
+                "data": {
+                    "shopCateName": "示例渠道分类",
+                    "costAmtCompanyCurrency": 22.5,
+                    "companyName": "示例公司",
+                    "sellerName": "示例业务员",
+                    "shopName": "示例销售渠道",
+                    "grossProfitCompanyCurrency": 22.5,
+                    "finReceiptTime": "2024-07-01",
+                    "cateName": "示例分类",
+                    "warehouseName": "示例发货仓库",
+                    "goodsQty": 22.5,
+                    "skuName": "示例规格",
+                    "expenseShareAmtCompanyCurrency": 22.5,
+                    "cityName": "杭州市",
+                    "taxAmtCompanyCurrency": 22.5,
+                    "noTaxGoodsAmtCompanyCurrency": 22.5,
+                    "customerTotal": 22.5,
+                    "goodsName": "示例货品名称",
+                    "barcode": "示例条码",
+                    "departName": "示例部门",
+                    "deductRefundgoodsAmtCompanyCurrency": 22.5,
+                    "goodsNo": "示例货品编号",
+                    "sellAmtCompanyCurrency": 22.5,
+                    "noTaxGrossProfitCompanyCurrency": 22.5,
+                    "brandName": "示例品牌",
+                    "unitName": "示例单位",
+                    "cancelGoodsAmtCompanyCurrency": 22.5,
+                    "returnGoodsQty": 22.5,
+                    "noTaxGrossProfitRateCompanyCurrencyShow": "22.5%",
+                    "estimateWeight": 22.5,
+                    "logisticName": "示例物流公司",
+                    "goodsAmtCompanyCurrency": 22.5,
+                    "skuNo": "示例规格编码",
+                    "refundGoodsAmtCompanyCurrency": 22.5,
+                    "returnGoodsRate": "22.5%",
+                    "countryName": "中国",
+                    "provinceName": "浙江省",
+                    "time": "2024-07-01",
+                    "grossProfitRateCompanyCurrencyShow": "22.5%",
+                    "deliveryGoodsQty": 22.5
+                },
+                "contextId": "1995799311731821056"
+            },
+            "subCode": ""
+        }
+    }
+}

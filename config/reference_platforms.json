@@ -1,0 +1,134 @@
+{
+  "schema": "a2a_reference_platform_registry_v1",
+  "updated_at": "2026-06-28",
+  "hub_model": "53aihub-style sidecar integration",
+  "platforms": {
+    "duckdb": {
+      "platform_id": "duckdb",
+      "display_name": "DuckDB",
+      "source_repo": "duckdb/duckdb",
+      "source_url": "https://github.com/duckdb/duckdb",
+      "license": "MIT",
+      "integration_mode": "embedded",
+      "role": "fact_layer",
+      "local_module": "fact_layer_tools",
+      "primary_tools": [
+        "query_fact_layer",
+        "query_fact_layer_from_question",
+        "list_registered_datasets",
+        "list_fact_tables"
+      ],
+      "env_prefix": "A2A_DUCKDB",
+      "doctor_check": "duckdb",
+      "notes": "Numeric facts, marts, aggregations, and inventory/sales metrics stay on DuckDB."
+    },
+    "lightrag": {
+      "platform_id": "lightrag",
+      "display_name": "LightRAG",
+      "source_repo": "HKUDS/LightRAG",
+      "source_url": "https://github.com/HKUDS/LightRAG",
+      "license": "MIT",
+      "integration_mode": "embedded_sidecar",
+      "role": "semantic_retrieval",
+      "local_module": "lightrag_tools",
+      "primary_tools": [
+        "query_lightrag",
+        "query_official_lightrag",
+        "sync_obsidian_to_official_lightrag",
+        "resolve_lightrag_reference_paths"
+      ],
+      "env_prefix": "LIGHTRAG",
+      "default_url_env": "LIGHTRAG_API_URL",
+      "default_port": 9621,
+      "doctor_check": "lightrag_port",
+      "notes": "Graph + vector retrieval over wiki/cleaned docs. Official server is optional but recommended."
+    },
+    "karpathy_llm_wiki": {
+      "platform_id": "karpathy_llm_wiki",
+      "display_name": "Karpathy LLM Wiki",
+      "source_repo": "karpathy/llm-wiki",
+      "source_url": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f",
+      "license": "pattern",
+      "integration_mode": "embedded",
+      "role": "durable_knowledge",
+      "local_module": "wiki_lifecycle_tools",
+      "primary_tools": [
+        "ensure_wiki_knowledge_scaffold",
+        "refresh_wiki_index",
+        "lint_wiki_knowledge_base",
+        "register_wiki_claim_evidence",
+        "search_wiki",
+        "read_wiki_page"
+      ],
+      "env_prefix": "A2A_WIKI",
+      "doctor_check": "wiki_scaffold",
+      "notes": "raw is immutable evidence; wiki is the compounding markdown knowledge codebase."
+    },
+    "mirofish": {
+      "platform_id": "mirofish",
+      "display_name": "MiroFish",
+      "source_repo": "666ghj/MiroFish",
+      "source_url": "https://github.com/666ghj/MiroFish",
+      "license": "AGPL-3.0",
+      "integration_mode": "sidecar_optional",
+      "role": "scenario_simulation",
+      "local_module": "platform_integration_tools",
+      "local_fallback_tools": [
+        "simulate_decision_scenarios",
+        "assess_decision_risks"
+      ],
+      "primary_tools": [
+        "route_knowledge_stack",
+        "query_external_platform_readonly"
+      ],
+      "env_prefix": "MIROFISH",
+      "default_url_env": "MIROFISH_API_URL",
+      "default_port": 5001,
+      "health_path": "/health",
+      "doctor_check": "optional_sidecar",
+      "notes": "Use local evidence-first scenario tools by default; optional MiroFish sidecar for swarm simulation reports."
+    },
+    "ruoyi_ai": {
+      "platform_id": "ruoyi_ai",
+      "display_name": "RuoYi AI",
+      "source_repo": "ageerle/ruoyi-ai",
+      "source_url": "https://github.com/ageerle/ruoyi-ai",
+      "license": "MIT",
+      "integration_mode": "sidecar_optional",
+      "role": "enterprise_agent_hub",
+      "local_module": "platform_integration_tools",
+      "primary_tools": [
+        "list_reference_platforms",
+        "check_reference_platform_health",
+        "query_external_platform_readonly"
+      ],
+      "env_prefix": "RUOYI_AI",
+      "default_url_env": "RUOYI_AI_API_URL",
+      "default_port": 26039,
+      "health_path": "/actuator/health",
+      "doctor_check": "optional_sidecar",
+      "notes": "Optional Java agent/workflow hub. This project keeps LangGraph as the primary orchestrator."
+    },
+    "maxkb": {
+      "platform_id": "maxkb",
+      "display_name": "MaxKB",
+      "source_repo": "1Panel-dev/MaxKB",
+      "source_url": "https://github.com/1Panel-dev/MaxKB",
+      "license": "GPL-3.0",
+      "integration_mode": "sidecar_optional",
+      "role": "enterprise_rag_hub",
+      "local_module": "platform_integration_tools",
+      "primary_tools": [
+        "list_reference_platforms",
+        "check_reference_platform_health",
+        "query_external_platform_readonly"
+      ],
+      "env_prefix": "MAXKB",
+      "default_url_env": "MAXKB_API_URL",
+      "default_port": 8080,
+      "health_path": "/api/health",
+      "doctor_check": "optional_sidecar",
+      "notes": "Optional enterprise RAG/agent portal. Local LightRAG + wiki remain the default knowledge stack."
+    }
+  }
+}

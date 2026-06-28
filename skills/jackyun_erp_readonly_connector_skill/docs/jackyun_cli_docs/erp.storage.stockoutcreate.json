@@ -1,0 +1,395 @@
+{
+    "method": "erp.storage.stockoutcreate",
+    "summary": "创建出库申请单",
+    "description": "创建出库申请单：\n通过此接口可以创建出库申请单到吉客云的系统，然后由吉客云系统操作接下来的出库作业。\n在调用此接口之前请确保基础数据如：仓库、货品、渠道等是否匹配完成，其中仓库是根据吉客云系统中的仓库编号来定位，也就是参数中的【outWarehouseCode】参数。\n货品档案的定位是可以根据吉客云系统中的skuId(吉客云系统的内部id）， outSkuCode(匹配关系编码，见接口erp.goods.skuimportbatch）， skuBarcode(条码）。\n其中优先级：skuId>outSkuCode>skuBarCode 如果想用其中的某个值做匹配，其他2个参数则不要赋值即可。\n创建的出库申请单默认为已审核状态",
+    "request": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "bizdata": {
+                    "type": "object",
+                    "properties": {
+                        "logisticNo": {
+                            "type": "string",
+                            "example": "YT0200002"
+                        },
+                        "logisticType": {
+                            "type": "integer",
+                            "example": 1
+                        },
+                        "vendCode": {
+                            "type": "string",
+                            "example": "vendCode"
+                        },
+                        "memo": {
+                            "type": "string",
+                            "example": "111"
+                        },
+                        "outTypeCode": {
+                            "type": "string",
+                            "example": "WB123"
+                        },
+                        "source": {
+                            "type": "string",
+                            "example": "OPEN"
+                        },
+                        "stockOutExpressInfo": {
+                            "type": "object",
+                            "properties": {
+                                "receiveTel": {
+                                    "type": "string",
+                                    "example": "057145623256"
+                                },
+                                "receiveCompanyName": {
+                                    "type": "string",
+                                    "example": "中国"
+                                },
+                                "receiveStreetName": {
+                                    "type": "string",
+                                    "example": "xx街道"
+                                },
+                                "sendCityName": {
+                                    "type": "string",
+                                    "example": "杭州市"
+                                },
+                                "sendEmail": {
+                                    "type": "string",
+                                    "example": ""
+                                },
+                                "receiveCountryName": {
+                                    "type": "string",
+                                    "example": "中国"
+                                },
+                                "receiveTownName": {
+                                    "type": "string",
+                                    "example": "xxx"
+                                },
+                                "sendStreetName": {
+                                    "type": "string",
+                                    "example": "三墩镇"
+                                },
+                                "sendCompanyName": {
+                                    "type": "string",
+                                    "example": "XXX公司"
+                                },
+                                "receiveProvinceName": {
+                                    "type": "string",
+                                    "example": "湖北省"
+                                },
+                                "receive": {
+                                    "type": "string",
+                                    "example": "李四"
+                                },
+                                "receivePhone": {
+                                    "type": "string",
+                                    "example": "139456988541"
+                                },
+                                "receiveCityName": {
+                                    "type": "string",
+                                    "example": "武汉市(入库委外仓必填)"
+                                },
+                                "receiveAddress": {
+                                    "type": "string",
+                                    "example": "xx路10号"
+                                },
+                                "receiveEmail": {
+                                    "type": "string",
+                                    "example": ""
+                                },
+                                "sendTownName": {
+                                    "type": "string",
+                                    "example": "西湖区"
+                                },
+                                "sendAddress": {
+                                    "type": "string",
+                                    "example": "天目山路100号"
+                                },
+                                "sendTel": {
+                                    "type": "string",
+                                    "example": "057185654123"
+                                },
+                                "sendPhone": {
+                                    "type": "string",
+                                    "example": "13712345678(入库委外仓必填)"
+                                },
+                                "send": {
+                                    "type": "string",
+                                    "example": "张三(入库委外仓必填)"
+                                },
+                                "sendProvinceName": {
+                                    "type": "string",
+                                    "example": "浙江省"
+                                },
+                                "sendCountryName": {
+                                    "type": "string",
+                                    "example": "中国"
+                                }
+                            }
+                        },
+                        "operator": {
+                            "type": "string",
+                            "example": "vip"
+                        },
+                        "systemMark": {
+                            "type": "string",
+                            "example": "测试"
+                        },
+                        "stockOutDetailViews": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "skuPrice": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "skuBarCode": {
+                                        "type": "string",
+                                        "example": ""
+                                    },
+                                    "relDetailId": {
+                                        "type": "string",
+                                        "example": "1"
+                                    },
+                                    "outSkuCode": {
+                                        "type": "string",
+                                        "example": ""
+                                    },
+                                    "batchList": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "productionDate": {
+                                                    "type": "string",
+                                                    "example": "2018-09-07 16:01:39"
+                                                },
+                                                "shelfLiftUnit": {
+                                                    "type": "string",
+                                                    "example": "月"
+                                                },
+                                                "shelfLife": {
+                                                    "type": "string",
+                                                    "example": "12"
+                                                },
+                                                "expirationDate": {
+                                                    "type": "string",
+                                                    "example": "2018-09-07 16:01:39"
+                                                },
+                                                "batchNo": {
+                                                    "type": "string",
+                                                    "example": "B20030"
+                                                },
+                                                "quantity": {
+                                                    "type": "string",
+                                                    "example": "10"
+                                                },
+                                                "batchMemo": {
+                                                    "type": "string",
+                                                    "example": "备注信息"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "skuCount": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "unitName": {
+                                        "type": "string",
+                                        "example": ""
+                                    }
+                                }
+                            }
+                        },
+                        "relDataId": {
+                            "type": "string",
+                            "example": "1"
+                        },
+                        "applyDepartCode": {
+                            "type": "string",
+                            "example": "JD001"
+                        },
+                        "flagData": {
+                            "type": "string",
+                            "example": "出库标记"
+                        },
+                        "logisticCode": {
+                            "type": "string",
+                            "example": "SFKD"
+                        },
+                        "channelCode": {
+                            "type": "string",
+                            "example": "1234"
+                        },
+                        "outReason": {
+                            "type": "string",
+                            "example": "出库原因"
+                        },
+                        "outWarehouseCode": {
+                            "type": "string",
+                            "example": "1"
+                        },
+                        "applyCompanyCode": {
+                            "type": "string",
+                            "example": "Company001"
+                        },
+                        "outType": {
+                            "type": "integer",
+                            "example": 201
+                        },
+                        "applyUserName": {
+                            "type": "string",
+                            "example": "张四"
+                        },
+                        "logisticName": {
+                            "type": "string",
+                            "example": "顺丰快递"
+                        },
+                        "applyDepartName": {
+                            "type": "string",
+                            "example": "京东到家财务部3"
+                        },
+                        "currencyRate": {
+                            "type": "number",
+                            "example": 1.0
+                        },
+                        "applyDate": {
+                            "type": "string",
+                            "example": "2018-02-19"
+                        },
+                        "outNo": {
+                            "type": "string",
+                            "example": "CK202103170022"
+                        },
+                        "currencyCode": {
+                            "type": "string",
+                            "example": "CNY"
+                        }
+                    }
+                }
+            }
+        },
+        "example": {
+            "bizdata": {
+                "logisticNo": "YT0200002",
+                "logisticType": 1,
+                "vendCode": "vendCode",
+                "memo": "111",
+                "outTypeCode": "WB123",
+                "source": "OPEN",
+                "stockOutExpressInfo": {
+                    "receiveTel": "057145623256",
+                    "receiveCompanyName": "中国",
+                    "receiveStreetName": "xx街道",
+                    "sendCityName": "杭州市",
+                    "sendEmail": "",
+                    "receiveCountryName": "中国",
+                    "receiveTownName": "xxx",
+                    "sendStreetName": "三墩镇",
+                    "sendCompanyName": "XXX公司",
+                    "receiveProvinceName": "湖北省",
+                    "receive": "李四",
+                    "receivePhone": "139456988541",
+                    "receiveCityName": "武汉市(入库委外仓必填)",
+                    "receiveAddress": "xx路10号",
+                    "receiveEmail": "",
+                    "sendTownName": "西湖区",
+                    "sendAddress": "天目山路100号",
+                    "sendTel": "057185654123",
+                    "sendPhone": "13712345678(入库委外仓必填)",
+                    "send": "张三(入库委外仓必填)",
+                    "sendProvinceName": "浙江省",
+                    "sendCountryName": "中国"
+                },
+                "operator": "vip",
+                "systemMark": "测试",
+                "stockOutDetailViews": [
+                    {
+                        "skuPrice": 1,
+                        "skuBarCode": "",
+                        "relDetailId": "1",
+                        "outSkuCode": "",
+                        "batchList": [
+                            {
+                                "productionDate": "2018-09-07 16:01:39",
+                                "shelfLiftUnit": "月",
+                                "shelfLife": "12",
+                                "expirationDate": "2018-09-07 16:01:39",
+                                "batchNo": "B20030",
+                                "quantity": "10",
+                                "batchMemo": "备注信息"
+                            }
+                        ],
+                        "skuCount": 1,
+                        "unitName": ""
+                    }
+                ],
+                "relDataId": "1",
+                "applyDepartCode": "JD001",
+                "flagData": "出库标记",
+                "logisticCode": "SFKD",
+                "channelCode": "1234",
+                "outReason": "出库原因",
+                "outWarehouseCode": "1",
+                "applyCompanyCode": "Company001",
+                "outType": 201,
+                "applyUserName": "张四",
+                "logisticName": "顺丰快递",
+                "applyDepartName": "京东到家财务部3",
+                "currencyRate": 1.0,
+                "applyDate": "2018-02-19",
+                "outNo": "CK202103170022",
+                "currencyCode": "CNY"
+            }
+        }
+    },
+    "response": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "description": "返回码，200 成功"
+                },
+                "msg": {
+                    "type": "string"
+                },
+                "subCode": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "object",
+                    "properties": {
+                        "data": {
+                            "type": "object",
+                            "properties": {
+                                "outNo": {
+                                    "type": "string",
+                                    "example": "CK20180003",
+                                    "description": "出库单号"
+                                }
+                            }
+                        },
+                        "contextId": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "example": {
+            "code": 200,
+            "msg": "",
+            "result": {
+                "data": {
+                    "outNo": "CK20180003"
+                },
+                "contextId": "2128950145192299648"
+            },
+            "subCode": ""
+        }
+    }
+}

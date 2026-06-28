@@ -1,0 +1,895 @@
+{
+    "method": "erp.storage.stockincreate",
+    "summary": "入库申请单创建",
+    "description": "入库申请单创建：\n通过此接口可以创建入库申请单到吉客云的系统，然后由吉客云系统操作接下来的入库作业。\n在调用此接口之前请确保基础数据如：仓库、货品、渠道等是否匹配完成，其中仓库是根据吉客云系统中的仓库编号来定位，也就是参数中的【inWarehouseCode】参数。\n货品档案的定位是可以根据吉客云系统中的skuId(吉客云系统的内部id）， outSkuCode(匹配关系编码，见接口erp.goods.skuimportbatch）， skuBarcode(条码）。\n其中优先级：skuId>outSkuCode>skuBarCode 如果想用其中的某个值做匹配，其他2个参数则不要赋值即可。\n创建的入库申请单默认为已审核状态",
+    "request": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "field19": {
+                    "type": "string",
+                    "example": "主表自定义字段19",
+                    "description": "主表自定义字段19"
+                },
+                "memo": {
+                    "type": "string",
+                    "example": "请按时间入库",
+                    "description": "申请单的备注信息"
+                },
+                "field17": {
+                    "type": "string",
+                    "example": "主表自定义字段17",
+                    "description": "主表自定义字段17"
+                },
+                "field18": {
+                    "type": "string",
+                    "example": "主表自定义字段18",
+                    "description": "主表自定义字段18"
+                },
+                "field22": {
+                    "type": "string",
+                    "example": "主表自定义字段22",
+                    "description": "主表自定义字段22"
+                },
+                "field23": {
+                    "type": "string",
+                    "example": "主表自定义字段23",
+                    "description": "主表自定义字段23"
+                },
+                "field20": {
+                    "type": "string",
+                    "example": "主表自定义字段20",
+                    "description": "主表自定义字段20"
+                },
+                "field21": {
+                    "type": "string",
+                    "example": "主表自定义字段21",
+                    "description": "主表自定义字段21"
+                },
+                "field26": {
+                    "type": "string",
+                    "example": "主表自定义字段26",
+                    "description": "主表自定义字段26"
+                },
+                "field27": {
+                    "type": "string",
+                    "example": "主表自定义字段27",
+                    "description": "主表自定义字段27"
+                },
+                "field24": {
+                    "type": "string",
+                    "example": "主表自定义字段24",
+                    "description": "主表自定义字段24"
+                },
+                "field25": {
+                    "type": "string",
+                    "example": "主表自定义字段25",
+                    "description": "主表自定义字段25"
+                },
+                "flagData": {
+                    "type": "string",
+                    "example": "入库标记1,入库标记2",
+                    "description": "标记（最多支持10个，标记名称英文逗号拼接）"
+                },
+                "applyCompanyCode": {
+                    "type": "string",
+                    "example": "123",
+                    "description": "公司编号"
+                },
+                "field11": {
+                    "type": "string",
+                    "example": "主表自定义字段11",
+                    "description": "主表自定义字段11"
+                },
+                "applyUserName": {
+                    "type": "string",
+                    "example": "张三",
+                    "description": "申请人姓名"
+                },
+                "field12": {
+                    "type": "string",
+                    "example": "主表自定义字段12",
+                    "description": "主表自定义字段12"
+                },
+                "field10": {
+                    "type": "string",
+                    "example": "主表自定义字段10",
+                    "description": "主表自定义字段10"
+                },
+                "field15": {
+                    "type": "string",
+                    "example": "主表自定义字段15",
+                    "description": "主表自定义字段15"
+                },
+                "field16": {
+                    "type": "string",
+                    "example": "主表自定义字段16",
+                    "description": "主表自定义字段16"
+                },
+                "field13": {
+                    "type": "string",
+                    "example": "主表自定义字段13",
+                    "description": "主表自定义字段13"
+                },
+                "field14": {
+                    "type": "string",
+                    "example": "主表自定义字段14",
+                    "description": "主表自定义字段14"
+                },
+                "inReason": {
+                    "type": "string",
+                    "example": "入库原因",
+                    "description": "入库原因"
+                },
+                "status": {
+                    "type": "integer",
+                    "example": 2,
+                    "description": "审核状态 （0 = 草稿，1=待审核，2= 已审核 不传默认已审核）"
+                },
+                "logisticType": {
+                    "type": "integer",
+                    "example": 1,
+                    "description": "快递配送方式（1=普通快递；2=上门自提；3=门店配送；5=无需配送；6=线下配送；7=市内配送）"
+                },
+                "relDataId": {
+                    "type": "string",
+                    "example": "可随机，保证不重复即可",
+                    "description": "关联单据的id"
+                },
+                "field28": {
+                    "type": "string",
+                    "example": "主表自定义字段28",
+                    "description": "主表自定义字段28"
+                },
+                "field29": {
+                    "type": "string",
+                    "example": "主表自定义字段29",
+                    "description": "主表自定义字段29"
+                },
+                "stockInDetailViews": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "skuCount": {
+                                "type": "number",
+                                "example": 165.0,
+                                "description": "申请入库数量"
+                            },
+                            "isCertified": {
+                                "type": "integer",
+                                "example": 1,
+                                "description": "正品=1 残次品=0"
+                            },
+                            "rowRemark": {
+                                "type": "string",
+                                "example": "备注",
+                                "description": "入库申请单明细备注"
+                            },
+                            "isBatch": {
+                                "type": "integer",
+                                "example": 0,
+                                "description": "批次管理 1=是 0=否"
+                            },
+                            "batchList": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "shelfLiftUnit": {
+                                            "type": "string",
+                                            "example": "月",
+                                            "description": "质保期单位支持：年、月、天"
+                                        },
+                                        "batchMemo": {
+                                            "type": "string",
+                                            "example": "备注信息",
+                                            "description": "批次备注"
+                                        },
+                                        "shelfLife": {
+                                            "type": "integer",
+                                            "example": 12,
+                                            "description": "质保期"
+                                        },
+                                        "batchNo": {
+                                            "type": "string",
+                                            "example": "B20030",
+                                            "description": "货品批号（如果货品开启批次并且入库需要指定批次则填写）"
+                                        },
+                                        "productionDate": {
+                                            "type": "string",
+                                            "example": "2018-09-07 16:01:39",
+                                            "description": "生产日期"
+                                        },
+                                        "expirationDate": {
+                                            "type": "string",
+                                            "example": "2018-09-07 16:01:39",
+                                            "description": "到期时间"
+                                        },
+                                        "quantity": {
+                                            "type": "integer",
+                                            "example": 10,
+                                            "description": "批次数量"
+                                        }
+                                    }
+                                },
+                                "description": "批次信息集合"
+                            },
+                            "skuBarcode": {
+                                "type": "string",
+                                "example": "B1D0012",
+                                "description": "条形码"
+                            },
+                            "detailField26": {
+                                "type": "string",
+                                "example": "货品明细自定义字段26",
+                                "description": "货品明细自定义字段26"
+                            },
+                            "detailField25": {
+                                "type": "string",
+                                "example": "货品明细自定义字段25",
+                                "description": "货品明细自定义字段25"
+                            },
+                            "detailField28": {
+                                "type": "string",
+                                "example": "货品明细自定义字段28",
+                                "description": "货品明细自定义字段28"
+                            },
+                            "detailField27": {
+                                "type": "string",
+                                "example": "货品明细自定义字段27",
+                                "description": "货品明细自定义字段27"
+                            },
+                            "detailField22": {
+                                "type": "string",
+                                "example": "货品明细自定义字段22",
+                                "description": "货品明细自定义字段22"
+                            },
+                            "detailField21": {
+                                "type": "string",
+                                "example": "货品明细自定义字段21",
+                                "description": "货品明细自定义字段21"
+                            },
+                            "detailField24": {
+                                "type": "string",
+                                "example": "货品明细自定义字段24",
+                                "description": "货品明细自定义字段24"
+                            },
+                            "detailField23": {
+                                "type": "string",
+                                "example": "货品明细自定义字段23",
+                                "description": "货品明细自定义字段23"
+                            },
+                            "skuPrice": {
+                                "type": "number",
+                                "example": 1.25,
+                                "description": "货品入库价格"
+                            },
+                            "detailField20": {
+                                "type": "string",
+                                "example": "货品明细自定义字段20",
+                                "description": "货品明细自定义字段20"
+                            },
+                            "detailField9": {
+                                "type": "string",
+                                "example": "货品明细自定义字段9",
+                                "description": "货品明细自定义字段9"
+                            },
+                            "outSkuCode": {
+                                "type": "string",
+                                "example": "1020000031",
+                                "description": "外部编号"
+                            },
+                            "isSerial": {
+                                "type": "integer",
+                                "example": 0,
+                                "description": "唯一码管理 1=是 0=否"
+                            },
+                            "detailField4": {
+                                "type": "string",
+                                "example": "货品明细自定义字段4",
+                                "description": "货品明细自定义字段4"
+                            },
+                            "detailField3": {
+                                "type": "string",
+                                "example": "货品明细自定义字段3",
+                                "description": "货品明细自定义字段3"
+                            },
+                            "detailField2": {
+                                "type": "string",
+                                "example": "货品明细自定义字段2",
+                                "description": "货品明细自定义字段2"
+                            },
+                            "detailField1": {
+                                "type": "string",
+                                "example": "货品明细自定义字段1",
+                                "description": "货品明细自定义字段1"
+                            },
+                            "detailField8": {
+                                "type": "string",
+                                "example": "货品明细自定义字段8",
+                                "description": "货品明细自定义字段8"
+                            },
+                            "detailField7": {
+                                "type": "string",
+                                "example": "货品明细自定义字段7",
+                                "description": "货品明细自定义字段7"
+                            },
+                            "detailField6": {
+                                "type": "string",
+                                "example": "货品明细自定义字段6",
+                                "description": "货品明细自定义字段6"
+                            },
+                            "detailField5": {
+                                "type": "string",
+                                "example": "货品明细自定义字段5",
+                                "description": "货品明细自定义字段5"
+                            },
+                            "detailField29": {
+                                "type": "string",
+                                "example": "货品明细自定义字段29",
+                                "description": "货品明细自定义字段29"
+                            },
+                            "skuId": {
+                                "type": "string",
+                                "example": "1020000031",
+                                "description": "货品id（匹配货品，优先级：skuid>outSkuCode>skuBarcode）"
+                            },
+                            "detailField15": {
+                                "type": "string",
+                                "example": "货品明细自定义字段15",
+                                "description": "货品明细自定义字段15"
+                            },
+                            "detailField14": {
+                                "type": "string",
+                                "example": "货品明细自定义字段14",
+                                "description": "货品明细自定义字段14"
+                            },
+                            "detailField17": {
+                                "type": "string",
+                                "example": "货品明细自定义字段17",
+                                "description": "货品明细自定义字段17"
+                            },
+                            "detailField16": {
+                                "type": "string",
+                                "example": "货品明细自定义字段16",
+                                "description": "货品明细自定义字段16"
+                            },
+                            "unitName": {
+                                "type": "string",
+                                "example": "",
+                                "description": "货品计量单位"
+                            },
+                            "detailField11": {
+                                "type": "string",
+                                "example": "货品明细自定义字段11",
+                                "description": "货品明细自定义字段11"
+                            },
+                            "detailField10": {
+                                "type": "string",
+                                "example": "货品明细自定义字段10",
+                                "description": "货品明细自定义字段10"
+                            },
+                            "detailField13": {
+                                "type": "string",
+                                "example": "货品明细自定义字段13",
+                                "description": "货品明细自定义字段13"
+                            },
+                            "detailField12": {
+                                "type": "string",
+                                "example": "货品明细自定义字段12",
+                                "description": "货品明细自定义字段12"
+                            },
+                            "detailField19": {
+                                "type": "string",
+                                "example": "货品明细自定义字段19",
+                                "description": "货品明细自定义字段19"
+                            },
+                            "detailField18": {
+                                "type": "string",
+                                "example": "货品明细自定义字段18",
+                                "description": "货品明细自定义字段18"
+                            },
+                            "relDetailId": {
+                                "type": "string",
+                                "example": "14444421333",
+                                "description": "上游单据的明细id"
+                            },
+                            "goodsNo": {
+                                "type": "string",
+                                "example": "G000130",
+                                "description": "货品编号"
+                            },
+                            "detailField30": {
+                                "type": "string",
+                                "example": "货品明细自定义字段30",
+                                "description": "货品明细自定义字段30"
+                            },
+                            "serialList": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "serialNo2": {
+                                            "type": "string",
+                                            "example": "SN1243448754",
+                                            "description": "唯一码2"
+                                        },
+                                        "serialNo": {
+                                            "type": "string",
+                                            "example": "SN2020010452",
+                                            "description": "唯一码"
+                                        },
+                                        "quantity": {
+                                            "type": "integer",
+                                            "example": 8,
+                                            "description": "数量"
+                                        }
+                                    }
+                                },
+                                "description": "唯一码集合（如果货品开启唯一码管理并且需要入库指定唯一码则填写）"
+                            }
+                        }
+                    },
+                    "description": "入库申请单的货品明细"
+                },
+                "field1": {
+                    "type": "string",
+                    "example": "主表自定义字段1",
+                    "description": "主表自定义字段1"
+                },
+                "la": {
+                    "type": "string",
+                    "example": "1",
+                    "description": "1"
+                },
+                "applyDepartName": {
+                    "type": "string",
+                    "example": "采购部门",
+                    "description": "申请人部门名称"
+                },
+                "field7": {
+                    "type": "string",
+                    "example": "主表自定义字段7",
+                    "description": "主表自定义字段7"
+                },
+                "field6": {
+                    "type": "string",
+                    "example": "主表自定义字段6",
+                    "description": "主表自定义字段6"
+                },
+                "field9": {
+                    "type": "string",
+                    "example": "主表自定义字段9",
+                    "description": "主表自定义字段9"
+                },
+                "currencyRate": {
+                    "type": "integer",
+                    "example": 1,
+                    "description": "汇率（默认为1）"
+                },
+                "field8": {
+                    "type": "string",
+                    "example": "主表自定义字段8",
+                    "description": "主表自定义字段8"
+                },
+                "applyDate": {
+                    "type": "string",
+                    "example": "2018-09-07 16:01:39",
+                    "description": "申请入库时间"
+                },
+                "field3": {
+                    "type": "string",
+                    "example": "主表自定义字段3",
+                    "description": "主表自定义字段3"
+                },
+                "currencyCode": {
+                    "type": "string",
+                    "example": "CNY",
+                    "description": "币种（默认人民币）"
+                },
+                "field2": {
+                    "type": "string",
+                    "example": "主表自定义字段2",
+                    "description": "主表自定义字段2"
+                },
+                "field30": {
+                    "type": "string",
+                    "example": "主表自定义字段30",
+                    "description": "主表自定义字段30"
+                },
+                "field5": {
+                    "type": "string",
+                    "example": "主表自定义字段5",
+                    "description": "主表自定义字段5"
+                },
+                "notificationCode": {
+                    "type": "string",
+                    "example": "100",
+                    "description": "不通知仓储作业传100，通知则不需要传"
+                },
+                "field4": {
+                    "type": "string",
+                    "example": "主表自定义字段4",
+                    "description": "主表自定义字段4"
+                },
+                "outTypeCode": {
+                    "type": "string",
+                    "example": "WB123",
+                    "description": "外部单据类型"
+                },
+                "source": {
+                    "type": "string",
+                    "example": "OPEN",
+                    "description": "写死：OPEN"
+                },
+                "operator": {
+                    "type": "string",
+                    "example": "李四",
+                    "description": "制单人姓名"
+                },
+                "inType": {
+                    "type": "integer",
+                    "example": 101,
+                    "description": "入库类型(101=采购入库 102=调拨入库 103=盘盈入库 104=其他入库 105=销售退货 106=生产完工入库)"
+                },
+                "logisticCode": {
+                    "type": "string",
+                    "example": "SFKD",
+                    "description": "物流公司编号"
+                },
+                "inWarehouseCode": {
+                    "type": "string",
+                    "example": "W",
+                    "description": "入库仓库编号"
+                },
+                "stockInExpressInfo": {
+                    "type": "object",
+                    "properties": {
+                        "sendStreetName": {
+                            "type": "string",
+                            "example": "三墩镇",
+                            "description": "发件人地址-街道"
+                        },
+                        "receiveProvinceName": {
+                            "type": "string",
+                            "example": "湖北省",
+                            "description": "收件人地址-省(入库委外仓必填)"
+                        },
+                        "receiveCityName": {
+                            "type": "string",
+                            "example": "武汉市(入库委外仓必填)",
+                            "description": "收件人地址-市(入库委外仓必填)"
+                        },
+                        "receiveAddress": {
+                            "type": "string",
+                            "example": "xx路10号",
+                            "description": "收件人地址-详细地址(入库委外仓必填)"
+                        },
+                        "receiveTel": {
+                            "type": "string",
+                            "example": "057145623256",
+                            "description": "收件人联系电话"
+                        },
+                        "receiveCompanyName": {
+                            "type": "string",
+                            "example": "中国",
+                            "description": "收件人所在公司"
+                        },
+                        "receiveStreetName": {
+                            "type": "string",
+                            "example": "xx街道",
+                            "description": "收件人地址-街道"
+                        },
+                        "sendCityName": {
+                            "type": "string",
+                            "example": "杭州市",
+                            "description": "发件人地址-市(入库委外仓必填)"
+                        },
+                        "receive": {
+                            "type": "string",
+                            "example": "李四",
+                            "description": "收件人姓名(入库委外仓必填)"
+                        },
+                        "receivePhone": {
+                            "type": "string",
+                            "example": "139456988541",
+                            "description": "收件人手机号码(入库委外仓必填)"
+                        },
+                        "sendTel": {
+                            "type": "string",
+                            "example": "057185654123",
+                            "description": "发件人联系电话"
+                        },
+                        "sendPhone": {
+                            "type": "string",
+                            "example": "13712345678(入库委外仓必填)",
+                            "description": "发件人手机号码(入库委外仓必填)"
+                        },
+                        "receiveCountryName": {
+                            "type": "string",
+                            "example": "中国",
+                            "description": "收件人地址-国家"
+                        },
+                        "sendTownName": {
+                            "type": "string",
+                            "example": "西湖区",
+                            "description": "发件人地址-区县"
+                        },
+                        "sendAddress": {
+                            "type": "string",
+                            "example": "天目山路100号",
+                            "description": "发件人地址-详细地址(入库委外仓必填)"
+                        },
+                        "send": {
+                            "type": "string",
+                            "example": "张三(入库委外仓必填)",
+                            "description": "发件人姓名(入库委外仓必填)"
+                        },
+                        "sendProvinceName": {
+                            "type": "string",
+                            "example": "浙江省",
+                            "description": "发件人地址-省(入库委外仓必填)"
+                        },
+                        "sendCountryName": {
+                            "type": "string",
+                            "example": "中国",
+                            "description": "发件人地址-国家"
+                        },
+                        "sendEmail": {
+                            "type": "string",
+                            "example": "",
+                            "description": "发件人邮箱地址"
+                        },
+                        "receiveTownName": {
+                            "type": "string",
+                            "example": "xxx",
+                            "description": "收件人地址-区县"
+                        },
+                        "sendCompanyName": {
+                            "type": "string",
+                            "example": "XXX公司",
+                            "description": "发件人所在公司"
+                        },
+                        "receiveEmail": {
+                            "type": "string",
+                            "example": "",
+                            "description": "收件人邮箱地址"
+                        }
+                    },
+                    "description": "收发件人信息(入库委外仓必填)"
+                },
+                "logisticNo": {
+                    "type": "string",
+                    "example": "YT0200002",
+                    "description": "物流运单号"
+                },
+                "vendCode": {
+                    "type": "string",
+                    "example": "vendCode",
+                    "description": "供应商编号"
+                },
+                "systemMark": {
+                    "type": "string",
+                    "example": "测试",
+                    "description": "系统标识"
+                },
+                "applyDepartCode": {
+                    "type": "string",
+                    "example": "234",
+                    "description": "部门编号（不同公司下部门编号允许重复，如存在相同部门编号，请传入公司编号以定位具体部门，不传默认取入库仓库对应公司部门）"
+                },
+                "channelCode": {
+                    "type": "string",
+                    "example": "1234",
+                    "description": "渠道编码"
+                },
+                "logisticName": {
+                    "type": "string",
+                    "example": "顺丰快递",
+                    "description": "物流公司名称"
+                },
+                "inNo": {
+                    "type": "string",
+                    "example": "RK202103170022",
+                    "description": "入库单号"
+                }
+            }
+        },
+        "example": {
+            "field19": "主表自定义字段19",
+            "memo": "请按时间入库",
+            "field17": "主表自定义字段17",
+            "field18": "主表自定义字段18",
+            "field22": "主表自定义字段22",
+            "field23": "主表自定义字段23",
+            "field20": "主表自定义字段20",
+            "field21": "主表自定义字段21",
+            "field26": "主表自定义字段26",
+            "field27": "主表自定义字段27",
+            "field24": "主表自定义字段24",
+            "field25": "主表自定义字段25",
+            "flagData": "入库标记1,入库标记2",
+            "applyCompanyCode": "123",
+            "field11": "主表自定义字段11",
+            "applyUserName": "张三",
+            "field12": "主表自定义字段12",
+            "field10": "主表自定义字段10",
+            "field15": "主表自定义字段15",
+            "field16": "主表自定义字段16",
+            "field13": "主表自定义字段13",
+            "field14": "主表自定义字段14",
+            "inReason": "入库原因",
+            "status": 2,
+            "logisticType": 1,
+            "relDataId": "可随机，保证不重复即可",
+            "field28": "主表自定义字段28",
+            "field29": "主表自定义字段29",
+            "stockInDetailViews": [
+                {
+                    "skuCount": 165.0,
+                    "isCertified": 1,
+                    "rowRemark": "备注",
+                    "isBatch": 0,
+                    "batchList": [
+                        {
+                            "shelfLiftUnit": "月",
+                            "batchMemo": "备注信息",
+                            "shelfLife": 12,
+                            "batchNo": "B20030",
+                            "productionDate": "2018-09-07 16:01:39",
+                            "expirationDate": "2018-09-07 16:01:39",
+                            "quantity": 10
+                        }
+                    ],
+                    "skuBarcode": "B1D0012",
+                    "detailField26": "货品明细自定义字段26",
+                    "detailField25": "货品明细自定义字段25",
+                    "detailField28": "货品明细自定义字段28",
+                    "detailField27": "货品明细自定义字段27",
+                    "detailField22": "货品明细自定义字段22",
+                    "detailField21": "货品明细自定义字段21",
+                    "detailField24": "货品明细自定义字段24",
+                    "detailField23": "货品明细自定义字段23",
+                    "skuPrice": 1.25,
+                    "detailField20": "货品明细自定义字段20",
+                    "detailField9": "货品明细自定义字段9",
+                    "outSkuCode": "1020000031",
+                    "isSerial": 0,
+                    "detailField4": "货品明细自定义字段4",
+                    "detailField3": "货品明细自定义字段3",
+                    "detailField2": "货品明细自定义字段2",
+                    "detailField1": "货品明细自定义字段1",
+                    "detailField8": "货品明细自定义字段8",
+                    "detailField7": "货品明细自定义字段7",
+                    "detailField6": "货品明细自定义字段6",
+                    "detailField5": "货品明细自定义字段5",
+                    "detailField29": "货品明细自定义字段29",
+                    "skuId": "1020000031",
+                    "detailField15": "货品明细自定义字段15",
+                    "detailField14": "货品明细自定义字段14",
+                    "detailField17": "货品明细自定义字段17",
+                    "detailField16": "货品明细自定义字段16",
+                    "unitName": "",
+                    "detailField11": "货品明细自定义字段11",
+                    "detailField10": "货品明细自定义字段10",
+                    "detailField13": "货品明细自定义字段13",
+                    "detailField12": "货品明细自定义字段12",
+                    "detailField19": "货品明细自定义字段19",
+                    "detailField18": "货品明细自定义字段18",
+                    "relDetailId": "14444421333",
+                    "goodsNo": "G000130",
+                    "detailField30": "货品明细自定义字段30",
+                    "serialList": [
+                        {
+                            "serialNo2": "SN1243448754",
+                            "serialNo": "SN2020010452",
+                            "quantity": 8
+                        }
+                    ]
+                }
+            ],
+            "field1": "主表自定义字段1",
+            "la": "1",
+            "applyDepartName": "采购部门",
+            "field7": "主表自定义字段7",
+            "field6": "主表自定义字段6",
+            "field9": "主表自定义字段9",
+            "currencyRate": 1,
+            "field8": "主表自定义字段8",
+            "applyDate": "2018-09-07 16:01:39",
+            "field3": "主表自定义字段3",
+            "currencyCode": "CNY",
+            "field2": "主表自定义字段2",
+            "field30": "主表自定义字段30",
+            "field5": "主表自定义字段5",
+            "notificationCode": "100",
+            "field4": "主表自定义字段4",
+            "outTypeCode": "WB123",
+            "source": "OPEN",
+            "operator": "李四",
+            "inType": 101,
+            "logisticCode": "SFKD",
+            "inWarehouseCode": "W",
+            "stockInExpressInfo": {
+                "sendStreetName": "三墩镇",
+                "receiveProvinceName": "湖北省",
+                "receiveCityName": "武汉市(入库委外仓必填)",
+                "receiveAddress": "xx路10号",
+                "receiveTel": "057145623256",
+                "receiveCompanyName": "中国",
+                "receiveStreetName": "xx街道",
+                "sendCityName": "杭州市",
+                "receive": "李四",
+                "receivePhone": "139456988541",
+                "sendTel": "057185654123",
+                "sendPhone": "13712345678(入库委外仓必填)",
+                "receiveCountryName": "中国",
+                "sendTownName": "西湖区",
+                "sendAddress": "天目山路100号",
+                "send": "张三(入库委外仓必填)",
+                "sendProvinceName": "浙江省",
+                "sendCountryName": "中国",
+                "sendEmail": "",
+                "receiveTownName": "xxx",
+                "sendCompanyName": "XXX公司",
+                "receiveEmail": ""
+            },
+            "logisticNo": "YT0200002",
+            "vendCode": "vendCode",
+            "systemMark": "测试",
+            "applyDepartCode": "234",
+            "channelCode": "1234",
+            "logisticName": "顺丰快递",
+            "inNo": "RK202103170022"
+        }
+    },
+    "response": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "description": "返回码，200 成功"
+                },
+                "msg": {
+                    "type": "string"
+                },
+                "subCode": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "object",
+                    "properties": {
+                        "data": {
+                            "type": "object",
+                            "properties": {
+                                "inNo": {
+                                    "type": "string",
+                                    "example": "RK202006120001",
+                                    "description": "入库单号"
+                                }
+                            }
+                        },
+                        "contextId": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "example": {
+            "code": 200,
+            "msg": "",
+            "result": {
+                "data": {
+                    "inNo": "RK202006120001"
+                },
+                "contextId": "2180647745574044032"
+            },
+            "subCode": ""
+        }
+    }
+}

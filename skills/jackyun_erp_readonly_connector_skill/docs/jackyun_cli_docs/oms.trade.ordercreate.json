@@ -1,0 +1,782 @@
+{
+    "method": "oms.trade.ordercreate",
+    "summary": "销售单创建",
+    "description": "接口说明：                                                                                                                                                                                                                                                                                     \n    客户端路径：销售→新建销售单；\n    接口描述：模拟手工创建吉客云销售订单",
+    "request": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "tradeOrder": {
+                    "type": "object",
+                    "properties": {
+                        "country": {
+                            "type": "string",
+                            "example": "",
+                            "description": "国家"
+                        },
+                        "discountFee": {
+                            "type": "integer",
+                            "example": 10,
+                            "description": "优惠金额"
+                        },
+                        "payTime": {
+                            "type": "string",
+                            "example": "2025-06-01 10:00:00",
+                            "description": "支付时间"
+                        },
+                        "identityCardName": {
+                            "type": "string",
+                            "example": "",
+                            "description": "证件使用姓名"
+                        },
+                        "mainPostid": {
+                            "type": "string",
+                            "example": "1000111",
+                            "description": "运单号"
+                        },
+                        "chargeType": {
+                            "type": "integer",
+                            "example": 7,
+                            "description": "结算方式（1：担保交易；2：银行收款；3：现金收款；4：货到付款；5：欠款计应收；6：客户预存款；7：多种结算；8：退换货冲抵；9：电子钱包）"
+                        },
+                        "invoiceEmail": {
+                            "type": "string",
+                            "example": "12345@163.com",
+                            "description": "发票邮箱"
+                        },
+                        "tradeOrderPayArr": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "chargeType": {
+                                        "type": "integer",
+                                        "example": 1,
+                                        "description": "结算方式（1：担保交易；2：银行收款；3：现金收款；4：货到付款；5：欠款计应收；6：客户预存款；8：退换货冲抵；9：电子钱包）"
+                                    },
+                                    "payment": {
+                                        "type": "integer",
+                                        "example": 25,
+                                        "description": "支付金额（支付金额之和要等于应收合计）"
+                                    },
+                                    "chargeCurrency": {
+                                        "type": "string",
+                                        "example": "人民币",
+                                        "description": "结算币种"
+                                    },
+                                    "accountName": {
+                                        "type": "string",
+                                        "example": "支付宝1123",
+                                        "description": "账户名称"
+                                    }
+                                }
+                            },
+                            "description": "多种结算明细，订单结算方式为多种结算时生效"
+                        },
+                        "payerRegno": {
+                            "type": "string",
+                            "example": "",
+                            "description": "购方税号"
+                        },
+                        "tradeOrderDetails": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "discountFee": {
+                                        "type": "integer",
+                                        "example": 0,
+                                        "description": "优惠金额"
+                                    },
+                                    "sellPrice": {
+                                        "type": "integer",
+                                        "example": 25,
+                                        "description": "单价"
+                                    },
+                                    "cateName": {
+                                        "type": "string",
+                                        "example": "",
+                                        "description": "货品类别"
+                                    },
+                                    "goodsName": {
+                                        "type": "string",
+                                        "example": "测试2",
+                                        "description": "货品名称"
+                                    },
+                                    "barcode": {
+                                        "type": "string",
+                                        "example": "209278784192",
+                                        "description": "条码"
+                                    },
+                                    "declaredValue": {
+                                        "type": "integer",
+                                        "example": 0,
+                                        "description": "申报价值"
+                                    },
+                                    "declaredWeight": {
+                                        "type": "integer",
+                                        "example": 0,
+                                        "description": "申报重量"
+                                    },
+                                    "brandName": {
+                                        "type": "string",
+                                        "example": "",
+                                        "description": "品牌"
+                                    },
+                                    "batchNo": {
+                                        "type": "string",
+                                        "example": "123",
+                                        "description": "批次号"
+                                    },
+                                    "customizeGoodsColumn5": {
+                                        "type": "string",
+                                        "example": "货品自定义字段5",
+                                        "description": "货品自定义字段5"
+                                    },
+                                    "customizeGoodsColumn6": {
+                                        "type": "string",
+                                        "example": "货品自定义字段6",
+                                        "description": "货品自定义字段6"
+                                    },
+                                    "customizeGoodsColumn7": {
+                                        "type": "string",
+                                        "example": "0.1",
+                                        "description": "货品自定义字段7"
+                                    },
+                                    "customizeGoodsColumn8": {
+                                        "type": "string",
+                                        "example": "货品自定义字段8",
+                                        "description": "货品自定义字段8"
+                                    },
+                                    "goodsMemo": {
+                                        "type": "string",
+                                        "example": "",
+                                        "description": "货品备注"
+                                    },
+                                    "customizeGoodsColumn1": {
+                                        "type": "string",
+                                        "example": "货品自定义字段1",
+                                        "description": "货品自定义字段1"
+                                    },
+                                    "customizeGoodsColumn2": {
+                                        "type": "string",
+                                        "example": "货品自定义字段2",
+                                        "description": "货品自定义字段2"
+                                    },
+                                    "sourceTradeNo": {
+                                        "type": "string",
+                                        "example": "wd123123",
+                                        "description": "网店单号"
+                                    },
+                                    "customizeGoodsColumn3": {
+                                        "type": "string",
+                                        "example": "货品自定义字段3",
+                                        "description": "货品自定义字段3"
+                                    },
+                                    "customizeGoodsColumn4": {
+                                        "type": "string",
+                                        "example": "货品自定义字段4",
+                                        "description": "货品自定义字段4"
+                                    },
+                                    "unit": {
+                                        "type": "string",
+                                        "example": "件",
+                                        "description": "单位"
+                                    },
+                                    "specName": {
+                                        "type": "string",
+                                        "example": "粉色132213123蚕丝",
+                                        "description": "规格名称"
+                                    },
+                                    "customizeGoodsColumn9": {
+                                        "type": "string",
+                                        "example": "货品自定义字段9",
+                                        "description": "货品自定义字段9"
+                                    },
+                                    "sellCount": {
+                                        "type": "integer",
+                                        "example": 1,
+                                        "description": "数量"
+                                    },
+                                    "sellTotal": {
+                                        "type": "integer",
+                                        "example": 25,
+                                        "description": "总金额"
+                                    },
+                                    "customizeGoodsColumn10": {
+                                        "type": "string",
+                                        "example": "10",
+                                        "description": "货品自定义字段10"
+                                    },
+                                    "isGift": {
+                                        "type": "integer",
+                                        "example": 0,
+                                        "description": "是否赠品（0：非赠品；1：赠品）"
+                                    },
+                                    "taxFee": {
+                                        "type": "integer",
+                                        "example": 0,
+                                        "description": "税额"
+                                    },
+                                    "goodsNo": {
+                                        "type": "string",
+                                        "example": "10粉色XXL=5XL/6XL",
+                                        "description": "货品编号"
+                                    },
+                                    "discountPoint": {
+                                        "type": "integer",
+                                        "example": 0,
+                                        "description": "抵扣积分"
+                                    },
+                                    "discountTotal": {
+                                        "type": "integer",
+                                        "example": 0,
+                                        "description": "抵扣金额"
+                                    },
+                                    "sourceSubtradeNo": {
+                                        "type": "string",
+                                        "example": "\"12312312312\"",
+                                        "description": "子单号"
+                                    },
+                                    "isFit": {
+                                        "type": "integer",
+                                        "example": 0,
+                                        "description": "组合装标记"
+                                    }
+                                }
+                            }
+                        },
+                        "payType": {
+                            "type": "integer",
+                            "example": 1,
+                            "description": "支付方式：1,支付宝 2,财付通 3,微信支付 4,银联支付 5,盛付通 6,其它 7,现金 8,储值卡 9,扫码付 10,挂账 11,诺诺支付 16,易付宝 32,有赞支付 33,汇付支付 35,商盟支付 36,易宝支付 37,汇聚支付 38,合利宝支付 27,通联支付"
+                        },
+                        "invoiceType": {
+                            "type": "integer",
+                            "example": 0,
+                            "description": "发票类型（0：无；1：增值税电子普通发票；2：增值税普通发票；3：增值税专用发票；4：增值税电子专用发票；5：普通发票（全电）；6：专用发票（全电））"
+                        },
+                        "payment": {
+                            "type": "integer",
+                            "example": 25,
+                            "description": "应收金额"
+                        },
+                        "state": {
+                            "type": "string",
+                            "example": "",
+                            "description": "省"
+                        },
+                        "invoiceNo": {
+                            "type": "string",
+                            "example": "",
+                            "description": "发票号码"
+                        },
+                        "zip": {
+                            "type": "string",
+                            "example": "",
+                            "description": "邮编"
+                        },
+                        "town": {
+                            "type": "string",
+                            "example": "",
+                            "description": "街道"
+                        },
+                        "tradeOrderFlags": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "flagId": {
+                                        "type": "string",
+                                        "example": "31",
+                                        "description": "标记id"
+                                    },
+                                    "flagName": {
+                                        "type": "string",
+                                        "example": "标记名称",
+                                        "description": "标记名称"
+                                    },
+                                    "flagType": {
+                                        "type": "integer",
+                                        "example": 0,
+                                        "description": "标记类型:1-自定义标记,0-系统标记"
+                                    }
+                                }
+                            },
+                            "description": "销售单标记列表"
+                        },
+                        "confirmTime": {
+                            "type": "string",
+                            "example": "2025-06-01 10:00:00",
+                            "description": "确认时间"
+                        },
+                        "invoiceCode": {
+                            "type": "string",
+                            "example": "",
+                            "description": "发票代码"
+                        },
+                        "customerName": {
+                            "type": "string",
+                            "example": "张三",
+                            "description": "客户名称"
+                        },
+                        "isAddressAnalyze": {
+                            "type": "integer",
+                            "example": 0,
+                            "description": "是否地址解析"
+                        },
+                        "tradeTime": {
+                            "type": "string",
+                            "example": "2025-06-01 10:00:00",
+                            "description": "下单时间"
+                        },
+                        "phone": {
+                            "type": "string",
+                            "example": "",
+                            "description": "电话"
+                        },
+                        "district": {
+                            "type": "string",
+                            "example": "",
+                            "description": "区县"
+                        },
+                        "sellerMemo": {
+                            "type": "string",
+                            "example": "",
+                            "description": "备注"
+                        },
+                        "chargeCurrency": {
+                            "type": "string",
+                            "example": "人民币",
+                            "description": "结算币种"
+                        },
+                        "customerAccount": {
+                            "type": "string",
+                            "example": "sellerNick",
+                            "description": "客户账号"
+                        },
+                        "buyerMemo": {
+                            "type": "string",
+                            "example": "",
+                            "description": "买家备注"
+                        },
+                        "couponFee": {
+                            "type": "integer",
+                            "example": 0,
+                            "description": "平台优惠"
+                        },
+                        "logisticType": {
+                            "type": "integer",
+                            "example": 1,
+                            "description": "配送方式（1：普通快递；2：上门自提；3：门店配送；5：无需配送； 6：线下配送；7：自有物流 ）"
+                        },
+                        "accountName": {
+                            "type": "string",
+                            "example": "支付宝账号",
+                            "description": "收款账户"
+                        },
+                        "city": {
+                            "type": "string",
+                            "example": "",
+                            "description": "城市"
+                        },
+                        "sellerName": {
+                            "type": "string",
+                            "example": "",
+                            "description": "业务员名称"
+                        },
+                        "shopName": {
+                            "type": "string",
+                            "example": "笛佛测试淘宝店",
+                            "description": "店铺名称、销售渠道"
+                        },
+                        "warehouseName": {
+                            "type": "string",
+                            "example": "",
+                            "description": "仓库名称"
+                        },
+                        "payerBankAccount": {
+                            "type": "string",
+                            "example": "",
+                            "description": "购方开户行及帐号"
+                        },
+                        "isDeliveryBatch": {
+                            "type": "integer",
+                            "example": 1,
+                            "description": "是否分批发货，1分批，0不分批"
+                        },
+                        "warehouseCode": {
+                            "type": "string",
+                            "example": "WS01"
+                        },
+                        "payNo": {
+                            "type": "string",
+                            "example": "201906000000000000000",
+                            "description": "支付单号"
+                        },
+                        "identityCardType": {
+                            "type": "integer",
+                            "example": 1,
+                            "description": "证件类型（1：身份证；2：学生证；3：军官证；4：护照；5：港澳通行证；6：其他）"
+                        },
+                        "payerName": {
+                            "type": "string",
+                            "example": "",
+                            "description": "购方名称"
+                        },
+                        "identityCardNo": {
+                            "type": "string",
+                            "example": "",
+                            "description": "证件号码"
+                        },
+                        "taxFee": {
+                            "type": "integer",
+                            "example": 0,
+                            "description": "税额"
+                        },
+                        "tradeType": {
+                            "type": "integer",
+                            "example": 1,
+                            "description": "订单类型（销售单类型（1：零售业务；2：代发货（来自分销）；5：代销售(供货商发货)；6：现款现货；7：售后发货；8：售后退货；9：批发业务(B2B)；10：试销业务；11：错漏调整；12：仅退款；13：销售返利；14：大B2B业务；15：物流买赔；16：销售对账差异；91：自定义1；92：自定义2；93：自定义3...100：自定义10））"
+                        },
+                        "receivedPostFee": {
+                            "type": "integer",
+                            "example": 20,
+                            "description": "应收邮资"
+                        },
+                        "address": {
+                            "type": "string",
+                            "example": "",
+                            "description": "详细地址"
+                        },
+                        "onlineTradeNo": {
+                            "type": "string",
+                            "example": "1234",
+                            "description": "网店订单号"
+                        },
+                        "receiverName": {
+                            "type": "string",
+                            "example": "张三",
+                            "description": "收货人"
+                        },
+                        "receivedTotal": {
+                            "type": "integer",
+                            "example": 190,
+                            "description": "已收金额"
+                        },
+                        "postFee": {
+                            "type": "integer",
+                            "example": 0,
+                            "description": "实际邮资"
+                        },
+                        "mobile": {
+                            "type": "string",
+                            "example": "",
+                            "description": "手机"
+                        },
+                        "payerBankName": {
+                            "type": "string",
+                            "example": "",
+                            "description": "购方开户行"
+                        },
+                        "payerPhone": {
+                            "type": "string",
+                            "example": "",
+                            "description": "购方电话"
+                        },
+                        "tradeOrderDeclare": {
+                            "type": "object",
+                            "properties": {
+                                "declareOrderNo": {
+                                    "type": "string",
+                                    "example": "123456",
+                                    "description": "报关单号"
+                                },
+                                "businessPlatCode": {
+                                    "type": "string",
+                                    "example": "1234564567",
+                                    "description": "电商平台备案编码"
+                                },
+                                "payCompanyName": {
+                                    "type": "string",
+                                    "example": "支付企业备案名称",
+                                    "description": "支付企业备案名称"
+                                },
+                                "businessPlatName": {
+                                    "type": "string",
+                                    "example": "电商平台备案名称",
+                                    "description": "电商平台备案名称"
+                                },
+                                "payCompanyCode": {
+                                    "type": "string",
+                                    "example": "132456",
+                                    "description": "支付企业备案编码"
+                                }
+                            },
+                            "description": "销售单报关表信息"
+                        },
+                        "payAccount": {
+                            "type": "string",
+                            "example": "11@qq.com",
+                            "description": "支付帐号"
+                        },
+                        "logisticName": {
+                            "type": "string",
+                            "example": "",
+                            "description": "物流名称"
+                        },
+                        "payerAddress": {
+                            "type": "string",
+                            "example": "",
+                            "description": "购方地址"
+                        },
+                        "totalFee": {
+                            "type": "integer",
+                            "example": 200,
+                            "description": "商品金额"
+                        },
+                        "tradeOrderCustomizeColumns": {
+                            "type": "object",
+                            "properties": {
+                                "customizeTradeColumn2": {
+                                    "type": "string",
+                                    "example": "2025-01-01 00:00:00",
+                                    "description": "自定义字段2"
+                                },
+                                "customizeTradeColumn1": {
+                                    "type": "string",
+                                    "example": "123",
+                                    "description": "自定义字段1"
+                                },
+                                "customizeTradeColumn5": {
+                                    "type": "string",
+                                    "example": "选项一",
+                                    "description": "自定义字段5（自定义字段最多30个）"
+                                },
+                                "customizeTradeColumn4": {
+                                    "type": "string",
+                                    "example": "123",
+                                    "description": "自定义字段4"
+                                },
+                                "customizeTradeColumn3": {
+                                    "type": "string",
+                                    "example": "123",
+                                    "description": "自定义字段3"
+                                }
+                            },
+                            "description": "销售单自定义字段"
+                        },
+                        "invoiceStatus": {
+                            "type": "integer",
+                            "example": 0,
+                            "description": "发票开具状态（0：未开票；1：开票中；2：开票失败；3：已开具）"
+                        },
+                        "lastShipTime": {
+                            "type": "string",
+                            "example": "2025-06-10 10:00:00",
+                            "description": "承诺发货时间"
+                        },
+                        "payStatus": {
+                            "type": "integer",
+                            "example": 9,
+                            "description": "付款状态（0：未付款；5：部分付款:；9：已付款）"
+                        },
+                        "registerName": {
+                            "type": "string",
+                            "example": "张三",
+                            "description": "登记人"
+                        }
+                    },
+                    "description": "销售单"
+                }
+            }
+        },
+        "example": {
+            "tradeOrder": {
+                "country": "",
+                "discountFee": 10,
+                "payTime": "2025-06-01 10:00:00",
+                "identityCardName": "",
+                "mainPostid": "1000111",
+                "chargeType": 7,
+                "invoiceEmail": "12345@163.com",
+                "tradeOrderPayArr": [
+                    {
+                        "chargeType": 1,
+                        "payment": 25,
+                        "chargeCurrency": "人民币",
+                        "accountName": "支付宝1123"
+                    }
+                ],
+                "payerRegno": "",
+                "tradeOrderDetails": [
+                    {
+                        "discountFee": 0,
+                        "sellPrice": 25,
+                        "cateName": "",
+                        "goodsName": "测试2",
+                        "barcode": "209278784192",
+                        "declaredValue": 0,
+                        "declaredWeight": 0,
+                        "brandName": "",
+                        "batchNo": "123",
+                        "customizeGoodsColumn5": "货品自定义字段5",
+                        "customizeGoodsColumn6": "货品自定义字段6",
+                        "customizeGoodsColumn7": "0.1",
+                        "customizeGoodsColumn8": "货品自定义字段8",
+                        "goodsMemo": "",
+                        "customizeGoodsColumn1": "货品自定义字段1",
+                        "customizeGoodsColumn2": "货品自定义字段2",
+                        "sourceTradeNo": "wd123123",
+                        "customizeGoodsColumn3": "货品自定义字段3",
+                        "customizeGoodsColumn4": "货品自定义字段4",
+                        "unit": "件",
+                        "specName": "粉色132213123蚕丝",
+                        "customizeGoodsColumn9": "货品自定义字段9",
+                        "sellCount": 1,
+                        "sellTotal": 25,
+                        "customizeGoodsColumn10": "10",
+                        "isGift": 0,
+                        "taxFee": 0,
+                        "goodsNo": "10粉色XXL=5XL/6XL",
+                        "discountPoint": 0,
+                        "discountTotal": 0,
+                        "sourceSubtradeNo": "\"12312312312\"",
+                        "isFit": 0
+                    }
+                ],
+                "payType": 1,
+                "invoiceType": 0,
+                "payment": 25,
+                "state": "",
+                "invoiceNo": "",
+                "zip": "",
+                "town": "",
+                "tradeOrderFlags": [
+                    {
+                        "flagId": "31",
+                        "flagName": "标记名称",
+                        "flagType": 0
+                    }
+                ],
+                "confirmTime": "2025-06-01 10:00:00",
+                "invoiceCode": "",
+                "customerName": "张三",
+                "isAddressAnalyze": 0,
+                "tradeTime": "2025-06-01 10:00:00",
+                "phone": "",
+                "district": "",
+                "sellerMemo": "",
+                "chargeCurrency": "人民币",
+                "customerAccount": "sellerNick",
+                "buyerMemo": "",
+                "couponFee": 0,
+                "logisticType": 1,
+                "accountName": "支付宝账号",
+                "city": "",
+                "sellerName": "",
+                "shopName": "笛佛测试淘宝店",
+                "warehouseName": "",
+                "payerBankAccount": "",
+                "isDeliveryBatch": 1,
+                "warehouseCode": "WS01",
+                "payNo": "201906000000000000000",
+                "identityCardType": 1,
+                "payerName": "",
+                "identityCardNo": "",
+                "taxFee": 0,
+                "tradeType": 1,
+                "receivedPostFee": 20,
+                "address": "",
+                "onlineTradeNo": "1234",
+                "receiverName": "张三",
+                "receivedTotal": 190,
+                "postFee": 0,
+                "mobile": "",
+                "payerBankName": "",
+                "payerPhone": "",
+                "tradeOrderDeclare": {
+                    "declareOrderNo": "123456",
+                    "businessPlatCode": "1234564567",
+                    "payCompanyName": "支付企业备案名称",
+                    "businessPlatName": "电商平台备案名称",
+                    "payCompanyCode": "132456"
+                },
+                "payAccount": "11@qq.com",
+                "logisticName": "",
+                "payerAddress": "",
+                "totalFee": 200,
+                "tradeOrderCustomizeColumns": {
+                    "customizeTradeColumn2": "2025-01-01 00:00:00",
+                    "customizeTradeColumn1": "123",
+                    "customizeTradeColumn5": "选项一",
+                    "customizeTradeColumn4": "123",
+                    "customizeTradeColumn3": "123"
+                },
+                "invoiceStatus": 0,
+                "lastShipTime": "2025-06-10 10:00:00",
+                "payStatus": 9,
+                "registerName": "张三"
+            }
+        }
+    },
+    "response": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "description": "返回码，200 成功"
+                },
+                "msg": {
+                    "type": "string"
+                },
+                "subCode": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "object",
+                    "properties": {
+                        "data": {
+                            "type": "object",
+                            "properties": {
+                                "tradeOrder": {
+                                    "type": "object",
+                                    "properties": {
+                                        "tradeNo": {
+                                            "type": "string",
+                                            "example": "",
+                                            "description": "销售单号"
+                                        }
+                                    },
+                                    "required": [
+                                        "tradeNo"
+                                    ],
+                                    "description": "销售单"
+                                }
+                            }
+                        },
+                        "contextId": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "example": {
+            "code": 200,
+            "msg": "",
+            "result": {
+                "data": {
+                    "tradeOrder": {
+                        "tradeNo": ""
+                    }
+                },
+                "contextId": "2243689190805047296"
+            },
+            "subCode": ""
+        }
+    }
+}

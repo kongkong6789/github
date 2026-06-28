@@ -1,0 +1,710 @@
+{
+    "method": "erp.stockin.get.v2",
+    "summary": "按需查询入库申请单货品模式",
+    "description": "分页查询入库申请单\n创建时间、修改时间、申请时间都为空，会默认查询申请时间为一个月内的数据",
+    "request": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "goodsNo": {
+                    "type": "string",
+                    "example": "565464",
+                    "description": "(明细)货品编号"
+                },
+                "isListLogistic": {
+                    "type": "integer",
+                    "example": 1,
+                    "description": "是否需要查询物流信息列表（0：否；1：是）"
+                },
+                "createTimeTo": {
+                    "type": "string",
+                    "example": "2020-06-06 23:59:59",
+                    "description": "创建时间（截止）"
+                },
+                "modifyTimeTo": {
+                    "type": "string",
+                    "example": "2020-06-05 23:59:59",
+                    "description": "修改时间(截止)"
+                },
+                "pageSize": {
+                    "type": "integer",
+                    "example": 50,
+                    "description": "分页页数"
+                },
+                "applyDateFrom": {
+                    "type": "string",
+                    "example": "2020-06-05 00:00:00",
+                    "description": "申请时间(起始)"
+                },
+                "inStatus": {
+                    "type": "string",
+                    "example": "1",
+                    "description": "(主表)入库状态（1：未入库；2：部分入库；3：已入库）"
+                },
+                "isNotification": {
+                    "type": "integer",
+                    "example": 0,
+                    "description": "是否只查通知成功的单据（0 ：查全部通知状态的单据；不传：只查通知成功的单据）"
+                },
+                "brandIds": {
+                    "type": "string",
+                    "example": "111,222,333",
+                    "description": "货品品牌id,多条英文逗号拼接"
+                },
+                "warehouseCode": {
+                    "type": "string",
+                    "example": "C0001",
+                    "description": "仓库编号"
+                },
+                "skuName": {
+                    "type": "string",
+                    "example": "fadf",
+                    "description": "(明细)sku名称"
+                },
+                "brandNames": {
+                    "type": "string",
+                    "example": "品牌1,品牌2,品牌3",
+                    "description": "货品品牌名称,多条英文逗号拼接"
+                },
+                "pageIndex": {
+                    "type": "integer",
+                    "example": 0,
+                    "description": "分页页码"
+                },
+                "applyDateTo": {
+                    "type": "string",
+                    "example": "2020-06-05 23:59:59",
+                    "description": "申请时间(截止)"
+                },
+                "mulStatus": {
+                    "type": "string",
+                    "example": "0,1",
+                    "description": "审核状态，多个状态中间逗号隔开(0=待递交,1=待审核,10=审核中,2=已审核,3=已关闭)"
+                },
+                "inNo": {
+                    "type": "string",
+                    "example": "RK2020-06-19-001",
+                    "description": "入库申请单号"
+                },
+                "createTimeFrom": {
+                    "type": "string",
+                    "example": "2020-06-05 23:59:59",
+                    "description": "创建时间（起始）"
+                },
+                "relDataId": {
+                    "type": "string",
+                    "example": "SOURCE2020-06-19-001",
+                    "description": "(主表)关联单号"
+                },
+                "inType": {
+                    "type": "string",
+                    "example": "101",
+                    "description": "入库类型（100：期初库存；101：采购入库；102：调拨入库；103：盘盈入库；104：其他入库；105：销售退货；106：完工入库；107：组装拆卸入库；108：翻新入库；109：报废入库；110：残次品入库；111：成本调整；112：即采即入；113：退料入库；114：调拨退回；115：维修返厂返还；116：资产入库；117：借用入库；118归还入库；119：生产委外入库；120：生产其他入库；121：售后单；122：调拨退货入库；123：生产余料入库；131：成本调价入库；132：结算补差；133：成本补差；134：系统补差）"
+                },
+                "goodsName": {
+                    "type": "string",
+                    "example": "fjadkj",
+                    "description": "(明细)货品名称"
+                },
+                "cols": {
+                    "type": "string",
+                    "example": "inNo,skuName",
+                    "description": "需要返回的字段,用“,”号拼接，子类用子类名称.属性"
+                },
+                "modifyTimeFrom": {
+                    "type": "string",
+                    "example": "2020-06-05 23:59:59",
+                    "description": "修改时间（起始）"
+                }
+            },
+            "required": [
+                "goodsNo",
+                "skuName",
+                "goodsName"
+            ]
+        },
+        "example": {
+            "goodsNo": "565464",
+            "isListLogistic": 1,
+            "createTimeTo": "2020-06-06 23:59:59",
+            "modifyTimeTo": "2020-06-05 23:59:59",
+            "pageSize": 50,
+            "applyDateFrom": "2020-06-05 00:00:00",
+            "inStatus": "1",
+            "isNotification": 0,
+            "brandIds": "111,222,333",
+            "warehouseCode": "C0001",
+            "skuName": "fadf",
+            "brandNames": "品牌1,品牌2,品牌3",
+            "pageIndex": 0,
+            "applyDateTo": "2020-06-05 23:59:59",
+            "mulStatus": "0,1",
+            "inNo": "RK2020-06-19-001",
+            "createTimeFrom": "2020-06-05 23:59:59",
+            "relDataId": "SOURCE2020-06-19-001",
+            "inType": "101",
+            "goodsName": "fjadkj",
+            "cols": "inNo,skuName",
+            "modifyTimeFrom": "2020-06-05 23:59:59"
+        }
+    },
+    "response": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "description": "返回码，200 成功"
+                },
+                "msg": {
+                    "type": "string"
+                },
+                "subCode": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "object",
+                    "properties": {
+                        "data": {
+                            "type": "object",
+                            "properties": {
+                                "companyName": {
+                                    "type": "string",
+                                    "example": "笛佛软件",
+                                    "description": "(主表)公司名称"
+                                },
+                                "memo": {
+                                    "type": "string",
+                                    "example": "申请单备注",
+                                    "description": "(主表)备注"
+                                },
+                                "skuPrice": {
+                                    "type": "integer",
+                                    "example": 30,
+                                    "description": "(明细)价格"
+                                },
+                                "detailField9": {
+                                    "type": "string",
+                                    "example": "货品明细行自定义字段9"
+                                },
+                                "inStatus": {
+                                    "type": "integer",
+                                    "example": 1,
+                                    "description": "(主表)入库状态（1：未入库；2：部分入库；3：已入库）"
+                                },
+                                "operator": {
+                                    "type": "string",
+                                    "example": "张三",
+                                    "description": "(主表)制单人"
+                                },
+                                "revokeReason": {
+                                    "type": "string",
+                                    "example": "采购入库",
+                                    "description": "(主表)撤回的原因"
+                                },
+                                "isSerial": {
+                                    "type": "integer",
+                                    "example": 1,
+                                    "description": "(明细)是否序列号货品"
+                                },
+                                "detailField4": {
+                                    "type": "string",
+                                    "example": "货品明细行自定义字段1"
+                                },
+                                "inId": {
+                                    "type": "string",
+                                    "example": "2212321",
+                                    "description": "(主表)入库申请单ID"
+                                },
+                                "detailField3": {
+                                    "type": "string",
+                                    "example": "货品明细行自定义字段1"
+                                },
+                                "detailField2": {
+                                    "type": "string",
+                                    "example": "货品明细行自定义字段2"
+                                },
+                                "detailField1": {
+                                    "type": "string",
+                                    "example": "货品明细行自定义字段1",
+                                    "description": "(明细)货品明细行自定义字段1（detailField1 - detailField10）"
+                                },
+                                "detailField8": {
+                                    "type": "string",
+                                    "example": "货品明细行自定义字段8"
+                                },
+                                "detailField7": {
+                                    "type": "string",
+                                    "example": "货品明细行自定义字段7"
+                                },
+                                "detailField6": {
+                                    "type": "string",
+                                    "example": "货品明细行自定义字段6"
+                                },
+                                "detailField5": {
+                                    "type": "string",
+                                    "example": "货品明细行自定义字段5"
+                                },
+                                "planDetailId": {
+                                    "type": "string",
+                                    "example": "10",
+                                    "description": "(明细)关联采购计划明细表的id"
+                                },
+                                "inType": {
+                                    "type": "integer",
+                                    "example": 101,
+                                    "description": "入库类型（100：期初库存；101：采购入库；102：调拨入库；103：盘盈入库；104：其他入库；105：销售退货；106：完工入库；107：组装拆卸入库；108：翻新入库；109：报废入库；110：残次品入库；111：成本调整；112：即采即入；113：退料入库；114：调拨退回；115：维修返厂返还；116：资产入库；117：借用入库；118归还入库；119：生产委外入库；120：生产其他入库；121：售后单；122：调拨退货入库；123：生产余料入库；131：成本调价入库；132：结算补差；133：成本补差；134：系统补差）"
+                                },
+                                "goodsName": {
+                                    "type": "string",
+                                    "example": "fdafa",
+                                    "description": "(明细)货品名称"
+                                },
+                                "brand": {
+                                    "type": "integer",
+                                    "example": 111,
+                                    "description": "(明细)货品品牌id"
+                                },
+                                "skuId": {
+                                    "type": "string",
+                                    "example": "350",
+                                    "description": "(明细)规格id"
+                                },
+                                "skuCount": {
+                                    "type": "integer",
+                                    "example": 30,
+                                    "description": "(明细)数量"
+                                },
+                                "purFeeType": {
+                                    "type": "integer",
+                                    "example": 12,
+                                    "description": "(主表)分摊方式"
+                                },
+                                "totalInnerCount": {
+                                    "type": "integer",
+                                    "example": 30,
+                                    "description": "(主表)已入库数量"
+                                },
+                                "batchNo": {
+                                    "type": "string",
+                                    "example": "fadfad"
+                                },
+                                "brandName": {
+                                    "type": "string",
+                                    "example": "品牌1",
+                                    "description": "(明细)货品品牌名称"
+                                },
+                                "inWarehouseCode": {
+                                    "type": "string",
+                                    "example": "C-0001",
+                                    "description": "(主表)入库仓库编码"
+                                },
+                                "inTypeName": {
+                                    "type": "string",
+                                    "example": "采购入库",
+                                    "description": "(主表)入库类型名称（100：期初库存；101：采购入库；102：调拨入库；103：盘盈入库；104：其他入库；105：销售退货；106：完工入库；107：组装拆卸入库；108：翻新入库；109：报废入库；110：残次品入库；111：成本调整；112：即采即入；113：退料入库；114：调拨退回；115：维修返厂返还；116：资产入库；117：借用入库；118归还入库；119：生产委外入库；120：生产其他入库；121：售后单；122：调拨退货入库；123：生产余料入库；131：成本调价入库；132：结算补差；133：成本补差；134：系统补差）"
+                                },
+                                "unitName": {
+                                    "type": "string",
+                                    "example": "fadfa",
+                                    "description": "(明细)单位名称"
+                                },
+                                "detailField10": {
+                                    "type": "string",
+                                    "example": "货品明细行自定义字段10"
+                                },
+                                "isCertified": {
+                                    "type": "integer",
+                                    "example": 1,
+                                    "description": "(明细)是否正品"
+                                },
+                                "totalUninnerCount": {
+                                    "type": "integer",
+                                    "example": 20,
+                                    "description": "(主表)未入库数量"
+                                },
+                                "applyUserName": {
+                                    "type": "string",
+                                    "example": "张三",
+                                    "description": "(主表)申请人姓名"
+                                },
+                                "totalAmount": {
+                                    "type": "integer",
+                                    "example": 123,
+                                    "description": "(主表)总金额"
+                                },
+                                "goodsCount": {
+                                    "type": "integer",
+                                    "example": 12,
+                                    "description": "(主表)货品种类数"
+                                },
+                                "companyId": {
+                                    "type": "string",
+                                    "example": "121212",
+                                    "description": "(主表)公司id"
+                                },
+                                "field10": {
+                                    "type": "string",
+                                    "example": "自定义字段10"
+                                },
+                                "inDetailId": {
+                                    "type": "string",
+                                    "example": "30",
+                                    "description": "(明细)主键id"
+                                },
+                                "inReason": {
+                                    "type": "string",
+                                    "example": "立即入库",
+                                    "description": "(主表)入库原因"
+                                },
+                                "gmtModified": {
+                                    "type": "string",
+                                    "example": "2020-06-05 00:00:00",
+                                    "description": "(主表)修改时间"
+                                },
+                                "inWarehouseName": {
+                                    "type": "string",
+                                    "example": "成品仓",
+                                    "description": "(主表)入库仓库"
+                                },
+                                "goodsId": {
+                                    "type": "string",
+                                    "example": "420",
+                                    "description": "(明细)货品id"
+                                },
+                                "orderNum": {
+                                    "type": "string",
+                                    "example": "dfadfa",
+                                    "description": "(明细)关联采购单号"
+                                },
+                                "relDetailId": {
+                                    "type": "string",
+                                    "example": "40",
+                                    "description": "(明细)关联明细表的id，如采购明细id"
+                                },
+                                "isBatch": {
+                                    "type": "integer",
+                                    "example": 1,
+                                    "description": "(明细)是否批次管理"
+                                },
+                                "revokeDate": {
+                                    "type": "string",
+                                    "example": "2020-06-05 00:00:00",
+                                    "description": "(主表)撤回时间"
+                                },
+                                "uninnerCount": {
+                                    "type": "integer",
+                                    "example": 60,
+                                    "description": "(明细)未入库数量"
+                                },
+                                "skuName": {
+                                    "type": "string",
+                                    "example": "fadfa",
+                                    "description": "(明细)sku名称"
+                                },
+                                "innerCount": {
+                                    "type": "integer",
+                                    "example": 60,
+                                    "description": "(明细)已入库数量"
+                                },
+                                "totalSkuCount": {
+                                    "type": "integer",
+                                    "example": 20,
+                                    "description": "(主表)货品总数量"
+                                },
+                                "relDataId": {
+                                    "type": "string",
+                                    "example": "CG2020-06-19-001",
+                                    "description": "(主表)关联单号"
+                                },
+                                "unitId": {
+                                    "type": "string",
+                                    "example": "4545"
+                                },
+                                "goodsNo": {
+                                    "type": "string",
+                                    "example": "fadfa",
+                                    "description": "(明细)货品编号"
+                                },
+                                "logisticList": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "logisticCode": {
+                                                "type": "string",
+                                                "example": "物流公司编码",
+                                                "description": "物流公司编码"
+                                            },
+                                            "docNo": {
+                                                "type": "string",
+                                                "example": "出入库单号",
+                                                "description": "出入库单号"
+                                            },
+                                            "logisticNo": {
+                                                "type": "string",
+                                                "example": "物流单号",
+                                                "description": "物流单号"
+                                            },
+                                            "logisticType": {
+                                                "type": "string",
+                                                "example": "物流类型",
+                                                "description": "物流类型"
+                                            },
+                                            "logisticName": {
+                                                "type": "string",
+                                                "example": "物流公司名称",
+                                                "description": "物流公司名称"
+                                            },
+                                            "applyNo": {
+                                                "type": "string",
+                                                "example": "出入库申请单号",
+                                                "description": "出入库申请单号"
+                                            }
+                                        },
+                                        "required": [
+                                            "logisticCode",
+                                            "docNo",
+                                            "logisticNo",
+                                            "logisticType",
+                                            "logisticName",
+                                            "applyNo"
+                                        ]
+                                    },
+                                    "description": "物流信息列表"
+                                },
+                                "gmtCreate": {
+                                    "type": "string",
+                                    "example": "2020-06-05 00:00:00",
+                                    "description": "(主表)创建时间"
+                                },
+                                "skuMemo": {
+                                    "type": "string",
+                                    "example": "dfadf",
+                                    "description": "(明细)规格备注"
+                                },
+                                "field1": {
+                                    "type": "string",
+                                    "example": "自定义字段1",
+                                    "description": "(主表)自定义字段1（field1 到 field10）"
+                                },
+                                "goodsTotalAmount": {
+                                    "type": "integer",
+                                    "example": 50,
+                                    "description": "(明细)金额"
+                                },
+                                "inNo": {
+                                    "type": "string",
+                                    "example": "RK2020-06-19-001",
+                                    "description": "入库申请单号"
+                                },
+                                "applyDepartName": {
+                                    "type": "string",
+                                    "example": "采购部门",
+                                    "description": "(主表)申请人部门名称"
+                                },
+                                "stockInTotalValue": {
+                                    "type": "integer",
+                                    "example": 12,
+                                    "description": "(主表)已入库金额"
+                                },
+                                "field7": {
+                                    "type": "string",
+                                    "example": "自定义字段7"
+                                },
+                                "field6": {
+                                    "type": "string",
+                                    "example": "自定义字段6"
+                                },
+                                "field9": {
+                                    "type": "string",
+                                    "example": "自定义字段9"
+                                },
+                                "currencyRate": {
+                                    "type": "integer",
+                                    "example": 12,
+                                    "description": "(主表)汇率"
+                                },
+                                "skuBarcode": {
+                                    "type": "string",
+                                    "example": "dfada",
+                                    "description": "(明细)条码"
+                                },
+                                "field8": {
+                                    "type": "string",
+                                    "example": "自定义字段8"
+                                },
+                                "applyDate": {
+                                    "type": "string",
+                                    "example": "2020-06-05 00:00:00",
+                                    "description": "(主表)申请时间"
+                                },
+                                "planInDate": {
+                                    "type": "string",
+                                    "example": "2020-06-05 00:00:00",
+                                    "description": "(主表)预计入库时间"
+                                },
+                                "field3": {
+                                    "type": "string",
+                                    "example": "自定义字段3"
+                                },
+                                "currencyCode": {
+                                    "type": "string",
+                                    "example": "CNY",
+                                    "description": "(主表)币种编码"
+                                },
+                                "purFee": {
+                                    "type": "integer",
+                                    "example": 12,
+                                    "description": "(主表)入库费用"
+                                },
+                                "field2": {
+                                    "type": "string",
+                                    "example": "自定义字段2"
+                                },
+                                "field5": {
+                                    "type": "string",
+                                    "example": "自定义字段5"
+                                },
+                                "field4": {
+                                    "type": "string",
+                                    "example": "自定义字段4"
+                                }
+                            },
+                            "required": [
+                                "skuPrice",
+                                "isSerial",
+                                "detailField1",
+                                "planDetailId",
+                                "goodsName",
+                                "brand",
+                                "skuId",
+                                "skuCount",
+                                "totalInnerCount",
+                                "brandName",
+                                "unitName",
+                                "isCertified",
+                                "totalUninnerCount",
+                                "inDetailId",
+                                "gmtModified",
+                                "goodsId",
+                                "orderNum",
+                                "relDetailId",
+                                "isBatch",
+                                "uninnerCount",
+                                "skuName",
+                                "innerCount",
+                                "totalSkuCount",
+                                "goodsNo",
+                                "logisticList",
+                                "skuMemo",
+                                "goodsTotalAmount",
+                                "skuBarcode"
+                            ]
+                        },
+                        "contextId": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "example": {
+            "code": 200,
+            "msg": "",
+            "result": {
+                "data": {
+                    "companyName": "笛佛软件",
+                    "memo": "申请单备注",
+                    "skuPrice": 30,
+                    "detailField9": "货品明细行自定义字段9",
+                    "inStatus": 1,
+                    "operator": "张三",
+                    "revokeReason": "采购入库",
+                    "isSerial": 1,
+                    "detailField4": "货品明细行自定义字段1",
+                    "inId": "2212321",
+                    "detailField3": "货品明细行自定义字段1",
+                    "detailField2": "货品明细行自定义字段2",
+                    "detailField1": "货品明细行自定义字段1",
+                    "detailField8": "货品明细行自定义字段8",
+                    "detailField7": "货品明细行自定义字段7",
+                    "detailField6": "货品明细行自定义字段6",
+                    "detailField5": "货品明细行自定义字段5",
+                    "planDetailId": "10",
+                    "inType": 101,
+                    "goodsName": "fdafa",
+                    "brand": 111,
+                    "skuId": "350",
+                    "skuCount": 30,
+                    "purFeeType": 12,
+                    "totalInnerCount": 30,
+                    "batchNo": "fadfad",
+                    "brandName": "品牌1",
+                    "inWarehouseCode": "C-0001",
+                    "inTypeName": "采购入库",
+                    "unitName": "fadfa",
+                    "detailField10": "货品明细行自定义字段10",
+                    "isCertified": 1,
+                    "totalUninnerCount": 20,
+                    "applyUserName": "张三",
+                    "totalAmount": 123,
+                    "goodsCount": 12,
+                    "companyId": "121212",
+                    "field10": "自定义字段10",
+                    "inDetailId": "30",
+                    "inReason": "立即入库",
+                    "gmtModified": "2020-06-05 00:00:00",
+                    "inWarehouseName": "成品仓",
+                    "goodsId": "420",
+                    "orderNum": "dfadfa",
+                    "relDetailId": "40",
+                    "isBatch": 1,
+                    "revokeDate": "2020-06-05 00:00:00",
+                    "uninnerCount": 60,
+                    "skuName": "fadfa",
+                    "innerCount": 60,
+                    "totalSkuCount": 20,
+                    "relDataId": "CG2020-06-19-001",
+                    "unitId": "4545",
+                    "goodsNo": "fadfa",
+                    "logisticList": [
+                        {
+                            "logisticCode": "物流公司编码",
+                            "docNo": "出入库单号",
+                            "logisticNo": "物流单号",
+                            "logisticType": "物流类型",
+                            "logisticName": "物流公司名称",
+                            "applyNo": "出入库申请单号"
+                        }
+                    ],
+                    "gmtCreate": "2020-06-05 00:00:00",
+                    "skuMemo": "dfadf",
+                    "field1": "自定义字段1",
+                    "goodsTotalAmount": 50,
+                    "inNo": "RK2020-06-19-001",
+                    "applyDepartName": "采购部门",
+                    "stockInTotalValue": 12,
+                    "field7": "自定义字段7",
+                    "field6": "自定义字段6",
+                    "field9": "自定义字段9",
+                    "currencyRate": 12,
+                    "skuBarcode": "dfada",
+                    "field8": "自定义字段8",
+                    "applyDate": "2020-06-05 00:00:00",
+                    "planInDate": "2020-06-05 00:00:00",
+                    "field3": "自定义字段3",
+                    "currencyCode": "CNY",
+                    "purFee": 12,
+                    "field2": "自定义字段2",
+                    "field5": "自定义字段5",
+                    "field4": "自定义字段4"
+                },
+                "contextId": "2193530737835050369"
+            },
+            "subCode": ""
+        }
+    }
+}

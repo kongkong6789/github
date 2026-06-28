@@ -1,0 +1,1404 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A2A PM Leader Light UI Concepts</title>
+    <style>
+      :root {
+        --canvas: #fbfbfa;
+        --surface: #ffffff;
+        --side: #f2f2f1;
+        --side-2: #ebebea;
+        --ink: #1d1d1f;
+        --text: #34363a;
+        --muted: #7b7f87;
+        --quiet: #a4a7ad;
+        --line: rgba(25, 25, 25, 0.08);
+        --line-strong: rgba(25, 25, 25, 0.14);
+        --blue: #2f73ff;
+        --blue-soft: #e9f1ff;
+        --green: #2d7b55;
+        --green-soft: #edf6ef;
+        --yellow: #8b6508;
+        --yellow-soft: #fbf3dd;
+        --red: #a33b36;
+        --red-soft: #fdeeed;
+        --shadow: 0 22px 70px rgba(24, 28, 34, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #e8e8e6;
+        color: var(--ink);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Display",
+          "SF Pro Text", "Helvetica Neue", "PingFang SC",
+          "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      }
+
+      .frame {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 42px;
+      }
+
+      .canvas {
+        position: relative;
+        width: 1440px;
+        height: 900px;
+        overflow: hidden;
+        background: var(--canvas);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      body.single {
+        background: var(--canvas);
+      }
+
+      body.single .frame {
+        display: none;
+        min-height: 900px;
+        padding: 0;
+      }
+
+      body.single .frame.active {
+        display: block;
+      }
+
+      body.single .canvas {
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .sidebar {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 230px;
+        background: var(--side);
+        border-right: 1px solid var(--line);
+        padding: 14px 10px;
+      }
+
+      .traffic {
+        display: flex;
+        gap: 8px;
+        height: 24px;
+        align-items: center;
+        margin: 0 0 12px 2px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+      .dot.red {
+        background: #ff6159;
+      }
+
+      .dot.yellow {
+        background: #ffbd2e;
+      }
+
+      .dot.green {
+        background: #28c840;
+      }
+
+      .brand {
+        color: #92959b;
+        font-size: 11px;
+        padding: 0 8px 14px;
+      }
+
+      .side-row,
+      .task-row {
+        display: flex;
+        align-items: center;
+        min-height: 32px;
+        border-radius: 7px;
+        padding: 0 10px;
+        gap: 9px;
+        color: #222326;
+        font-size: 13px;
+        letter-spacing: 0;
+      }
+
+      .side-row .right,
+      .task-row .right {
+        margin-left: auto;
+        color: #a3a5aa;
+        font-size: 11px;
+      }
+
+      .side-row.active,
+      .task-row.active {
+        background: #ffffff;
+        font-weight: 650;
+      }
+
+      .icon-box {
+        width: 16px;
+        height: 16px;
+        border: 1.5px solid #202124;
+        border-radius: 4px;
+        display: inline-grid;
+        place-items: center;
+        flex: 0 0 auto;
+      }
+
+      .icon-box:after {
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #202124;
+      }
+
+      .side-title {
+        margin: 22px 10px 8px;
+        color: #9ca0a6;
+        font-size: 12px;
+      }
+
+      .pin-list {
+        display: grid;
+        gap: 3px;
+        padding: 0 6px;
+      }
+
+      .pin-item {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+        padding: 6px 4px;
+        color: #27282b;
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .pin-item span {
+        color: #a0a3a8;
+      }
+
+      .profile {
+        position: absolute;
+        left: 14px;
+        bottom: 14px;
+        right: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #2f3135;
+        font-size: 12px;
+      }
+
+      .avatar {
+        width: 26px;
+        height: 26px;
+        border-radius: 8px;
+        background: #111111;
+        color: white;
+        display: grid;
+        place-items: center;
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .main {
+        position: absolute;
+        inset: 0 0 0 230px;
+      }
+
+      .topbar {
+        position: absolute;
+        left: 28px;
+        right: 28px;
+        top: 18px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #5b5f66;
+        font-size: 13px;
+      }
+
+      .topbar .spacer {
+        flex: 1;
+      }
+
+      .round-button,
+      .badge {
+        height: 30px;
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        background: rgba(255, 255, 255, 0.82);
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 0 10px;
+        color: #35373b;
+        font-size: 12px;
+      }
+
+      .badge.success {
+        background: var(--green-soft);
+        color: var(--green);
+        border-color: rgba(45, 123, 85, 0.16);
+      }
+
+      .badge.blue {
+        background: var(--blue-soft);
+        color: #235bc4;
+        border-color: rgba(47, 115, 255, 0.16);
+      }
+
+      .hero-center {
+        position: absolute;
+        left: 50%;
+        top: 47%;
+        width: 560px;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .assistant-mark {
+        position: relative;
+        width: 106px;
+        height: 106px;
+        margin: 0 auto 24px;
+        border: 1px solid var(--line-strong);
+        border-radius: 30px;
+        background: #ffffff;
+        box-shadow: 0 14px 40px rgba(22, 24, 29, 0.05);
+        animation: breathe 4.8s ease-in-out infinite;
+      }
+
+      .assistant-mark:before,
+      .assistant-mark:after {
+        content: "";
+        position: absolute;
+        left: 28px;
+        right: 28px;
+        height: 12px;
+        border: 1.5px solid #1d1d1f;
+        border-left: 0;
+        border-right: 0;
+      }
+
+      .assistant-mark:before {
+        top: 32px;
+      }
+
+      .assistant-mark:after {
+        top: 58px;
+      }
+
+      .assistant-eye {
+        position: absolute;
+        top: 42px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #1d1d1f;
+      }
+
+      .assistant-eye.left {
+        left: 34px;
+      }
+
+      .assistant-eye.right {
+        right: 34px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        color: var(--ink);
+        font-size: 34px;
+        line-height: 1.15;
+        letter-spacing: 0;
+        font-weight: 760;
+      }
+
+      .lead {
+        max-width: 520px;
+        margin: 12px auto 0;
+        color: #6d737d;
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .mode-pills,
+      .suggestions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .mode-pills {
+        margin-top: 24px;
+      }
+
+      .pill {
+        min-height: 34px;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #ffffff;
+        color: #35373b;
+        padding: 0 13px;
+        font-size: 13px;
+      }
+
+      .pill.active {
+        background: #111111;
+        color: white;
+        border-color: #111111;
+      }
+
+      .composer {
+        position: absolute;
+        left: 50%;
+        bottom: 38px;
+        transform: translateX(-50%);
+        width: 640px;
+      }
+
+      .composer.wide {
+        width: 780px;
+      }
+
+      .suggestions {
+        justify-content: flex-start;
+        margin-bottom: 8px;
+      }
+
+      .composer-box {
+        min-height: 92px;
+        border: 1px solid var(--line);
+        background: #ffffff;
+        border-radius: 18px;
+        box-shadow: 0 14px 40px rgba(24, 28, 34, 0.05);
+        padding: 15px 15px 12px;
+      }
+
+      .composer-box.glow {
+        animation: composerGlow 3.8s ease-in-out infinite;
+      }
+
+      .placeholder {
+        color: #a2a6ad;
+        font-size: 14px;
+      }
+
+      .composer-actions {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .composer-actions .send {
+        margin-left: auto;
+        width: 38px;
+        height: 38px;
+        border: 0;
+        border-radius: 12px;
+        background: #111111;
+        color: white;
+        font-weight: 700;
+      }
+
+      .mini-action {
+        color: #50545a;
+        font-size: 13px;
+      }
+
+      .panel {
+        background: #ffffff;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        box-shadow: 0 12px 32px rgba(24, 28, 34, 0.04);
+      }
+
+      .panel.flat {
+        box-shadow: none;
+      }
+
+      .panel-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #1f2023;
+        font-weight: 700;
+        font-size: 15px;
+        padding: 16px 18px 10px;
+      }
+
+      .panel-body {
+        padding: 0 18px 16px;
+      }
+
+      .plain-card {
+        border-top: 1px solid var(--line);
+        padding: 13px 0;
+      }
+
+      .plain-card:first-child {
+        border-top: 0;
+      }
+
+      .plain-card b {
+        display: block;
+        margin-bottom: 4px;
+        color: #27282b;
+        font-size: 14px;
+      }
+
+      .plain-card span {
+        color: #747982;
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .floating-card {
+        position: absolute;
+        width: 178px;
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 12px;
+        box-shadow: 0 12px 32px rgba(24, 28, 34, 0.055);
+        color: #36383d;
+        font-size: 12px;
+        line-height: 1.4;
+        animation: floatCard 5.8s ease-in-out infinite;
+      }
+
+      .floating-card strong {
+        display: block;
+        color: #202124;
+        font-size: 13px;
+        margin-bottom: 4px;
+      }
+
+      .tiny-line {
+        width: 100%;
+        height: 6px;
+        border-radius: 99px;
+        background: #eeeeec;
+        margin-top: 10px;
+        overflow: hidden;
+      }
+
+      .tiny-line span {
+        display: block;
+        width: 66%;
+        height: 100%;
+        border-radius: inherit;
+        background: #111111;
+      }
+
+      .right-panel {
+        position: absolute;
+        right: 36px;
+        top: 106px;
+        width: 285px;
+      }
+
+      .left-large {
+        position: absolute;
+        left: 38px;
+        top: 96px;
+        width: 500px;
+      }
+
+      .section-kicker {
+        color: #858991;
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+
+      .section-title {
+        color: var(--ink);
+        font-size: 30px;
+        line-height: 1.2;
+        font-weight: 760;
+      }
+
+      .section-copy {
+        margin-top: 12px;
+        color: #6e737c;
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .task-board {
+        display: grid;
+        gap: 12px;
+        margin-top: 26px;
+      }
+
+      .task-card {
+        position: relative;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #ffffff;
+        padding: 16px 16px 16px 48px;
+        box-shadow: 0 10px 28px rgba(24, 28, 34, 0.035);
+      }
+
+      .task-card:before {
+        content: "";
+        position: absolute;
+        left: 17px;
+        top: 18px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 2px solid #111111;
+      }
+
+      .task-card.done:before {
+        background: #111111;
+        box-shadow: inset 0 0 0 4px #ffffff;
+      }
+
+      .task-card b {
+        display: block;
+        color: #25262a;
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+
+      .task-card span {
+        color: #757a83;
+        font-size: 13px;
+      }
+
+      .kanban {
+        position: absolute;
+        right: 56px;
+        top: 126px;
+        width: 395px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .check-list {
+        padding: 6px 18px 18px;
+      }
+
+      .check-item {
+        display: grid;
+        grid-template-columns: 24px 1fr auto;
+        align-items: center;
+        gap: 8px;
+        min-height: 48px;
+        border-top: 1px solid var(--line);
+        color: #2f3135;
+        font-size: 13px;
+      }
+
+      .check-item:first-child {
+        border-top: 0;
+      }
+
+      .circle-check {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1.5px solid #111111;
+      }
+
+      .check-item.done .circle-check {
+        background: #111111;
+        box-shadow: inset 0 0 0 4px #ffffff;
+      }
+
+      .hint {
+        color: #9ca0a6;
+        font-size: 12px;
+      }
+
+      .business-grid {
+        position: absolute;
+        left: 52px;
+        right: 52px;
+        top: 168px;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr 1fr;
+        gap: 14px;
+      }
+
+      .business-card {
+        min-height: 184px;
+        background: #ffffff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 22px;
+      }
+
+      .business-card.large {
+        min-height: 382px;
+        grid-row: span 2;
+      }
+
+      .business-card h3 {
+        font-size: 17px;
+        margin-bottom: 9px;
+      }
+
+      .business-card p {
+        color: #6f747d;
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .metric {
+        margin-top: 18px;
+        font-size: 42px;
+        font-weight: 760;
+        letter-spacing: 0;
+      }
+
+      .metric small {
+        color: #777c84;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .bar-set {
+        display: grid;
+        gap: 9px;
+        margin-top: 22px;
+      }
+
+      .bar {
+        height: 9px;
+        border-radius: 999px;
+        background: #eeeeed;
+        overflow: hidden;
+      }
+
+      .bar span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: #111111;
+      }
+
+      .decision-layout {
+        position: absolute;
+        left: 52px;
+        right: 52px;
+        top: 116px;
+        display: grid;
+        grid-template-columns: 1.4fr 0.8fr;
+        gap: 18px;
+      }
+
+      .summary-stack {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 20px;
+      }
+
+      .summary-card {
+        min-height: 210px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: #ffffff;
+        padding: 18px;
+      }
+
+      .summary-card .label {
+        color: #757a82;
+        font-size: 12px;
+      }
+
+      .summary-card strong {
+        display: block;
+        font-size: 27px;
+        margin: 12px 0 7px;
+      }
+
+      .summary-card p {
+        color: #646a73;
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .advice {
+        display: grid;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .advice-item {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 14px;
+        background: #ffffff;
+      }
+
+      .advice-item b {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      .advice-item span {
+        color: #717680;
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .workspace-center {
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        width: 640px;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .segment {
+        display: inline-flex;
+        padding: 4px;
+        background: #ededec;
+        border-radius: 16px;
+        gap: 4px;
+        margin-top: 24px;
+      }
+
+      .segment span {
+        height: 30px;
+        padding: 0 13px;
+        display: inline-flex;
+        align-items: center;
+        border-radius: 12px;
+        color: #60646c;
+        font-size: 12px;
+      }
+
+      .segment span.active {
+        color: #ffffff;
+        background: #111111;
+      }
+
+      .bottom-soft {
+        position: absolute;
+        left: 230px;
+        right: 0;
+        bottom: 0;
+        height: 138px;
+        background: rgba(255, 255, 255, 0.72);
+        border-top: 1px solid var(--line);
+      }
+
+      .doc-flow {
+        position: absolute;
+        display: grid;
+        gap: 8px;
+        width: 168px;
+        animation: floatCard 7.5s ease-in-out infinite;
+      }
+
+      .doc-mini {
+        height: 48px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #ffffff;
+        padding: 10px;
+        color: #4f535a;
+        font-size: 12px;
+        box-shadow: 0 10px 26px rgba(24, 28, 34, 0.04);
+      }
+
+      .soft-line {
+        position: absolute;
+        height: 1px;
+        background: var(--line);
+      }
+
+      .motion-label {
+        position: absolute;
+        color: #969aa1;
+        font-size: 11px;
+        letter-spacing: 0;
+      }
+
+      @keyframes breathe {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      @keyframes floatCard {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+
+      @keyframes composerGlow {
+        0%,
+        100% {
+          box-shadow: 0 14px 40px rgba(24, 28, 34, 0.05);
+        }
+        50% {
+          box-shadow: 0 18px 48px rgba(47, 115, 255, 0.13);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *:before,
+        *:after {
+          animation: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="frame" data-shot="briefing">
+      <div class="canvas">
+        <aside class="sidebar">
+          <div class="traffic">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="brand">A2A 经营助理 v0.4</div>
+          <div class="side-row active"><span class="icon-box"></span>新建任务</div>
+          <div class="side-row"><span class="icon-box"></span>今日重点</div>
+          <div class="side-row"><span class="icon-box"></span>经营分析</div>
+          <div class="side-row"><span class="icon-box"></span>资料整理</div>
+          <div class="side-row"><span class="icon-box"></span>老板报告</div>
+          <div class="side-title">重要任务（3）</div>
+          <div class="pin-list">
+            <div class="pin-item">周一经营简报 <span>今天</span></div>
+            <div class="pin-item">广告花费异常说明 <span>今天</span></div>
+            <div class="pin-item">库存风险清单 <span>明天</span></div>
+          </div>
+          <div class="side-title">最近完成（5）</div>
+          <div class="pin-list">
+            <div class="pin-item">整理商品资料 <span>1天前</span></div>
+            <div class="pin-item">生成月度汇报 <span>2天前</span></div>
+          </div>
+          <div class="profile"><span class="avatar">A2</span>Lee 老板</div>
+        </aside>
+        <main class="main">
+          <div class="topbar">
+            <span class="round-button">搜索任务</span>
+            <span class="round-button">筛选</span>
+            <span class="spacer"></span>
+            <span class="badge success">知识库可用</span>
+            <span class="badge">本周经营积分 72</span>
+          </div>
+          <div class="floating-card" style="left: 110px; top: 190px">
+            <strong>经营提醒</strong>
+            广告花费比上周高 12%，建议先看原因。
+            <div class="tiny-line"><span></span></div>
+          </div>
+          <div
+            class="floating-card"
+            style="right: 330px; top: 248px; animation-delay: -1.8s"
+          >
+            <strong>待我确认</strong>
+            2 份报告已生成，等待你确认口径。
+            <div class="tiny-line"><span style="width: 48%"></span></div>
+          </div>
+          <div class="hero-center">
+            <div class="assistant-mark">
+              <span class="assistant-eye left"></span>
+              <span class="assistant-eye right"></span>
+            </div>
+            <h1>今天想看哪件事？</h1>
+            <p class="lead">
+              直接说业务目标，我会整理资料、分析数据，并生成领导能看懂的结论。
+            </p>
+            <div class="mode-pills">
+              <span class="pill active">日常办公</span>
+              <span class="pill">看经营</span>
+              <span class="pill">找风险</span>
+              <span class="pill">写汇报</span>
+            </div>
+          </div>
+          <aside class="panel right-panel">
+            <div class="panel-title">今日提醒</div>
+            <div class="panel-body">
+              <div class="plain-card">
+                <b>3 款商品库存偏低</b>
+                <span>建议今天确认补货数量，避免影响本周销售。</span>
+              </div>
+              <div class="plain-card">
+                <b>广告花费上涨</b>
+                <span>主要来自两个计划，系统已准备原因说明。</span>
+              </div>
+              <div class="plain-card">
+                <b>老板报告可生成</b>
+                <span>本周数据已齐，可以直接生成简版汇报。</span>
+              </div>
+            </div>
+          </aside>
+          <div class="composer wide">
+            <div class="suggestions">
+              <span class="pill">本周经营情况</span>
+              <span class="pill">生成老板报告</span>
+              <span class="pill">整理资料</span>
+              <span class="pill">查看库存风险</span>
+            </div>
+            <div class="composer-box glow">
+              <div class="placeholder">
+                直接说业务目标，例如：帮我看下本周销售为什么下降
+              </div>
+              <div class="composer-actions">
+                <span class="mini-action">上传资料</span>
+                <span class="mini-action">选择工作空间</span>
+                <button class="send">发</button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <section class="frame" data-shot="pm">
+      <div class="canvas">
+        <aside class="sidebar">
+          <div class="traffic">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="brand">A2A 经营助理 v0.4</div>
+          <div class="side-row active"><span class="icon-box"></span>新建任务</div>
+          <div class="side-row"><span class="icon-box"></span>任务进度</div>
+          <div class="side-row"><span class="icon-box"></span>资料库</div>
+          <div class="side-row"><span class="icon-box"></span>待我确认</div>
+          <div class="side-row"><span class="icon-box"></span>团队协作</div>
+          <div class="side-title">任务（26）</div>
+          <div class="pin-list">
+            <div class="pin-item">查询企业微信用户ID <span>2天前</span></div>
+            <div class="pin-item">识别图片内容 <span>3天前</span></div>
+            <div class="pin-item">分析截图聊天内容 <span>3天前</span></div>
+            <div class="pin-item">生成老板周报 <span>4天前</span></div>
+          </div>
+          <div class="profile"><span class="avatar">PM</span>产品经理</div>
+        </aside>
+        <main class="main">
+          <div class="topbar">
+            <span class="round-button">我的任务</span>
+            <span class="round-button">全部资料</span>
+            <span class="spacer"></span>
+            <span class="badge blue">正在处理 3 件事</span>
+          </div>
+          <section class="left-large">
+            <p class="section-kicker">PM 任务助理</p>
+            <h2 class="section-title">把目标交给我，过程我拆给你看</h2>
+            <p class="section-copy">
+              领导只看结果，PM 需要看过程。这个版本把任务拆成“资料、分析、汇报、确认”，每一步都用普通话说明。
+            </p>
+            <div class="task-board">
+              <div class="task-card done">
+                <b>整理资料</b>
+                <span>已找到商品表、广告表、库存表，数据可用于分析。</span>
+              </div>
+              <div class="task-card">
+                <b>分析原因</b>
+                <span>正在比较本周与上周的销售、广告和库存变化。</span>
+              </div>
+              <div class="task-card">
+                <b>生成汇报</b>
+                <span>完成分析后，自动整理成 1 页老板汇报。</span>
+              </div>
+            </div>
+          </section>
+          <section class="kanban">
+            <div class="panel flat">
+              <div class="panel-title">下一步</div>
+              <div class="check-list">
+                <div class="check-item done">
+                  <span class="circle-check"></span>
+                  <span>确认要分析的店铺范围</span>
+                  <span class="hint">已完成</span>
+                </div>
+                <div class="check-item">
+                  <span class="circle-check"></span>
+                  <span>填写企业微信参数</span>
+                  <span class="hint">先空着</span>
+                </div>
+                <div class="check-item">
+                  <span class="circle-check"></span>
+                  <span>选择老板报告模板</span>
+                  <span class="hint">待选择</span>
+                </div>
+              </div>
+            </div>
+            <div class="panel flat">
+              <div class="panel-title">系统会怎么做</div>
+              <div class="panel-body">
+                <div class="plain-card">
+                  <b>先找资料</b>
+                  <span>从你上传的表格、PDF、图片里找到相关内容。</span>
+                </div>
+                <div class="plain-card">
+                  <b>再讲结论</b>
+                  <span>不用展示复杂过程，只给原因、影响和建议。</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="composer">
+            <div class="suggestions">
+              <span class="pill">创建分析任务</span>
+              <span class="pill">看任务进度</span>
+              <span class="pill">补充资料</span>
+            </div>
+            <div class="composer-box glow">
+              <div class="placeholder">
+                例如：帮我把这周广告效果整理成老板能看的版本
+              </div>
+              <div class="composer-actions">
+                <span class="mini-action">上传 PDF 或表格</span>
+                <button class="send">发</button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <section class="frame" data-shot="daily">
+      <div class="canvas">
+        <aside class="sidebar">
+          <div class="traffic">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="brand">A2A 经营助理 v0.4</div>
+          <div class="side-row active"><span class="icon-box"></span>每日经营</div>
+          <div class="side-row"><span class="icon-box"></span>待我确认</div>
+          <div class="side-row"><span class="icon-box"></span>经营提醒</div>
+          <div class="side-row"><span class="icon-box"></span>报告中心</div>
+          <div class="side-title">今天安排</div>
+          <div class="pin-list">
+            <div class="pin-item">看本周销售 <span>09:30</span></div>
+            <div class="pin-item">确认补货清单 <span>11:00</span></div>
+            <div class="pin-item">发老板日报 <span>17:30</span></div>
+          </div>
+          <div class="profile"><span class="avatar">经</span>经营负责人</div>
+        </aside>
+        <main class="main">
+          <div class="topbar">
+            <span class="round-button">今天</span>
+            <span class="round-button">本周</span>
+            <span class="spacer"></span>
+            <span class="badge success">数据已同步</span>
+          </div>
+          <section style="position: absolute; left: 52px; top: 95px">
+            <p class="section-kicker">每日经营大厅</p>
+            <h2 class="section-title">早上好，今天先看这三件事</h2>
+          </section>
+          <div class="business-grid">
+            <article class="business-card large">
+              <h3>今天重点</h3>
+              <p>系统把销售、广告、库存三个方向整理成可执行清单。</p>
+              <div class="metric">3 <small>件需要关注</small></div>
+              <div class="bar-set">
+                <div class="bar"><span style="width: 78%"></span></div>
+                <div class="bar"><span style="width: 54%"></span></div>
+                <div class="bar"><span style="width: 42%"></span></div>
+              </div>
+            </article>
+            <article class="business-card">
+              <h3>销售变化</h3>
+              <p>本周销售比上周高 8%，主要来自两款主推商品。</p>
+              <div class="metric">+8%</div>
+            </article>
+            <article class="business-card">
+              <h3>广告提醒</h3>
+              <p>花费上升但转化没有同步上升，建议复盘两个计划。</p>
+              <div class="metric">2 <small>个计划</small></div>
+            </article>
+            <article class="business-card">
+              <h3>库存风险</h3>
+              <p>有 4 款商品可能在 7 天内缺货，建议今天确认。</p>
+              <div class="metric">4 <small>款商品</small></div>
+            </article>
+            <article class="business-card">
+              <h3>老板报告</h3>
+              <p>日报已准备，可一键生成“原因 + 影响 + 建议”。</p>
+              <div class="metric">1 <small>份草稿</small></div>
+            </article>
+          </div>
+          <div class="doc-flow" style="right: 84px; top: 548px">
+            <div class="doc-mini">商品表已读取</div>
+            <div class="doc-mini">广告表已整理</div>
+            <div class="doc-mini">库存表已检查</div>
+          </div>
+          <div class="composer wide">
+            <div class="suggestions">
+              <span class="pill">看今天重点</span>
+              <span class="pill">生成日报</span>
+              <span class="pill">查库存风险</span>
+              <span class="pill">解释销售变化</span>
+            </div>
+            <div class="composer-box glow">
+              <div class="placeholder">
+                例如：把今天最重要的经营问题按优先级列出来
+              </div>
+              <div class="composer-actions">
+                <span class="mini-action">选择资料</span>
+                <span class="mini-action">默认权限</span>
+                <button class="send">发</button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <section class="frame" data-shot="decision">
+      <div class="canvas">
+        <aside class="sidebar">
+          <div class="traffic">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="brand">A2A 经营助理 v0.4</div>
+          <div class="side-row active"><span class="icon-box"></span>经营结论</div>
+          <div class="side-row"><span class="icon-box"></span>销售变化</div>
+          <div class="side-row"><span class="icon-box"></span>广告效果</div>
+          <div class="side-row"><span class="icon-box"></span>库存风险</div>
+          <div class="side-row"><span class="icon-box"></span>老板报告</div>
+          <div class="side-title">常用问题</div>
+          <div class="pin-list">
+            <div class="pin-item">本周为什么涨了 <span>常用</span></div>
+            <div class="pin-item">哪个广告浪费钱 <span>常用</span></div>
+            <div class="pin-item">先补哪些货 <span>常用</span></div>
+          </div>
+          <div class="profile"><span class="avatar">决</span>决策人</div>
+        </aside>
+        <main class="main">
+          <div class="topbar">
+            <span class="round-button">本周</span>
+            <span class="round-button">全部店铺</span>
+            <span class="spacer"></span>
+            <span class="badge">已更新到今天 09:12</span>
+          </div>
+          <section class="decision-layout">
+            <div>
+              <p class="section-kicker">轻量决策室</p>
+              <h2 class="section-title">这周发生了什么，先讲人话结论</h2>
+              <p class="section-copy">
+                给领导看的页面只保留结论、原因和建议。需要细节时，再从卡片进入明细。
+              </p>
+              <div class="summary-stack">
+                <article class="summary-card">
+                  <span class="label">收入变化</span>
+                  <strong>比上周 +8%</strong>
+                  <p>增长主要来自主推商品，暂时不是全店普涨。</p>
+                  <div class="bar-set">
+                    <div class="bar"><span style="width: 74%"></span></div>
+                    <div class="bar"><span style="width: 49%"></span></div>
+                  </div>
+                </article>
+                <article class="summary-card">
+                  <span class="label">广告效果</span>
+                  <strong>有点下降</strong>
+                  <p>花费变高，但成交没有同步变高，需要复盘。</p>
+                  <div class="bar-set">
+                    <div class="bar"><span style="width: 61%"></span></div>
+                    <div class="bar"><span style="width: 38%"></span></div>
+                  </div>
+                </article>
+                <article class="summary-card">
+                  <span class="label">库存风险</span>
+                  <strong>4 项要处理</strong>
+                  <p>建议先处理高销量、低库存的商品。</p>
+                  <div class="bar-set">
+                    <div class="bar"><span style="width: 88%"></span></div>
+                    <div class="bar"><span style="width: 46%"></span></div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <aside class="panel flat" style="min-height: 470px">
+              <div class="panel-title">建议先做</div>
+              <div class="panel-body">
+                <div class="advice">
+                  <div class="advice-item">
+                    <b>先看广告计划 A</b>
+                    <span>它花费上涨最多，对利润影响最大。</span>
+                  </div>
+                  <div class="advice-item">
+                    <b>确认 4 款商品补货</b>
+                    <span>预计 7 天内缺货，越早确认越稳。</span>
+                  </div>
+                  <div class="advice-item">
+                    <b>生成老板版说明</b>
+                    <span>用一页解释“发生了什么、为什么、怎么办”。</span>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </section>
+          <div class="composer wide">
+            <div class="suggestions">
+              <span class="pill">解释销售变化</span>
+              <span class="pill">找广告浪费</span>
+              <span class="pill">列补货优先级</span>
+            </div>
+            <div class="composer-box glow">
+              <div class="placeholder">
+                例如：用老板听得懂的话解释这周销售上涨的原因
+              </div>
+              <div class="composer-actions">
+                <span class="mini-action">附上明细</span>
+                <button class="send">发</button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <section class="frame" data-shot="workspace">
+      <div class="canvas">
+        <aside class="sidebar">
+          <div class="traffic">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="brand">A2A 经营助理 v0.4</div>
+          <div class="side-row active"><span class="icon-box"></span>新建任务</div>
+          <div class="side-row"><span class="icon-box"></span>助理</div>
+          <div class="side-row"><span class="icon-box"></span>专家</div>
+          <div class="side-row"><span class="icon-box"></span>技能</div>
+          <div class="side-row"><span class="icon-box"></span>自动化</div>
+          <div class="side-row"><span class="icon-box"></span>更多</div>
+          <div class="side-title">重要任务（3）</div>
+          <div class="pin-list">
+            <div class="pin-item">Legal Logic Analysis 资料整理 <span></span></div>
+            <div class="pin-item">市场调研 群投放复盘 <span></span></div>
+            <div class="pin-item">携程问答 出行助手 <span></span></div>
+          </div>
+          <div class="side-title">任务（26）</div>
+          <div class="pin-list">
+            <div class="pin-item">推送企业微信审批提醒 <span>2天前</span></div>
+            <div class="pin-item">查询企业微信用户ID <span>2天前</span></div>
+            <div class="pin-item">识别图片内容 <span>3天前</span></div>
+          </div>
+          <div class="profile"><span class="avatar">Lee</span>Lee 老板</div>
+        </aside>
+        <main class="main">
+          <div class="topbar">
+            <span class="spacer"></span>
+            <span class="badge success">来成长计划赚积分</span>
+          </div>
+          <div class="soft-line" style="left: 260px; right: 92px; top: 678px"></div>
+          <div class="doc-flow" style="left: 326px; top: 216px">
+            <div class="doc-mini">资料进入整理区</div>
+            <div class="doc-mini">自动生成摘要</div>
+          </div>
+          <div
+            class="doc-flow"
+            style="right: 300px; top: 205px; animation-delay: -2s"
+          >
+            <div class="doc-mini">风险变成清单</div>
+            <div class="doc-mini">报告等待确认</div>
+          </div>
+          <section class="workspace-center">
+            <div class="assistant-mark">
+              <span class="assistant-eye left"></span>
+              <span class="assistant-eye right"></span>
+            </div>
+            <h1>连接业务，一句话开工</h1>
+            <p class="lead">
+              不需要懂系统名。你只要说要做什么，助理会把资料、分析和汇报排好。
+            </p>
+            <div class="segment">
+              <span>代码开发</span>
+              <span class="active">日常办公</span>
+              <span>经营分析</span>
+            </div>
+          </section>
+          <div class="bottom-soft"></div>
+          <div class="composer wide" style="bottom: 36px">
+            <div class="suggestions">
+              <span class="pill">文档处理</span>
+              <span class="pill">金融服务</span>
+              <span class="pill">数据分析及可视化</span>
+              <span class="pill">深度研究</span>
+              <span class="pill">产品管理</span>
+              <span class="pill">老板报告</span>
+            </div>
+            <div class="composer-box glow">
+              <div class="placeholder">
+                今天帮你做些什么？例如：引用对话文件，帮我整理成汇报
+              </div>
+              <div class="composer-actions">
+                <span class="mini-action">Craft</span>
+                <span class="mini-action">Auto</span>
+                <span class="mini-action">技能</span>
+                <span class="mini-action">默认权限</span>
+                <button class="send">发</button>
+              </div>
+            </div>
+          </div>
+          <div class="motion-label" style="right: 92px; bottom: 172px">
+            输入框会轻微呼吸，提示可直接开工
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <script>
+      const shot = new URLSearchParams(window.location.search).get("shot");
+      if (shot) {
+        document.body.classList.add("single");
+        document.querySelectorAll(".frame").forEach((frame) => {
+          frame.classList.toggle("active", frame.dataset.shot === shot);
+        });
+      }
+    </script>
+  </body>
+</html>

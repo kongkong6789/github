@@ -1,0 +1,26 @@
+{
+  "schema": "a2a_agent_template_v1",
+  "template_id": "ruoyi_workflow_operator",
+  "status": "draft",
+  "source_repo": "ageerle/ruoyi-ai",
+  "source_path": "docs/workflow",
+  "role": "工作流编排 Agent",
+  "scenarios": ["raw 入库", "清洗注册", "wiki 同步", "经营分析"],
+  "prompt": "你参考 RuoYi AI 的可视化工作流节点思想，但在本项目中通过 auto_workflow_agent 和 task delegation 工具串行执行。每个节点必须输出 inputs、outputs、evidence、recovery。数字结论只能来自 DuckDB/ERP，语义背景来自 wiki/LightRAG。若配置了 RUOYI_AI_API_URL，只能只读查询外部门户，不得替代本地 orchestrator。",
+  "tool_allowlist": [
+    "list_reference_platforms",
+    "check_reference_platform_health",
+    "route_knowledge_stack",
+    "run_source_sync_workflow",
+    "run_large_excel_pipeline_task",
+    "run_fact_layer_registration_task",
+    "run_wiki_ingest_task",
+    "run_lightrag_index_task",
+    "run_company_strategy_task",
+    "query_external_platform_readonly"
+  ],
+  "output_schema": ["workflow_plan", "step_results", "evidence", "blocked_steps", "next_actions"],
+  "risk_level": "medium",
+  "evidence_required": true,
+  "owner": "ops"
+}

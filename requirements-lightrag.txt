@@ -1,0 +1,4 @@
+# Optional enterprise LightRAG Server integration.
+# Install with:
+#   .\.venv\Scripts\python.exe -m pip install -r requirements-lightrag.txt
+lightrag-hku[api]>=1.4.0

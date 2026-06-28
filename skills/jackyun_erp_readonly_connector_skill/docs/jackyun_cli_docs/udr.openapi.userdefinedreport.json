@@ -1,0 +1,86 @@
+{
+    "method": "udr.openapi.userdefinedreport",
+    "summary": "吉智BI自定义报表API接口",
+    "description": "吉智BI自定义报表API接口",
+    "request": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "pageSize": {
+                    "type": "string",
+                    "example": "200",
+                    "description": "每页记录数，默认50，最大200"
+                },
+                "filterKeyValueJson": {
+                    "type": "string",
+                    "example": "[{\"key\":\"timeType\",\"value\":\"consign_time\"},{\"key\":\"shopId\",\"value\":\"515656078680228224,515657021821092480,515657845983773056,688170798017938688\"},{\"key\":\"date_key\",\"value\":\"2023-11-25,2023-11-27\"}]",
+                    "description": "筛选项参数JSON"
+                },
+                "reportId": {
+                    "type": "string",
+                    "example": "159",
+                    "description": "自定义报表id"
+                },
+                "pageIndex": {
+                    "type": "string",
+                    "example": "0",
+                    "description": "页码，0为第1页"
+                }
+            }
+        },
+        "example": {
+            "pageSize": "200",
+            "filterKeyValueJson": "[{\"key\":\"timeType\",\"value\":\"consign_time\"},{\"key\":\"shopId\",\"value\":\"515656078680228224,515657021821092480,515657845983773056,688170798017938688\"},{\"key\":\"date_key\",\"value\":\"2023-11-25,2023-11-27\"}]",
+            "reportId": "159",
+            "pageIndex": "0"
+        }
+    },
+    "response": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "description": "返回码，200 成功"
+                },
+                "msg": {
+                    "type": "string"
+                },
+                "subCode": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "object",
+                    "properties": {
+                        "data": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "type": "string",
+                                    "example": "[{\"渠道名称\":\"天猫店铺\",\"金额\":\"100\"}{\"渠道名称\":\"京东店铺\",\"金额\":\"500\"}]",
+                                    "description": "返回吉智BI自定义报表数据"
+                                }
+                            }
+                        },
+                        "contextId": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "example": {
+            "code": 200,
+            "msg": "",
+            "result": {
+                "data": {
+                    "data": "[{\"渠道名称\":\"天猫店铺\",\"金额\":\"100\"}{\"渠道名称\":\"京东店铺\",\"金额\":\"500\"}]"
+                },
+                "contextId": "1997045120288162176"
+            },
+            "subCode": ""
+        }
+    }
+}

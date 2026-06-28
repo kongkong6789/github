@@ -1,0 +1,97 @@
+{
+    "method": "erp.dictionary.page",
+    "summary": "查询数据字典",
+    "description": "对应吉客云数据字典查询页面",
+    "request": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "dictValue": {
+                    "type": "string",
+                    "example": "尺码",
+                    "description": "字典名（对应左侧的字典项，如 成分）"
+                },
+                "pageSize": {
+                    "type": "integer",
+                    "example": 50,
+                    "description": "分页大小"
+                },
+                "pageIndex": {
+                    "type": "integer",
+                    "example": 0,
+                    "description": "页码（从0开始）"
+                }
+            }
+        },
+        "example": {
+            "dictValue": "尺码",
+            "pageSize": 50,
+            "pageIndex": 0
+        }
+    },
+    "response": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "description": "返回码，200 成功"
+                },
+                "msg": {
+                    "type": "string"
+                },
+                "subCode": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "object",
+                    "properties": {
+                        "data": {
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "type": "string",
+                                    "example": "0012",
+                                    "description": "编号"
+                                },
+                                "orderIndex": {
+                                    "type": "integer",
+                                    "example": 9,
+                                    "description": "序号"
+                                },
+                                "text": {
+                                    "type": "string",
+                                    "example": "2XL",
+                                    "description": "名称"
+                                }
+                            },
+                            "required": [
+                                "value",
+                                "orderIndex",
+                                "text"
+                            ]
+                        },
+                        "contextId": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "example": {
+            "code": 200,
+            "msg": "",
+            "result": {
+                "data": {
+                    "value": "0012",
+                    "orderIndex": 9,
+                    "text": "2XL"
+                },
+                "contextId": "1923146730396615680"
+            },
+            "subCode": ""
+        }
+    }
+}

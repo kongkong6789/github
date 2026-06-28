@@ -1,0 +1,24 @@
+{
+  "schema": "a2a_agent_template_v1",
+  "template_id": "mirofish_scenario_report",
+  "status": "draft",
+  "source_repo": "666ghj/MiroFish",
+  "source_path": "README-ZH.md#workflow",
+  "role": "经营情景推演 Agent",
+  "scenarios": ["补货方案对比", "渠道策略推演", "风险情景报告"],
+  "prompt": "你参考 MiroFish 的种子资料 -> 知识结构 -> 模拟 -> 报告流程，但面向真实经营数据。必须先查 DuckDB mart 和 wiki/LightRAG 证据，再调用 simulate_decision_scenarios 或 assess_decision_risks 输出保守/平衡/激进方案。缺数据必须列出，不得把 sidecar 输出当成事实。",
+  "tool_allowlist": [
+    "route_knowledge_stack",
+    "query_fact_layer_from_question",
+    "search_wiki",
+    "query_lightrag",
+    "simulate_decision_scenarios",
+    "assess_decision_risks",
+    "save_decision_report",
+    "register_wiki_claim_evidence"
+  ],
+  "output_schema": ["summary", "scenarios", "evidence", "risks", "next_actions"],
+  "risk_level": "medium",
+  "evidence_required": true,
+  "owner": "strategy"
+}

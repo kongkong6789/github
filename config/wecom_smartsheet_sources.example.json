@@ -1,0 +1,21 @@
+{
+  "sources": [
+    {
+      "source_id": "channel_daily_sales",
+      "name": "渠道每日销售智能表",
+      "dataset": "channel_daily_sales",
+      "docid": "<docid>",
+      "sheet_id": "<sheet_id>",
+      "sheet_ids": ["<sheet_id_1>", "<sheet_id_2>"],
+      "mcp_url_env": "WECOM_SMARTSHEET_MCP_URL"
+    },
+    {
+      "source_id": "channel_daily_sales_multi_sheet",
+      "name": "渠道每日销售智能表（MCP 多子表）",
+      "dataset": "channel_daily_sales",
+      "docid": "<docid>",
+      "sheet_ids_env": "WECOM_SMARTSHEET_SHEET_IDS",
+      "mcp_url_env": "WECOM_SMARTSHEET_MCP_URL"
+    }
+  ]
+}

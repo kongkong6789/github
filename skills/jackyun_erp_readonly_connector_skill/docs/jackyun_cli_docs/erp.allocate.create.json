@@ -1,0 +1,789 @@
+{
+    "method": "erp.allocate.create",
+    "summary": "开放平台调拨单创建对外接口",
+    "description": "开放平台调拨单创建对外接口",
+    "request": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "reason": {
+                    "type": "string",
+                    "example": "",
+                    "description": "原因"
+                },
+                "outCurrencyCode": {
+                    "type": "string",
+                    "example": "CNY",
+                    "description": "出库币种编码"
+                },
+                "companyName": {
+                    "type": "string",
+                    "example": "笛佛",
+                    "description": "公司名称"
+                },
+                "memo": {
+                    "type": "string",
+                    "example": "备注",
+                    "description": "备注"
+                },
+                "inStatus": {
+                    "type": "integer",
+                    "example": 0,
+                    "description": "入库状态（1：入库等待；2：部分入库；3：入库完成）"
+                },
+                "operator": {
+                    "type": "string",
+                    "example": "1"
+                },
+                "inCurrencyCode": {
+                    "type": "string",
+                    "example": "CNY",
+                    "description": "入库币种编码"
+                },
+                "stockAllocateDetailViews": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "skuPrice": {
+                                "type": "integer",
+                                "example": 12,
+                                "description": "单价"
+                            },
+                            "detailField9": {
+                                "type": "string",
+                                "example": "",
+                                "description": "明细自定义字段9值"
+                            },
+                            "outSkuCode": {
+                                "type": "string",
+                                "example": "241142（条码和外部货品编码必传其一）",
+                                "description": "外部货品编码"
+                            },
+                            "isSerial": {
+                                "type": "integer",
+                                "example": 1,
+                                "description": "是否是序列号货品（0：否；1：是）"
+                            },
+                            "detailField4": {
+                                "type": "string",
+                                "example": "",
+                                "description": "明细自定义字段4值"
+                            },
+                            "detailField3": {
+                                "type": "string",
+                                "example": "",
+                                "description": "明细自定义字段3值"
+                            },
+                            "detailField2": {
+                                "type": "string",
+                                "example": "",
+                                "description": "明细自定义字段2值"
+                            },
+                            "detailField1": {
+                                "type": "string",
+                                "example": "",
+                                "description": "明细自定义字段1值"
+                            },
+                            "detailField8": {
+                                "type": "string",
+                                "example": "",
+                                "description": "明细自定义字段8值"
+                            },
+                            "detailField7": {
+                                "type": "string",
+                                "example": "",
+                                "description": "明细自定义字段7值"
+                            },
+                            "detailField6": {
+                                "type": "string",
+                                "example": "",
+                                "description": "明细自定义字段6值"
+                            },
+                            "detailField5": {
+                                "type": "string",
+                                "example": "",
+                                "description": "明细自定义字段5值"
+                            },
+                            "goodsName": {
+                                "type": "string",
+                                "example": "",
+                                "description": "货品名称（冗余字段）"
+                            },
+                            "skuCount": {
+                                "type": "integer",
+                                "example": 12,
+                                "description": "数量"
+                            },
+                            "unitName": {
+                                "type": "string",
+                                "example": "件",
+                                "description": "计量单位名称"
+                            },
+                            "detailField10": {
+                                "type": "string",
+                                "example": "",
+                                "description": "明细自定义字段10值"
+                            },
+                            "isCertified": {
+                                "type": "string",
+                                "example": "1",
+                                "description": "是否正品"
+                            },
+                            "rowRemark": {
+                                "type": "string",
+                                "example": "备注0001",
+                                "description": "备注"
+                            },
+                            "totalAmount": {
+                                "type": "integer",
+                                "example": 144,
+                                "description": "总金额"
+                            },
+                            "isBatch": {
+                                "type": "integer",
+                                "example": 1,
+                                "description": "是否批次货品（0：否；1：是）"
+                            },
+                            "skuName": {
+                                "type": "string",
+                                "example": "",
+                                "description": "sku名称，冗余字段"
+                            },
+                            "outCount": {
+                                "type": "string",
+                                "example": "",
+                                "description": "已出库数量"
+                            },
+                            "batchList": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "shelfLiftUnit": {
+                                            "type": "string",
+                                            "example": "day",
+                                            "description": "质保期单位，年、月、日"
+                                        },
+                                        "batchNo": {
+                                            "type": "string",
+                                            "example": "PC200203",
+                                            "description": "批次号"
+                                        },
+                                        "batchMemo": {
+                                            "type": "string",
+                                            "example": "测试备注信息",
+                                            "description": "批次备注"
+                                        },
+                                        "productionDate": {
+                                            "type": "string",
+                                            "example": "2020-01-02",
+                                            "description": "生产日期"
+                                        },
+                                        "shelfLife": {
+                                            "type": "string",
+                                            "example": "3",
+                                            "description": "质保期"
+                                        },
+                                        "expirationDate": {
+                                            "type": "string",
+                                            "example": "2022-01-02",
+                                            "description": "到期日期"
+                                        },
+                                        "quantity": {
+                                            "type": "number",
+                                            "example": 10.0,
+                                            "description": "货品数量"
+                                        }
+                                    }
+                                },
+                                "description": "批次节点"
+                            },
+                            "goodsNo": {
+                                "type": "string",
+                                "example": "A001212",
+                                "description": "商品编号"
+                            },
+                            "inCount": {
+                                "type": "string",
+                                "example": "",
+                                "description": "已入库数量"
+                            },
+                            "skuBarcode": {
+                                "type": "string",
+                                "example": "A0001（条码和外部货品编码必传其一）",
+                                "description": "条形码"
+                            }
+                        }
+                    },
+                    "description": "货品明细"
+                },
+                "allocatePriceType": {
+                    "type": "string",
+                    "example": "1",
+                    "description": "调拨价格类型（1：批发价；2：零售价；3：会员价）"
+                },
+                "stockAllocateFiles": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "fileName": {
+                                "type": "string",
+                                "example": "",
+                                "description": "文件名"
+                            },
+                            "fileUrl": {
+                                "type": "string",
+                                "example": "",
+                                "description": "文件url"
+                            }
+                        }
+                    },
+                    "description": "附件信息"
+                },
+                "operatorId": {
+                    "type": "string",
+                    "example": "张三"
+                },
+                "logisticCode": {
+                    "type": "string",
+                    "example": "A0001",
+                    "description": "物流公司编码"
+                },
+                "stockAllocateExpressInfo": {
+                    "type": "object",
+                    "properties": {
+                        "receiveCountryName": {
+                            "type": "string",
+                            "example": "中国",
+                            "description": "收件人国家"
+                        },
+                        "sendStreetName": {
+                            "type": "string",
+                            "example": "西园路",
+                            "description": "发件人街道"
+                        },
+                        "receiveProvinceName": {
+                            "type": "string",
+                            "example": "浙江省",
+                            "description": "收件人省"
+                        },
+                        "receiveCityName": {
+                            "type": "string",
+                            "example": "杭州",
+                            "description": "收件人市"
+                        },
+                        "receiveAddress": {
+                            "type": "string",
+                            "example": "西园路 20号",
+                            "description": "收件人详细地址"
+                        },
+                        "sendTownName": {
+                            "type": "string",
+                            "example": "三顿",
+                            "description": "发件人镇，区"
+                        },
+                        "sendAddress": {
+                            "type": "string",
+                            "example": "西苑路20号",
+                            "description": "发件人详细地址"
+                        },
+                        "send": {
+                            "type": "string",
+                            "example": "张三",
+                            "description": "发件人"
+                        },
+                        "sendProvinceName": {
+                            "type": "string",
+                            "example": "浙江省",
+                            "description": "发件人省"
+                        },
+                        "sendCountryName": {
+                            "type": "string",
+                            "example": "中国",
+                            "description": "发件人国家"
+                        },
+                        "receiveTel": {
+                            "type": "string",
+                            "example": "15236612558",
+                            "description": "收件人电话"
+                        },
+                        "receiveCompanyName": {
+                            "type": "string",
+                            "example": "笛梵",
+                            "description": "收件公司名称"
+                        },
+                        "receiveStreetName": {
+                            "type": "string",
+                            "example": "西苑路12号",
+                            "description": "收件人街道"
+                        },
+                        "sendCityName": {
+                            "type": "string",
+                            "example": "杭州",
+                            "description": "发件人市"
+                        },
+                        "sendEmail": {
+                            "type": "string",
+                            "example": "9@qq.com",
+                            "description": "发件人邮箱"
+                        },
+                        "receiveTownName": {
+                            "type": "string",
+                            "example": "三顿镇",
+                            "description": "收件人镇，区"
+                        },
+                        "sendCompanyName": {
+                            "type": "string",
+                            "example": "上海发货公司",
+                            "description": "发件公司名称"
+                        },
+                        "receive": {
+                            "type": "string",
+                            "example": "李四",
+                            "description": "收件人"
+                        },
+                        "receivePhone": {
+                            "type": "string",
+                            "example": "15236624567",
+                            "description": "收件人手机号"
+                        },
+                        "receiveEmail": {
+                            "type": "string",
+                            "example": "1@qq.com",
+                            "description": "收件人邮箱"
+                        },
+                        "sendTel": {
+                            "type": "string",
+                            "example": "15269999999",
+                            "description": "发件人电话"
+                        },
+                        "sendPhone": {
+                            "type": "string",
+                            "example": "15236666666",
+                            "description": "发件人手机号"
+                        }
+                    },
+                    "description": "收发货人信息"
+                },
+                "skuCount": {
+                    "type": "integer",
+                    "example": 1,
+                    "description": "货品数量"
+                },
+                "companyCode": {
+                    "type": "string",
+                    "example": "P01",
+                    "description": "申请人所在公司的公司编号（用于定位公司信息）"
+                },
+                "sourceNo": {
+                    "type": "string",
+                    "example": "1245612",
+                    "description": "来源单号"
+                },
+                "applyDepartId": {
+                    "type": "string",
+                    "example": "1",
+                    "description": "申请部门id"
+                },
+                "applyUserName": {
+                    "type": "string",
+                    "example": "张三",
+                    "description": "申请人"
+                },
+                "totalAmount": {
+                    "type": "integer",
+                    "example": 100,
+                    "description": "总金额"
+                },
+                "goodsCount": {
+                    "type": "integer",
+                    "example": 1,
+                    "description": "货品种类"
+                },
+                "companyId": {
+                    "type": "string",
+                    "example": "1",
+                    "description": "公司id"
+                },
+                "auditUserId": {
+                    "type": "string",
+                    "example": "1",
+                    "description": "审核人id"
+                },
+                "auditUserName": {
+                    "type": "string",
+                    "example": "张三",
+                    "description": "审核人"
+                },
+                "field10": {
+                    "type": "string",
+                    "example": "",
+                    "description": "自定义字段10值"
+                },
+                "inCountSum": {
+                    "type": "integer",
+                    "example": 12,
+                    "description": "入库数量"
+                },
+                "outCurrencyName": {
+                    "type": "string",
+                    "example": "人民币",
+                    "description": "出库币种名称"
+                },
+                "status": {
+                    "type": "string",
+                    "example": "0",
+                    "description": "审核状态（0：待递交；1：审核中；2：审核通过；3：关闭；4：作废）"
+                },
+                "outCountSum": {
+                    "type": "integer",
+                    "example": 12,
+                    "description": "出库数量"
+                },
+                "logisticType": {
+                    "type": "string",
+                    "example": "1",
+                    "description": "物流类型（1：普通快递；2：上门自提；3：门店配送；5：无需配送； 6：线下配送；7：自有物流）"
+                },
+                "logisticNo": {
+                    "type": "string",
+                    "example": "A0001",
+                    "description": "物流单号"
+                },
+                "applyUserId": {
+                    "type": "string",
+                    "example": "1",
+                    "description": "申请人id,关联用户表"
+                },
+                "isNegativeStock": {
+                    "type": "string",
+                    "example": "",
+                    "description": "是否允许负库存出库（0：否；1：是）"
+                },
+                "planOutDate": {
+                    "type": "string",
+                    "example": "",
+                    "description": "预计出库时间"
+                },
+                "auditDate": {
+                    "type": "string",
+                    "example": "",
+                    "description": "审核时间"
+                },
+                "outWarehouseCode": {
+                    "type": "string",
+                    "example": "outA001",
+                    "description": "调出仓库编码"
+                },
+                "gmtCreate": {
+                    "type": "string",
+                    "example": "",
+                    "description": "创建时间"
+                },
+                "allocatePrice": {
+                    "type": "string",
+                    "example": "1",
+                    "description": "调拨价格（1：批发价；2：零售价；3：会员价）"
+                },
+                "field1": {
+                    "type": "string",
+                    "example": "",
+                    "description": "自定义字段1值"
+                },
+                "logisticName": {
+                    "type": "string",
+                    "example": "顺丰",
+                    "description": "物流公司名称"
+                },
+                "applyDepartName": {
+                    "type": "string",
+                    "example": "开发部",
+                    "description": "申请部门"
+                },
+                "field7": {
+                    "type": "string",
+                    "example": "",
+                    "description": "自定义字段7值"
+                },
+                "inCurrencyName": {
+                    "type": "string",
+                    "example": "人民币",
+                    "description": "入库币种名称"
+                },
+                "intWarehouseCode": {
+                    "type": "string",
+                    "example": "A0001",
+                    "description": "调入仓库编码"
+                },
+                "field6": {
+                    "type": "string",
+                    "example": "",
+                    "description": "自定义字段6值"
+                },
+                "allocateType": {
+                    "type": "integer",
+                    "example": 0,
+                    "description": "调拨类型（0：同价调拨；1：异价调拨）"
+                },
+                "departCode": {
+                    "type": "string",
+                    "example": "D01",
+                    "description": "申请人所在的部门编号（请确保吉客云系统中存在对应的部门）"
+                },
+                "field9": {
+                    "type": "string",
+                    "example": "",
+                    "description": "自定义字段9值"
+                },
+                "currencyRate": {
+                    "type": "integer",
+                    "example": 1,
+                    "description": "入库汇率"
+                },
+                "returnedCountInSum": {
+                    "type": "integer",
+                    "example": 12,
+                    "description": "退回数量"
+                },
+                "outStatus": {
+                    "type": "integer",
+                    "example": 0,
+                    "description": "出库状态（1：出库等待；2：部分出库；3：出库完成）"
+                },
+                "field8": {
+                    "type": "string",
+                    "example": "",
+                    "description": "自定义字段8值"
+                },
+                "applyDate": {
+                    "type": "string",
+                    "example": "2020-06-04",
+                    "description": "申请时间"
+                },
+                "planInDate": {
+                    "type": "string",
+                    "example": "",
+                    "description": "预计入库时间"
+                },
+                "isAutoResolutionAddress": {
+                    "type": "integer",
+                    "example": 0,
+                    "description": "当省市区为空时,是否自动解析省市区"
+                },
+                "field3": {
+                    "type": "string",
+                    "example": "",
+                    "description": "自定义字段3值"
+                },
+                "field2": {
+                    "type": "string",
+                    "example": "",
+                    "description": "自定义字段2值"
+                },
+                "isSetFromWarehouse": {
+                    "type": "integer",
+                    "example": 0,
+                    "description": "当收发件人信息为空时候,自动取仓库的收发件人信息"
+                },
+                "field5": {
+                    "type": "string",
+                    "example": "",
+                    "description": "自定义字段5值"
+                },
+                "field4": {
+                    "type": "string",
+                    "example": "",
+                    "description": "自定义字段4值"
+                }
+            }
+        },
+        "example": {
+            "reason": "",
+            "outCurrencyCode": "CNY",
+            "companyName": "笛佛",
+            "memo": "备注",
+            "inStatus": 0,
+            "operator": "1",
+            "inCurrencyCode": "CNY",
+            "stockAllocateDetailViews": [
+                {
+                    "skuPrice": 12,
+                    "detailField9": "",
+                    "outSkuCode": "241142（条码和外部货品编码必传其一）",
+                    "isSerial": 1,
+                    "detailField4": "",
+                    "detailField3": "",
+                    "detailField2": "",
+                    "detailField1": "",
+                    "detailField8": "",
+                    "detailField7": "",
+                    "detailField6": "",
+                    "detailField5": "",
+                    "goodsName": "",
+                    "skuCount": 12,
+                    "unitName": "件",
+                    "detailField10": "",
+                    "isCertified": "1",
+                    "rowRemark": "备注0001",
+                    "totalAmount": 144,
+                    "isBatch": 1,
+                    "skuName": "",
+                    "outCount": "",
+                    "batchList": [
+                        {
+                            "shelfLiftUnit": "day",
+                            "batchNo": "PC200203",
+                            "batchMemo": "测试备注信息",
+                            "productionDate": "2020-01-02",
+                            "shelfLife": "3",
+                            "expirationDate": "2022-01-02",
+                            "quantity": 10.0
+                        }
+                    ],
+                    "goodsNo": "A001212",
+                    "inCount": "",
+                    "skuBarcode": "A0001（条码和外部货品编码必传其一）"
+                }
+            ],
+            "allocatePriceType": "1",
+            "stockAllocateFiles": [
+                {
+                    "fileName": "",
+                    "fileUrl": ""
+                }
+            ],
+            "operatorId": "张三",
+            "logisticCode": "A0001",
+            "stockAllocateExpressInfo": {
+                "receiveCountryName": "中国",
+                "sendStreetName": "西园路",
+                "receiveProvinceName": "浙江省",
+                "receiveCityName": "杭州",
+                "receiveAddress": "西园路 20号",
+                "sendTownName": "三顿",
+                "sendAddress": "西苑路20号",
+                "send": "张三",
+                "sendProvinceName": "浙江省",
+                "sendCountryName": "中国",
+                "receiveTel": "15236612558",
+                "receiveCompanyName": "笛梵",
+                "receiveStreetName": "西苑路12号",
+                "sendCityName": "杭州",
+                "sendEmail": "9@qq.com",
+                "receiveTownName": "三顿镇",
+                "sendCompanyName": "上海发货公司",
+                "receive": "李四",
+                "receivePhone": "15236624567",
+                "receiveEmail": "1@qq.com",
+                "sendTel": "15269999999",
+                "sendPhone": "15236666666"
+            },
+            "skuCount": 1,
+            "companyCode": "P01",
+            "sourceNo": "1245612",
+            "applyDepartId": "1",
+            "applyUserName": "张三",
+            "totalAmount": 100,
+            "goodsCount": 1,
+            "companyId": "1",
+            "auditUserId": "1",
+            "auditUserName": "张三",
+            "field10": "",
+            "inCountSum": 12,
+            "outCurrencyName": "人民币",
+            "status": "0",
+            "outCountSum": 12,
+            "logisticType": "1",
+            "logisticNo": "A0001",
+            "applyUserId": "1",
+            "isNegativeStock": "",
+            "planOutDate": "",
+            "auditDate": "",
+            "outWarehouseCode": "outA001",
+            "gmtCreate": "",
+            "allocatePrice": "1",
+            "field1": "",
+            "logisticName": "顺丰",
+            "applyDepartName": "开发部",
+            "field7": "",
+            "inCurrencyName": "人民币",
+            "intWarehouseCode": "A0001",
+            "field6": "",
+            "allocateType": 0,
+            "departCode": "D01",
+            "field9": "",
+            "currencyRate": 1,
+            "returnedCountInSum": 12,
+            "outStatus": 0,
+            "field8": "",
+            "applyDate": "2020-06-04",
+            "planInDate": "",
+            "isAutoResolutionAddress": 0,
+            "field3": "",
+            "field2": "",
+            "isSetFromWarehouse": 0,
+            "field5": "",
+            "field4": ""
+        }
+    },
+    "response": {
+        "contentType": "application/json",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "description": "返回码，200 成功"
+                },
+                "msg": {
+                    "type": "string"
+                },
+                "subCode": {
+                    "type": "string"
+                },
+                "result": {
+                    "type": "object",
+                    "properties": {
+                        "data": {
+                            "type": "object",
+                            "properties": {
+                                "allocateNo": {
+                                    "type": "string",
+                                    "example": "DB0002",
+                                    "description": "返回调拨单号"
+                                },
+                                "batchControlByWarehouse": {
+                                    "type": "string",
+                                    "example": "0",
+                                    "description": "批次受仓库批次开关控制，若仓库不开启批次，则忽略传入的批次信息 （1 = 控制 ，0 或者 不传 =不控制 ）"
+                                }
+                            },
+                            "required": [
+                                "allocateNo",
+                                "batchControlByWarehouse"
+                            ]
+                        },
+                        "contextId": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "example": {
+            "code": 200,
+            "msg": "",
+            "result": {
+                "data": {
+                    "allocateNo": "DB0002",
+                    "batchControlByWarehouse": "0"
+                },
+                "contextId": "2010827599365900416"
+            },
+            "subCode": ""
+        }
+    }
+}
