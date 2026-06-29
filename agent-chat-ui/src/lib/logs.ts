@@ -99,8 +99,10 @@ const LOG_SOURCES: SourceDefinition[] = [
 
 const SENSITIVE_PATTERNS = [
   /(api[_-]?key|token|secret|password)\s*[:=]\s*['"]?[^,'"\s]+/gi,
+  /\b(scode|apikey|access_token)=([^&\s"']+)/gi,
   /sk-[A-Za-z0-9_-]{12,}/g,
   /tp-[A-Za-z0-9_-]{12,}/g,
+  /ghp_[A-Za-z0-9]{20,}/g,
 ];
 const ANSI_PATTERN = new RegExp(`${String.fromCharCode(27)}\\[[0-9;]*m`, "g");
 const MAX_LOG_READ_BYTES = 512 * 1024;

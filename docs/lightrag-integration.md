@@ -72,17 +72,17 @@ LIGHTRAG_API_URL=http://127.0.0.1:9621
 LIGHTRAG_API_KEY=
 
 LLM_BINDING=openai
-LLM_MODEL=xiaomi/mimo-v2.5-pro
-LLM_BINDING_HOST=https://token-plan-cn.xiaomimimo.com/v1
-LLM_BINDING_API_KEY=你的 LLM token
+LLM_MODEL=your_chat_model_name
+LLM_BINDING_HOST=https://your-llm-provider.example/v1
+LLM_BINDING_API_KEY=your_llm_api_key_here
 
 EMBEDDING_BINDING=openai
 EMBEDDING_MODEL=text-embedding-3-small
-EMBEDDING_BINDING_HOST=https://api.openai.com/v1
-EMBEDDING_BINDING_API_KEY=你的 embedding token
+EMBEDDING_BINDING_HOST=https://your-embedding-provider.example/v1
+EMBEDDING_BINDING_API_KEY=your_embedding_api_key_here
 ```
 
-如果你的 Xiaomi 接口也提供 OpenAI-compatible embedding，可以把 `EMBEDDING_BINDING_HOST` 和 `EMBEDDING_BINDING_API_KEY` 换成同一套服务；如果不提供，需要单独配置一个 embedding 服务。
+如果聊天 LLM 供应商也提供 OpenAI-compatible embedding，可以把 `EMBEDDING_BINDING_HOST` 和 `EMBEDDING_BINDING_API_KEY` 换成同一套服务；如果不提供，需要单独配置一个 embedding 服务。不要把真实 token 写进文档、代码或 Git 仓库。
 
 启动服务：
 

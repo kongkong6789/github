@@ -3,6 +3,7 @@ import { test } from "node:test";
 
 import {
   collectArtifactLinks,
+  redactServiceHost,
   summarizeEmbeddingHealth,
   summarizeConnectorRegistry,
   summarizeSensitiveFields,
@@ -104,6 +105,19 @@ test("embedding health surfaces config gaps and LightRAG failure root causes", (
   assert.equal(health.failure_counts.llm_insufficient_balance, 1);
   assert.equal(health.observed_latency_ms, 82);
   assert(health.warnings.some((warning) => warning.includes("EMBEDDING_BINDING_API_KEY")));
+});
+
+test("redactServiceHost strips query strings and fragments from provider URLs", () => {
+  assert.equal(
+    redactServiceHost(
+      "https://qyapi.weixin.qq.com/mcp/robot-doc?apikey=secret-key&foo=bar",
+    ),
+    "https://qyapi.weixin.qq.com/mcp/robot-doc",
+  );
+  assert.equal(
+    redactServiceHost("https://api.openai.com/v1#fragment"),
+    "https://api.openai.com/v1",
+  );
 });
 
 test("connector registry summary and artifact links surface ERP connector health", () => {

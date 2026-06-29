@@ -18,8 +18,10 @@ STATUS_ORDER = {"ok": 0, "skipped": 0, "warn": 1, "fail": 2}
 SENSITIVE_KEY_PATTERN = re.compile(r"(api[_-]?key|token|secret|password)", re.IGNORECASE)
 SENSITIVE_VALUE_PATTERNS = [
     re.compile(r"(api[_-]?key|token|secret|password)\s*[:=]\s*['\"]?[^,'\"\s]+", re.IGNORECASE),
+    re.compile(r"(?i)(apikey=|scode=|access_token=)[^&\s\"']+", re.IGNORECASE),
     re.compile(r"sk-[A-Za-z0-9_-]{12,}"),
     re.compile(r"tp-[A-Za-z0-9_-]{12,}"),
+    re.compile(r"ghp_[A-Za-z0-9]{20,}"),
 ]
 REQUIRED_ENV_KEYS = ["OPENAI_API_KEY", "OPENAI_MODEL", "OPENAI_BASE_URL"]
 PYTHON_DEPS = ["duckdb", "langgraph", "openpyxl"]
@@ -189,6 +191,7 @@ def check_repository_secret_hygiene(project_root: Path) -> dict[str, Any]:
 
     missing_patterns = [pattern for pattern in [".env", ".env.*", "!.env.example"] if pattern not in gitignore_lines]
     tracked_env = False
+    tracked_skill_configs: list[str] = []
     git_error = ""
     if (project_root / ".git").exists() and shutil.which("git"):
         result = subprocess.run(
@@ -201,27 +204,67 @@ def check_repository_secret_hygiene(project_root: Path) -> dict[str, Any]:
         )
         tracked_env = bool(result.stdout.strip())
         git_error = result.stderr.strip()
+        config_result = subprocess.run(
+            ["git", "ls-files", "skills/*/config.py"],
+            cwd=project_root,
+            check=False,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+        tracked_skill_configs = [line.strip() for line in config_result.stdout.splitlines() if line.strip()]
 
     high_risk_patterns = [
         re.compile(r"6be140cc09f441978a1ff6727367dda2", re.IGNORECASE),
         re.compile(r"\b37811901\b"),
         re.compile(r"159\.75\.104\.61"),
         re.compile(r"65405d0ec432ee", re.IGNORECASE),
+        re.compile(
+            r"https://[^\s\"']*(?:apikey=|scode=)(?!secret-key|secret-code)[^&\s\"']{8,}",
+            re.IGNORECASE,
+        ),
+        re.compile(r"ghp_[A-Za-z0-9]{20,}"),
+        re.compile(r"token-plan-cn\.xiaomimimo\.com", re.IGNORECASE),
     ]
+    redaction_definition_files = {
+        "doctor.py",
+        "enterprise_audit_tools.py",
+        "thread_repair_tools.py",
+        "wecom_smartsheet_tools.py",
+        "logs.ts",
+        "agent-reach.ts",
+        "route.ts",
+    }
     scan_roots = [
         project_root / "README.md",
         project_root / "TODO.md",
         project_root / "docs",
         project_root / "tests",
         project_root / "skills",
+        project_root / "src",
+        project_root / "config",
+        project_root / "agent-chat-ui" / "src",
+        project_root / "scripts",
     ]
     sensitive_hits: list[str] = []
     for root in scan_roots:
         paths = [root] if root.is_file() else sorted(root.rglob("*")) if root.exists() else []
         for path in paths:
-            if not path.is_file() or path.suffix.lower() not in {".md", ".py", ".json", ".txt", ".example"}:
+            if not path.is_file() or path.suffix.lower() not in {
+                ".md",
+                ".py",
+                ".json",
+                ".txt",
+                ".example",
+                ".ts",
+                ".tsx",
+            }:
                 continue
             if path.name == "test_p7_engineering_guardrails.py":
+                continue
+            if path.name in redaction_definition_files:
+                continue
+            if path.name.startswith("test_") or path.name.endswith(".test.ts"):
                 continue
             try:
                 text = path.read_text(encoding="utf-8", errors="ignore")
@@ -235,6 +278,8 @@ def check_repository_secret_hygiene(project_root: Path) -> dict[str, Any]:
         problems.append(f".gitignore missing: {', '.join(missing_patterns)}")
     if tracked_env:
         problems.append("root .env is tracked by Git")
+    if tracked_skill_configs:
+        problems.append(f"local skill config.py tracked by Git: {', '.join(tracked_skill_configs[:4])}")
     if sensitive_hits:
         problems.append(f"high-risk literal(s): {', '.join(sensitive_hits[:8])}")
     if problems:

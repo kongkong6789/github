@@ -168,7 +168,6 @@ def _compact_tool_result_payload(payload: Any, stats: RepairStats) -> Any:
         "schema",
         "source_sheet_ids",
         "doc_url",
-        "mcp_url",
         "warnings",
     }
     compacted = {key: payload[key] for key in keep_keys if key in payload}

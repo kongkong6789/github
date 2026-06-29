@@ -29,6 +29,39 @@ type ConfigHealthOptions = {
 
 const REQUIRED_ENV_KEYS = ["OPENAI_API_KEY", "OPENAI_MODEL", "OPENAI_BASE_URL"];
 
+const INTEGRATION_CREDENTIAL_GROUPS: Array<{ label: string; keys: string[] }> = [
+  { label: "Jackyun ERP", keys: ["JACKYUN_APP_KEY", "JACKYUN_APP_SECRET"] },
+  {
+    label: "Kingdee ERP",
+    keys: ["KINGDEE_BASE_URL", "KINGDEE_ACCT_ID", "KINGDEE_USERNAME", "KINGDEE_PASSWORD"],
+  },
+  {
+    label: "WeCom smart sheet MCP",
+    keys: [
+      "WECOM_SMARTSHEET_MCP_URL",
+      "WEWORK_SMARTSHEET_MCP_URL",
+      "WEDOC_MCP_URL",
+      "WEWORK_WEDOC_MCP_URL",
+    ],
+  },
+  {
+    label: "LLM provider",
+    keys: ["LLM_BINDING_API_KEY", "OPENAI_API_KEY"],
+  },
+  {
+    label: "Embedding provider",
+    keys: ["EMBEDDING_BINDING_API_KEY", "OPENAI_API_KEY"],
+  },
+];
+
+function credentialPresenceSummary(env: Record<string, string>): string {
+  const parts = INTEGRATION_CREDENTIAL_GROUPS.map(({ label, keys }) => {
+    const configured = keys.some((key) => Boolean(env[key]));
+    return `${label}: ${configured ? "configured" : "not configured"}`;
+  });
+  return parts.join("; ");
+}
+
 function safeRecord(value: unknown): Record<string, unknown> {
   return value && typeof value === "object" && !Array.isArray(value)
     ? (value as Record<string, unknown>)
@@ -98,7 +131,13 @@ async function envHealth(workspaceDir: string, env: NodeJS.ProcessEnv) {
       envPath,
     );
   }
-  return item("env", ".env", "ok", "Required env keys are present.", envPath);
+  return item(
+    "env",
+    ".env",
+    "ok",
+    `Required env keys are present. ${credentialPresenceSummary(merged)}.`,
+    envPath,
+  );
 }
 
 async function connectorHealth(filePath: string) {

@@ -14,8 +14,10 @@ AUDIT_LOG = AUDIT_DIR / "events.jsonl"
 
 SENSITIVE_PATTERNS = [
     re.compile(r"(api[_-]?key|token|secret|password)\s*[:=]\s*['\"]?[^,'\"\s]+", re.IGNORECASE),
+    re.compile(r"(?i)(apikey=|scode=|access_token=)[^&\s\"']+", re.IGNORECASE),
     re.compile(r"sk-[A-Za-z0-9_-]{12,}"),
     re.compile(r"tp-[A-Za-z0-9_-]{12,}"),
+    re.compile(r"ghp_[A-Za-z0-9]{20,}"),
 ]
 SENSITIVE_KEY_MARKERS = {
     "api_key",

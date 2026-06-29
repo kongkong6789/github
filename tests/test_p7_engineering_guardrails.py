@@ -35,6 +35,7 @@ class P7EngineeringGuardrailTests(unittest.TestCase):
     def test_sensitive_examples_do_not_contain_known_live_values(self) -> None:
         checked_files = [
             PROJECT_ROOT / ".env.example",
+            PROJECT_ROOT / "docs" / "lightrag-integration.md",
             PROJECT_ROOT / "tests" / "test_connector_registry.py",
             *sorted((PROJECT_ROOT / "skills" / "jackyun_erp_readonly_connector_skill").rglob("*.md")),
             *sorted((PROJECT_ROOT / "skills" / "jackyun_erp_readonly_connector_skill" / "tests").rglob("*.py")),
@@ -46,6 +47,8 @@ class P7EngineeringGuardrailTests(unittest.TestCase):
             "159.75.104.61",
             "65405d0ec432ee",
             "KINGDEE_USERNAME=Administrator",
+            "token-plan-cn.xiaomimimo.com",
+            "xiaomimimo.com",
         ]
 
         violations: list[str] = []

@@ -39,5 +39,6 @@ vendor/reference-only/kingdee_erp_desktop_skill/_tmp_view_*.json
 vendor/reference-only/kingdee_erp_desktop_skill/客户账套配置.txt
 vendor/reference-only/kingdee_erp_desktop_skill/scripts/tools/tmp_*.py
 vendor/reference-only/kingdee_erp_desktop_skill/scripts/tools/tmp_test_*.py
+skills/*/config.py
 skills/*/FEEDBACK_LOG.jsonl
 stitch_exports/

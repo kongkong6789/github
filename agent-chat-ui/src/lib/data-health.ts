@@ -247,6 +247,19 @@ function safeText(value: unknown): string {
   return typeof value === "string" ? value.trim() : "";
 }
 
+export function redactServiceHost(value: unknown): string {
+  const host = safeText(value);
+  if (!host) return "";
+  try {
+    const url = new URL(host);
+    const pathname =
+      url.pathname && url.pathname !== "/" ? url.pathname.replace(/\/$/, "") : "";
+    return `${url.protocol}//${url.host}${pathname}`;
+  } catch {
+    return host.split("?")[0]?.split("#")[0] ?? host;
+  }
+}
+
 function safeBoolean(value: unknown): boolean {
   return value === true;
 }
@@ -1167,10 +1180,11 @@ export function summarizeEmbeddingHealth(input: {
 }): EmbeddingHealth {
   const env = input.env ?? {};
   const binding = safeText(env.EMBEDDING_BINDING) || "openai";
-  const host =
+  const host = redactServiceHost(
     safeText(env.EMBEDDING_BINDING_HOST) ||
-    safeText(env.OPENAI_BASE_URL) ||
-    "https://api.openai.com/v1";
+      safeText(env.OPENAI_BASE_URL) ||
+      "https://api.openai.com/v1",
+  );
   const model = safeText(env.EMBEDDING_MODEL) || "text-embedding-3-small";
   const apiKeyConfigured = Boolean(
     safeText(env.EMBEDDING_BINDING_API_KEY) || safeText(env.OPENAI_API_KEY),
