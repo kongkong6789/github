@@ -24,6 +24,13 @@ if (-not (Test-Path -LiteralPath $LangGraph)) {
 
 Remove-Item -LiteralPath $OutLog, $ErrLog -Force -ErrorAction SilentlyContinue
 
+$backendEnv = @{
+    PYTHONUTF8 = "1"
+}
+foreach ($entry in $backendEnv.GetEnumerator()) {
+    Set-Item -Path "Env:$($entry.Key)" -Value $entry.Value
+}
+
 Start-Process `
     -FilePath $LangGraph `
     -ArgumentList @("dev", "--host", $HostName, "--port", "$Port", "--no-browser", "--no-reload", "--n-jobs-per-worker", "1") `

@@ -9,13 +9,13 @@ from typing import Any
 from src.a2a_ecommerce_demo.state_io import atomic_write_json, load_json
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DATA_DIR = Path(os.getenv("A2A_DATA_DIR", PROJECT_ROOT / "data")).resolve()
-WAREHOUSE_DIR = Path(os.getenv("A2A_WAREHOUSE_DIR", DATA_DIR / "warehouse")).resolve()
+DATA_DIR = Path(os.getenv("A2A_DATA_DIR") or PROJECT_ROOT / "data").resolve()
+WAREHOUSE_DIR = Path(os.getenv("A2A_WAREHOUSE_DIR") or DATA_DIR / "warehouse").resolve()
 CONNECTOR_REGISTRY_PATH = Path(
-    os.getenv("A2A_CONNECTOR_REGISTRY", WAREHOUSE_DIR / "connector_registry.json")
+    os.getenv("A2A_CONNECTOR_REGISTRY") or WAREHOUSE_DIR / "connector_registry.json"
 ).resolve()
 CONNECTOR_STAGING_DIR = Path(
-    os.getenv("A2A_CONNECTOR_STAGING_DIR", DATA_DIR / "staging" / "connectors")
+    os.getenv("A2A_CONNECTOR_STAGING_DIR") or DATA_DIR / "staging" / "connectors"
 ).resolve()
 
 DOMESTIC_PLATFORMS = ["天猫", "淘宝", "抖音", "拼多多", "唯品会", "京东", "快手", "小红书", "得物"]
